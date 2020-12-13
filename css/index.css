@@ -53,6 +53,10 @@
 
     }
 
+    #index_menu {
+        margin-top: -20px;
+    }
+
     #btn_menu:hover {
         background-color: #36b163;
     }
