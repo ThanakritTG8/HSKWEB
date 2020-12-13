@@ -3,18 +3,25 @@
         background-color: #fdb9b9;
     }
 
+    nav {
+        background: rgb(122, 45, 45);
+        color: #fff;
+    }
+
     .wrapper {
         display: flex;
         margin-top: 40px;
         padding: 20px;
     }
 
-    .header {
-        margin-top: 40px;
+    #header {
+        background: rgb(75, 75, 75);
+        /* height: 100px; */
+        color: #fff;
     }
 
-    #index_menu {
-        margin-top: 50px;
+    .text-header {
+        margin-top: 60px;
     }
 
     .underlineHover:after {
@@ -41,96 +48,11 @@
         height: 170px;
         border-radius: 20px;
         font-weight: 20px;
-        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.596);
+        margin-top: 50px;
 
     }
 
     #btn_menu:hover {
         background-color: #36b163;
     }
-
-    /* .wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-
-        padding: 20px;
-        margin-top: 40px;
-    }
-
-
-    h4 {
-        text-align: center;
-        color: white;
-        margin-top: 10px;
-        margin-right: 40px;
-    }
-
-    button {
-        padding: 40px;
-        margin-top: 30px;
-    }
-
-    .card-body {
-        padding: 20px;
-        cursor: pointer;
-    }
-
-    .card_1 {
-        border-radius: 30px;
-        background-color: rgb(33, 207, 109);
-    }
-
-    .card_1:hover {
-        background-color: rgb(97, 201, 142);
-    }
-
-    .card_2 {
-        border-radius: 30px;
-        background-color: rgb(240, 82, 124);
-    }
-
-    .card_2:hover {
-        background-color: rgb(209, 88, 121);
-    }
-
-    .card_3 {
-        border-radius: 30px;
-        background-color: rgb(40, 175, 238);
-    }
-
-    .card_3:hover {
-        background-color: rgb(77, 168, 211);
-    }
-
-    .card_4 {
-        border-radius: 30px;
-        background-color: rgb(82, 82, 82);
-    }
-
-    .card_4:hover {
-        background-color: rgb(77, 77, 77);
-    }
-
-
-
-    .underlineHover:after {
-        display: block;
-        left: 0;
-        bottom: -10px;
-        width: 0;
-        height: 2px;
-        background-color: white;
-        content: "";
-        transition: width 0.2s;
-    }
-
-    .underlineHover:hover {
-        color: white;
-    }
-
-    .underlineHover:hover:after {
-        width: 100%;
-    } */

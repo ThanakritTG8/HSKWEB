@@ -1,4 +1,3 @@
-  
 $(function () {
 
     $('#loginn').click(function () {
