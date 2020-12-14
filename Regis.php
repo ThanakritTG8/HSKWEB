@@ -91,7 +91,7 @@
       <!-- Login Form -->
 
       <!-- Remind Passowrd -->
-      <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.html">
+      <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
         <p class="text-center" style="color: white;"> Back </p>
       </a>
     </div>

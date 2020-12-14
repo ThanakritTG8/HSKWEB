@@ -43,8 +43,7 @@
                 </div>
                 <div class="col-sm-2 text-center">
                     <h4 class="text-center">
-                        <!-- <i class="fas fa-clock" aria-hidden="true"></i> -->
-                        <i class="fa fa-safari" aria-hidden="true"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                         <span id="time"> 20:00</span> minutes!
                     </h4>
                 </div>
@@ -112,22 +111,8 @@
             <div class="col-sm-2"></div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-                <button class="btn btn-success text-center" id="submit-pretest" type="submit">Back</button>
-            </div>
-            <div class="col-sm-2">
-                <button class="btn btn-success text-center" id="submit-pretest" type="submit">Submit</button>
-            </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2"></div>
-        </div>
-    </div>
 
-
+    .
 
     <!-- //////////////////script -->
 
