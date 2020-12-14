@@ -27,6 +27,13 @@
           <h1 style="text-align: center; margin-bottom: 20px;">Register</h1>
           <div class="form-row">
             <div class="col-1"></div>
+            <div class="form-group col-md-10">
+              <label for="inputEmail4">Username</label>
+              <input type="text" class="form-control" id="inputEmail4">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-1"></div>
             <div class="form-group col-md-5">
               <label for="inputEmail4">First name</label>
               <input type="text" class="form-control" id="inputEmail4">
@@ -52,23 +59,18 @@
           </div>
           <div class="form-row">
             <div class="col-1"></div>
-            <div class="form-group col-md-7">
+            <div class="form-group col-md-10">
               <label for="inputEmail4">Email</label>
-              <input type="text" class="form-control" id="inputEmail4">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="inputEmail4">Username</label>
               <input type="text" class="form-control" id="inputEmail4">
             </div>
           </div>
           <div class="form-row">
             <div class="col-1"></div>
             <div class="form-group col-md-4">
-              <label for="inputEmail4">Type</label>
+              <label for="inputEmail4">School</label>
               <select class="form-control">
-                <option>Select</option>
-                <option>Student</option>
-                <option>Teacher</option>
+                <option>ภูเก็ตวิทยาลัย</option>
+                <option>สตรีภูเก็ต</option>
               </select>
             </div>
           </div>
@@ -89,10 +91,9 @@
       <!-- Login Form -->
 
       <!-- Remind Passowrd -->
-      <div id="formFooter">
-
-        <a class="underlineHover" style="color: white;" href="Login.html"> Back </a>
-      </div>
+      <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
+        <p class="text-center" style="color: white;"> Back </p>
+      </a>
     </div>
   </div>
 

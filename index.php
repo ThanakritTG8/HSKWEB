@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -17,28 +17,36 @@
 </head>
 
 <body id="body">
-    <nav class="navbar navbar-light bg-light">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-light">
         <a class="navbar-brand">
             <h5 class="title">
                 Karin Pimloy
             </h5>
         </a>
-        <form action="Login.html" class="form-inline">
+        <form action="Login.php" class="form-inline">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
         </form>
     </nav>
+
+
     <header class="masthead">
-        <h1 class="header text-center">
-            หน้าแรก
-        </h1>
+        <div class="jumbotron jumbotron-fluid" id="header">
+            <h1 class="text-center">
+                หน้าแรก
+            </h1>
+        </div>
     </header>
+
+    <!-- content -->
     <div class="wrapper">
         <div class="container">
             <div class="row" id="index_menu">
                 <div class="col-sm-4">
                     <div class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
-                            <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <img src="./img/personal-information.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">ข้อมูล</h4>
                         </div>
                     </div>
@@ -46,7 +54,7 @@
                 <div class="col-sm-4">
                     <div class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
-                            <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <img src="./img/china.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">ไวยากรณ์</h4>
                         </div>
                     </div>
@@ -54,7 +62,7 @@
                 <div class="col-sm-4">
                     <div class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
-                            <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <img src="./img/yueqin.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">พินอิน</h4>
                         </div>
                     </div>
@@ -65,7 +73,7 @@
                 <div class="col-sm-4">
                     <div class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
-                            <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <img src="./img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK1</h4>
                         </div>
                     </div>
@@ -73,7 +81,7 @@
                 <div class="col-sm-4">
                     <div class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
-                            <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <img src="./img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK2</h4>
                         </div>
                     </div>
@@ -86,7 +94,7 @@
     <!-- //////////////////script -->
 
 
-    <script src="/js/index.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
