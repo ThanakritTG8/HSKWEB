@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -25,7 +25,7 @@
                 Karin Pimloy
             </h5>
         </a>
-        <form action="Login.html" class="form-inline">
+        <form action="Login.php" class="form-inline">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
         </form>
     </nav>
@@ -43,6 +43,7 @@
                 </div>
                 <div class="col-sm-2 text-center">
                     <h4 class="text-center">
+                        <!-- <i class="fas fa-clock" aria-hidden="true"></i> -->
                         <i class="fa fa-safari" aria-hidden="true"></i>
                         <span id="time"> 20:00</span> minutes!
                     </h4>
@@ -110,20 +111,28 @@
             </div>
             <div class="col-sm-2"></div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="btn" id="submit-pretest">
-                    <input type="submit" value="Submit">
-                </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <button class="btn btn-success text-center" id="submit-pretest" type="submit">Back</button>
             </div>
+            <div class="col-sm-2">
+                <button class="btn btn-success text-center" id="submit-pretest" type="submit">Submit</button>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
         </div>
     </div>
+
 
 
     <!-- //////////////////script -->
 
 
-    <script src="/js/index.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

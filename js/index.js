@@ -9,7 +9,7 @@ $(function () {
     } else if (user == 'admin' && pass == '1234') {
       window.location.replace('./admin/index.html');
     } else {
-      window.location.replace('index.html');
+      window.location.replace('index.php');
     }
 
   });

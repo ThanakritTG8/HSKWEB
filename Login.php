@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/Login.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/Login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -29,7 +29,7 @@
             </div>
 
             <!-- Login Form -->
-            <form action="PreTest.html">
+            <form action="PreTest.php">
                 <input type="text" id="login" class="fadeIn second text-left" name="login" placeholder="username">
                 <input type="password" id="password" class="fadeIn third text-left" name="login" placeholder="password">
 
@@ -40,7 +40,7 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" style="color: white;" href="Regis.html">Register </a>
+                <a class="underlineHover" style="color: white;" href="Regis.php">Register </a>
                 or
                 <a class="underlineHover" style="color: white;" href="#"> Forgot Password?</a>
             </div>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <script src="/js/index.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
