@@ -9,7 +9,7 @@ $(function () {
     } else if (user == 'admin' && pass == '1234') {
       window.location.replace('./admin/index.html');
     } else {
-      window.location.replace('index.php');
+      window.location.replace('index.html');
     }
 
   });
@@ -417,4 +417,8 @@ window.onload = function () {
   var twentyMinutes = 60 * 20,
     display = document.querySelector('#time');
   startTimer(twentyMinutes, display);
+
+  var fourMin = 60 * 40,
+    display = document.querySelector('#time_exercise');
+  startTimer(fourMin, display);
 };
