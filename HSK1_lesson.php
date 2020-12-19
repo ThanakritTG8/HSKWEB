@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE php>
 <html lang="en">
 
 <head>
@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">หน้าแรก <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -48,7 +48,7 @@
                     <a class="nav-link" href="#">แบบทดสอบ</a>
                 </li>
             </ul>
-            <form action="Login.html" class="form-inline my-2 my-lg-0">
+            <form action="Login.php" class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
             </form>
         </div>
@@ -70,8 +70,9 @@
         <div class="container">
             <div class="row" id="nav-body">
                 <div class="col">
-                    <h6><a href="index.html">หน้าหลัก</a> >
-                        <a href="HSK1_menu.html">HSK ชุดที่1</a>
+                    <h6><a href="index.php">หน้าหลัก</a> >
+                    <a href="HSK1.php">HSK1</a> >
+                        <a href="HSK1_menu.php">HSK ชุดที่1</a>
                         > บทเรียน
                     </h6>
                 </div>

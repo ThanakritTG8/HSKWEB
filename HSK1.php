@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSK</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -25,7 +25,7 @@
                 Karin Pimloy
             </h5>
         </a>
-        <form action="Login.html" class="form-inline">
+        <form action="Login.php" class="form-inline">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
         </form>
     </nav>
@@ -47,7 +47,7 @@
             <!-- navigation -->
             <div class="row">
                 <div class="col-sm-12" id="nav-body">
-                    <h6><a href="index.html">หน้าหลัก</a>
+                    <h6><a href="index.php">หน้าหลัก</a>
                         > HSK1
                     </h6>
                 </div>
@@ -56,7 +56,7 @@
             <div class="row" id="index_menu">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
-                    <a href="HSK1_lesson.html" class="card btn text-center" id="btn_menu">
+                    <a href="HSK1_menu.php" class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="/img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK ชุดที่ 1</h4>

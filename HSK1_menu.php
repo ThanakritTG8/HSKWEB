@@ -17,17 +17,43 @@
 </head>
 
 <body id="body">
-    <!-- navbar -->
-    <nav class="navbar navbar-light">
-        <a class="navbar-brand">
-            <h5 class="title">
-                Karin Pimloy
-            </h5>
-        </a>
-        <form action="Login.html" class="form-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
-        </form>
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <h5 class="navbar-brand title">
+            Karin Pimloy
+        </h5>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        HSK1
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">HSK ชุดที่1</a>
+                        <a class="dropdown-item" href="#">HSK ชุดที่2</a>
+                        <a class="dropdown-item" href="#">HSK ชุดที่3</a>
+                        <a class="dropdown-item" href="#">HSK ชุดที่4</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">แบบทดสอบ</a>
+                </li>
+            </ul>
+            <form action="Login.php" class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
+            </form>
+        </div>
     </nav>
+
 
     <!-- header -->
     <header class="masthead">
@@ -48,7 +74,7 @@
             <!-- navigation -->
             <div class="row" id="nav-body">
                 <div class="col-sm-12 text-left">
-                    <h6><a href="index.html">หน้าหลัก</a> > HSK ชุดที่ 1</h6>
+                    <h6><a href="index.php">หน้าหลัก</a> > <a href="HSK1.php">HSK1</a> > HSK ชุดที่1</h6>
                 </div>
             </div>
 
@@ -64,7 +90,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="HSK1_lesson.html" class="card btn text-center" id="btn_menu">
+                    <a href="HSK1_lesson.php" class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="/img/online-lesson.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title ">บทเรียน</h4>
