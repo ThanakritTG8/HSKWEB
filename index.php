@@ -1,3 +1,25 @@
+<?php 
+ session_start();
+
+ if (!isset($_SESSION['username'])) {
+     $_SESSION['msg'] = "You must log in first!";
+     header('location: Login.php');
+ }
+ if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: Login.php');
+}
+if(isset($_SESSION['success'])){
+    $message = $_SESSION['success'];
+  echo  "<script type='text/javascript'>alert('$message');</script>"; 
+
+  unset($_SESSION['success']);
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,17 +39,27 @@
 </head>
 
 <body id="body">
+ <!-- notification -->
+
+
+
 
     <!-- navbar -->
     <nav class="navbar navbar-light">
         <a class="navbar-brand">
+            <?php if (isset($_SESSION['username'])) :?>
             <h5 class="title">
-                Karin Pimloy
+           
+            <?php echo $_SESSION['username']; ?>
+
             </h5>
+              <?php endif ?>
         </a>
-        <form action="Login.php" class="form-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
-        </form>
+       
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button">
+                <a href="index.php?logout='1'">LOG OUT</a>
+            </button>
+       
     </nav>
 
 

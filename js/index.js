@@ -1,18 +1,18 @@
 $(function () {
 
-  $('#loginn').click(function () {
+  // $('#loginn').click(function () {
 
-    var user = $('#login').val();
-    var pass = $('#password').val();
-    if (user == 't' && pass == '1234') {
-      window.location.replace('./teacher/index.html');
-    } else if (user == 'admin' && pass == '1234') {
-      window.location.replace('./admin/index.html');
-    } else {
-      window.location.replace('index.php');
-    }
+  //   var user = $('#login').val();
+  //   var pass = $('#password').val();
+  //   if (user == 't' && pass == '1234') {
+  //     window.location.replace('./teacher/index.html');
+  //   } else if (user == 'admin' && pass == '1234') {
+  //     window.location.replace('./admin/index.html');
+  //   } else {
+  //     window.location.replace('index.php');
+  //   }
 
-  });
+  // });
 
   $('#click_part1').click(function () {
     location.replace('List_HSK1.html')
