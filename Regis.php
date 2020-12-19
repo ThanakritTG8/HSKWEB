@@ -338,20 +338,11 @@ unset($_SESSION['err']);
 <body id="body">
 
 
-
-
-
-
-
-
-
-
-
-
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
-      <form action="Regis_check.php" method="post" >
+      
+      <form action="Regis_check.php" method="post" class="needs-validation" novalidate >
         <!-- Icon -->
         <div class="fadeIn first">
           <h1 style="text-align: center; margin-bottom: 20px;">Register</h1>
@@ -359,7 +350,7 @@ unset($_SESSION['err']);
          <div class="col-2 col-md-1"></div>
             <div class="form-group col-4 col-sm-4 col-md-5">
               <label for="inputEmail4">Firstname</label>
-              <input type="text" class="form-control" name="Sname" required>
+              <input type="text" class="form-control" name="Fname" required>
             </div>
             <div class="form-group col-4 col-sm-4 col-md-5">
               <label for="inputEmail4">Lastname</label>
@@ -369,7 +360,7 @@ unset($_SESSION['err']);
 
           <div class="form-row">
             <div class="col-2 col-md-1"></div>
-            <div class="form-group form-group col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-8 col-sm-8 col-md-10">
               <label for="inputEmail4">Username</label>
               <input type="text" class="form-control" name="username"  required>
             </div>
@@ -378,7 +369,7 @@ unset($_SESSION['err']);
            
           <div class="form-row">
             <div class="col-2 col-md-1"></div>
-            <div class="form-group form-group col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-8 col-sm-8 col-md-10">
               <label for="inputEmail4">Password</label>
               <input type="password" class="form-control" name="password1" id="password" required>
             </div>
@@ -386,7 +377,7 @@ unset($_SESSION['err']);
 
           <div class="form-row">
             <div class="col-2 col-md-1"></div>
-            <div class="form-group form-group col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-8 col-sm-8 col-md-10">
               <label for="inputEmail4">Confirm Password</label>
               <input type="password" class="form-control" name="password2" id="confirm_password" required>
               <span id='message'></span>
@@ -406,7 +397,7 @@ $('#password, #confirm_password').on('keyup', function () {
 
           <div class="form-row">
             <div class="col-2 col-md-1"></div>
-            <div class="form-group form-group col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-8 col-sm-8 col-md-10">
               <label for="inputEmail4">Email</label>
               <input type="email" class="form-control" name="email" required>
             </div>
@@ -415,24 +406,25 @@ $('#password, #confirm_password').on('keyup', function () {
           <div class="form-row">
             <div class="col-2 col-md-1 col-lg-1 "></div>
             <div class="form-group col-5">
-              <label for="inputEmail4">School</label>
-              <select class="form-control" name = "sh">
-              <option selected>select </option>
+              <label for="inputEmail4" class="form-label">School</label>
+              <select class="form-control" id="validationCustom" name = "sh" required >
+              <option selected disabled value="">select </option>
 <?php
  include('./database/database.php');
 
- $query = "SELECT * FROM School ";
+ $query = "SELECT * FROM school ";
  $result = mysqli_query($conn , $query);
 
  while($row = mysqli_fetch_assoc($result)){
-   echo '<option value = '.$row['Sh_id'].'>'.$row['Sh_name'].'</option>' ;
+   echo '<option value = '.$row['SchoolID'].'>'.$row['SchoolName'].'</option>' ;
  }
 
 ?>
                 
               </select>
+          
             </div>
-          </div>
+            </div>
 
 
 
@@ -446,6 +438,29 @@ $('#password, #confirm_password').on('keyup', function () {
         </div>
 
       </form>
+
+      <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+      </script>
 
       <!-- Login Form -->
 

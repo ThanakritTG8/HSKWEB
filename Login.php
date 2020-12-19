@@ -54,14 +54,49 @@ unset($_SESSION['err']);
             </div>
 
             <!-- Login Form -->
-            <form action="Login_check.php" method="post">
-                <input type="text" id="login" class="fadeIn second text-left" name="username" placeholder="username" required>
-                <input type="password" id="password" class="fadeIn third text-left" name="password" placeholder="password "required>
+            <form action="Login_check.php" method="post" class="needs-validation" novalidate>
+            <div class="form-row">
+            <div class="col-2 col-md-1"></div>
+            <div class="form-group  col-8 col-sm-8 col-md-10">
+          
+              <input type="text" class="form-control" name="username"  placeholder="Username" required>
+            </div>
+          </div>
+              
+          <div class="form-row">
+            <div class="col-2 col-md-1"></div>
+            <div class="form-group  col-8 col-sm-8 col-md-10">
+            
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            </div>
+          </div>
 
                 <input type="submit" class="fadeIn fourth" name="login" value="Log In" >
 
 
             </form>
+            <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+      </script>
 
             <!-- Remind Passowrd -->
             <div id="formFooter">

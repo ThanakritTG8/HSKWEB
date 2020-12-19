@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost";
+$servername = "ns122.hostinglotus.net";
 $username = "chinyhot_HSK13";
 $password = "hsk13";
 $db_name = 'chinyhot_HSK';
