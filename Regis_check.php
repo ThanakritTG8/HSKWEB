@@ -13,7 +13,7 @@
         $email = mysqli_real_escape_string($conn , $_POST['email']);
         $sh = mysqli_real_escape_string($conn , $_POST['sh']);
         
-      $user_check_query = "SELECT * FROM student WHERE SUsername = '$username' OR Semail = '$email'";
+      $user_check_query = "SELECT * FROM Student WHERE SUsername = '$username' OR Semail = '$email'";
       $query = mysqli_query($conn , $user_check_query);
       $result = mysqli_fetch_assoc($query);
 
@@ -33,11 +33,11 @@
 
       if (!$_SESSION['err']) {
         //   $password = md5($password1);
-          $sql = "INSERT INTO student  VALUES(NULL,'$Fname','$Lname','$password1','$email','$sh','$username')";
+          $sql = "INSERT INTO Student  VALUES(NULL,'$Fname','$Lname','$password1','$email','$sh','$username')";
         $results =   mysqli_query($conn , $sql);
+        
         if (!$results) {
             echo mysqli_error();
-            echo $username, $password,$email;
         }
         else{
 

@@ -409,10 +409,10 @@ $('#password, #confirm_password').on('keyup', function () {
               <label for="inputEmail4" class="form-label">School</label>
               <select class="form-control" id="validationCustom" name = "sh" required >
               <option selected disabled value="">select </option>
-<?php
+              <?php
  include('./database/database.php');
 
- $query = "SELECT * FROM school ";
+ $query = "SELECT * FROM School ";
  $result = mysqli_query($conn , $query);
 
  while($row = mysqli_fetch_assoc($result)){
@@ -420,6 +420,7 @@ $('#password, #confirm_password').on('keyup', function () {
  }
 
 ?>
+       
                 
               </select>
           
