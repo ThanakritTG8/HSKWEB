@@ -417,4 +417,8 @@ window.onload = function () {
   var twentyMinutes = 60 * 20,
     display = document.querySelector('#time');
   startTimer(twentyMinutes, display);
+
+  var fourMin = 60 * 40,
+    display = document.querySelector('#time_exercise');
+  startTimer(fourMin, display);
 };
