@@ -1,3 +1,18 @@
+<?php 
+ session_start();
+
+ if (!isset($_SESSION['username'])) {
+     $_SESSION['msg'] = "You must log in first!";
+     header('location: Login.php');
+ }
+ if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: Login.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +32,17 @@
 </head>
 
 <body id="body">
-     <!-- navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-        <h5 class="navbar-brand title">
-            Karin Pimloy
+    <!-- navbar -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <?php if (isset($_SESSION['username'])) :?>
+        <h5 class="title">
+
+            <?php echo $_SESSION['username']; ?>
+
         </h5>
+        <?php endif ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,24 +53,21 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        HSK1
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">HSK ชุดที่1</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่2</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่3</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่4</a>
-                    </div>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="HSK1.php">HSK1</a>
+                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">แบบทดสอบ</a>
                 </li>
+
             </ul>
-            <form action="Login.php" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
+            <form action="Login.html" class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button">
+                    <a href="index.php?logout='1'">LOG OUT</a>
+                </button>
+
             </form>
         </div>
     </nav>
@@ -59,8 +77,9 @@
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK1
+                HSK1 ชุดที่ <?php echo $_GET['part'] ; ?>
             </h1>
+
         </div>
     </header>
 
@@ -71,18 +90,13 @@
     <div class="wrapper">
         <div class="container">
 
-            <!-- navigation -->
-            <div class="row" id="nav-body">
-                <div class="col-sm-12 text-left">
-                    <h6><a href="index.php">หน้าหลัก</a> > <a href="HSK1.php">HSK1</a> > HSK ชุดที่1</h6>
-                </div>
-            </div>
-
             <!-- menu -->
             <div class="row" id="index_menu">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
-                    <a href="#" class="card btn text-center" id="btn_menu">
+                    <a href="
+                    HSK1_Vocab.php?vocab=<?php echo $_GET['part'] ; ?>
+                    " class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="/img/flag-china.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title ">คำศัพท์</h4>

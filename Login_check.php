@@ -38,11 +38,10 @@
             $SID = "SID" ;
             $sid = $result_send[$SID];
             $check_score = "SELECT * FROM hsk_exam_score WHERE $SID ='$sid'";
-            $query_score = mysqli_query($conn , $check_score);
-            $result_score = mysqli_fetch_assoc($query_score);
+            $result_score = mysqli_query($conn , $check_score);
 
             
-            if (mysqli_num_rows($result_score)!=1 ) {
+            if (mysqli_num_rows($result_score)<1 ) {
                 header('location:./hsk1/Pretest.php');
                  $_SESSION['SID']= $sid ; 
                  $_SESSION['topic_num']= '1';
@@ -52,6 +51,8 @@
             }   
             else {
              header('location:index.php');
+             $_SESSION['SID']= $sid ; 
+            
             }     
 
           

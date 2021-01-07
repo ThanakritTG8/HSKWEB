@@ -1,3 +1,17 @@
+<?php 
+ session_start();
+
+ if (!isset($_SESSION['username'])) {
+     $_SESSION['msg'] = "You must log in first!";
+     header('location: Login.php');
+ }
+ if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: Login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +34,13 @@
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-        <h5 class="navbar-brand title">
-            Karin Pimloy
+        <?php if (isset($_SESSION['username'])) :?>
+        <h5 class="title">
+
+            <?php echo $_SESSION['username']; ?>
+
         </h5>
+        <?php endif ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,26 +49,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">หน้าแรก <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        HSK1
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">HSK ชุดที่1</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่2</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่3</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่4</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="HSK1.php">HSK1</a>
+                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">แบบทดสอบ</a>
                 </li>
             </ul>
             <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button">
+                    <a href="index.php?logout='1'">LOG OUT</a>
+                </button>
+
             </form>
         </div>
     </nav>
@@ -59,7 +72,7 @@
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                คำศัพท์พื้นฐาน
+                คำศัพท์พื้นฐาน ชุดที่ <?php echo $_GET['vocab'] ; ?>
             </h1>
         </div>
     </header>
@@ -68,134 +81,75 @@
 
     <div class="wrapper">
         <div class="container">
-            <div class="row" id="nav-body">
-                <div class="col">
-                    <h6><a href="index.html">หน้าหลัก</a> >
-                        <a href="HSK1_menu.html">HSK ชุดที่1</a>
-                        > คำศัพท์
-                    </h6>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-md-12">
-                    <h5 class="title" id="subtitle-vocab">คำสรรพนาม (代词)</h5>
-                    <div class="" id="table-vocab">
-                        <table class="table">
-                            <tbody>
-                                <tr class="table-light">
-                                    <th scope="row">1</th>
-                                    <td>我</td>
-                                    <td>wǒ</td>
-                                    <td>ฉัน</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">2</th>
-                                    <td>你</td>
-                                    <td>nǐ</td>
-                                    <td>คุณ, เธอ</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">3</th>
-                                    <td>他</td>
-                                    <td>tā</td>
-                                    <td>เขา (ผู้ชาย)</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">4</th>
-                                    <td>她</td>
-                                    <td>tā</td>
-                                    <td>เขา (ผู้หญิง)</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">5</th>
-                                    <td>我们</td>
-                                    <td>wǒmen</td>
-                                    <td>พวกเรา</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row"></th>
-                                    <td>你们</td>
-                                    <td>nǐmen</td>
-                                    <td>พวกคุณ, พวกเธอ</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row"></th>
-                                    <td>他们</td>
-                                    <td>tāmen</td>
-                                    <td>พวกเขา (ผู้ชาย)</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row"></th>
-                                    <td>她们</td>
-                                    <td>tāmen</td>
-                                    <td>พวกเขา (ผู้หญิง)</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h5 class="title" id="subtitle-vocab">สรรพนามชี้เฉพาะ (指示代词)</h5>
-                    <div class="" id="table-vocab">
-                        <table class="table">
-                            <tbody>
-                                <tr class="table-light">
-                                    <th scope="row">6</th>
-                                    <td>这</td>
-                                    <td>zhè</td>
-                                    <td>นี่, นี้</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">7</th>
-                                    <td>那</td>
-                                    <td>nà</td>
-                                    <td>นั่น, นั้น</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row">8</th>
-                                    <td>哪</td>
-                                    <td>nà</td>
-                                    <td>ไหน</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row"></th>
-                                    <td>这儿，这里</td>
-                                    <td>zhèr, zhèlǐ</td>
-                                    <td>ที่นี่</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                                <tr class="table-light">
-                                    <th scope="row"></th>
-                                    <td>那儿，那里</td>
-                                    <td>nàr, nàlǐ</td>
-                                    <td>ที่นั่น</td>
-                                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
-                                    <td><a href="">ตัวอย่างประโยค</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
+                    <?php
+ include('./database/database.php');
+
+$session = "session";
+$ses = $_GET['vocab'] ; 
+
+////หาประเภทคำ type 
+$query_type = "SELECT * FROM hsk1_vocab WHERE $session = $ses GROUP BY type  ";
+$result_type = mysqli_query($conn , $query_type);
+
+while($row_type = mysqli_fetch_assoc($result_type)){
+ $type = $row_type['type'];
+
+
+////// หาประเภทคำ type_word
+$query_type_word = "SELECT * FROM hsk1_vocab WHERE type = '$type' GROUP BY type_word ";
+$result_type_word = mysqli_query($conn , $query_type_word);
+
+if ((mysqli_num_rows($result_type_word)>=1 )) {
+
+    while($row_type_word = mysqli_fetch_assoc($result_type_word)){
+if (!$row_type_word['type_word']) {
+    echo '<h5 class="title" id="subtitle-vocab">'.$type.'</h5>' ;
+}else{
+echo '<h5 class="title" id="subtitle-vocab">'.$row_type_word['type_word'].'</h5>' ;
+}
+$type_word = $row_type_word['type_word']; 
+
+////// หาคำศัพท์
+$query = "SELECT * FROM hsk1_vocab WHERE type = '$type' AND type_word = '$type_word'  ";
+$result = mysqli_query($conn , $query);
+  
+if ((mysqli_num_rows($result)>=1 )) {
+   echo '<div class="" id="table-vocab">
+   <table class="table">
+       <tbody>';
+   while($row = mysqli_fetch_assoc($result)){
+
+       echo '  <tr class="table-light">
+                  
+                   <td>'.$row['ch'].'</td>
+                   <td>'.$row['pinyin'].'</td>
+                   <td>'.$row['th'].'</td>
+                   <td><a href=""><i class="fas fa-volume-up"></i></a></td>
+                   
+               </tr>
+               '
+               ;
+}
+echo '  </tbody>
+</table>
+</div>';
+}else {
+    echo "ไม่มี" ;
+}
+}
+
+    }
+
+
+}
+
+
+
+?>
                 </div>
             </div>
         </div>
