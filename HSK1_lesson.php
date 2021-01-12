@@ -1,3 +1,16 @@
+<?php 
+ session_start();
+
+ if (!isset($_SESSION['username'])) {
+     $_SESSION['msg'] = "You must log in first!";
+     header('location: Login.php');
+ }
+ if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: Login.php');
+}
+?>
 <!DOCTYPE php>
 <html lang="en">
 
@@ -5,7 +18,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บทเรียน HSK1</title>
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,13 +27,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
+<style>
+    
+    #body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #fdb9b9;
+    }
 
-<body id="body">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-        <h5 class="navbar-brand title">
-            Karin Pimloy
+    nav {
+        background: rgb(122, 45, 45);
+        color: #fff;
+    }
+
+    .wrapper {
+        display: flex;
+    }
+    #header {
+        background: rgb(75, 75, 75);
+        /* height: 100px; */
+        color: #fff;
+        
+    max-height : 100px;
+    }
+
+    #card_lesson {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #list_lesson {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    #img-lesson {
+        max-width: 100%;
+        max-height: 400px;
+        align-items: center;
+    }
+
+    #lesson-btn {
+        background: rgb(94, 177, 255);
+        max-height: 30px;
+    }
+
+    #lesson-btn img{
+        max-width: 25px;
+    }
+    #lesson-btn:hover{
+        color: #fff;
+    }
+    form{
+        margin-bottom: -5px;
+    }
+    .btn-submit:hover{
+        border : 1px solid green;
+    }
+</style>
+<body id="body" >
+
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <?php if (isset($_SESSION['username'])) :?>
+        <h5 class="title">
+
+            <?php echo $_SESSION['username']; ?>
+
         </h5>
+        <?php endif ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,33 +107,29 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        HSK1
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">HSK ชุดที่1</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่2</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่3</a>
-                        <a class="dropdown-item" href="#">HSK ชุดที่4</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="HSK1.php">HSK1</a>
+                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">แบบทดสอบ</a>
                 </li>
             </ul>
-            <form action="Login.php" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
+            <form action="Login.html" class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button">
+                    <a href="index.php?logout='1'">LOG OUT</a>
+                </button>
+
             </form>
         </div>
     </nav>
+
 
     <!-- header -->
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK1 บทเรียน ชุดที่1 
+                HSK1 บทเรียน ชุดที่<?php echo $_GET['lesson']  ; ?>
             </h1>
         </div>
     </header>
@@ -72,12 +143,12 @@
 
             <div class="row">
                 <div class="col-sm-8">
-                    <div class="text-center" style="margin-top:70px;">
+                    <div class="text-center" style="margin-top:20px;">
                         <button class="btn" onclick="playAllAudio()" id="lesson-btn">
                             <i class="fa fa-play" aria-hidden="true"></i>
                         </button>
                         <button class="btn" onclick="slowAllAudio()" id="lesson-btn">
-                            <img src="./img/snail.png" alt="">
+                            <img src="./img/snail.png" alt="" height="20">
                         </button>
                         <button class="btn" onclick="pauseAllAudio()" id="lesson-btn">
                             <i class="fa fa-pause" aria-hidden="true"></i>
@@ -87,10 +158,24 @@
                 <div class="col-sm-4"></div>
             </div>
             <div class="row" id="content_lesson">
-                <div class="col-sm-8">
+                <div class="col-sm-8" >
                     <div class="card text-left" id="card_lesson">
                         <div class="card-body text-center">
-                            <!-- <img src="/img/บทเรียน/example.PNG" alt="" id="img-lesson"> -->
+                        
+<?php 
+include('./database/database.php');
+$less_name = $_SESSION['less_name'];
+$sesion = "session";
+$ses = $_GET['lesson'] ;
+ $query = "SELECT * FROM hsk1_lesson WHERE $sesion = $ses AND pic = '$less_name'";
+ $result = mysqli_query($conn , $query);
+ 
+ while($row = mysqli_fetch_assoc($result)){
+echo '<img src="./img/บทเรียนHSK1_ชุดที่'.$ses.'/'.$row['pic'].'" alt=""  id="img-lesson">' ;
+}
+?>
+
+                            
                            <div id="textshow"></div>
                             <div class="text-left" id="card_lesson">
                                 <div class="text-center">
@@ -113,21 +198,44 @@
                     <div class="text-left" id="list_lesson">
                         <div class="list-group" id="listgroup">
                             <!-- <audio src="/sound/20th Century Recorder Edition.mp3" id="sound"></audio> -->
-                            <button type="button" class="list-group-item list-group-item-action active"
-                                aria-current="true" id="listbtn_lesson">
-                            </button>
+
+
+                        <form action="HSK1_lesson_check.php" method="post">
+<?php 
+include('./database/database.php');
+$sesion = "session";
+$ses = $_GET['lesson'] ;
+ $query = "SELECT * FROM hsk1_lesson WHERE $sesion = $ses ";
+ $result = mysqli_query($conn , $query);
+ 
+ while($row = mysqli_fetch_assoc($result)){
+
+echo '<form action="HSK1_lesson_check.php" method="post">
+<input type="hidden"  name="lesson_name"  value='.$row['pic'].'>
+<input type="hidden"  name="lesson"  value='.$ses.'>
+<button type="submit" class="btn-submit list-group-item list-group-item-action text-center"
+    aria-current="true" id="listbtn_lesson">'.$row['lesson_name'].'
+    </button>
+    </form>' ;
+}
+?>                          
+                         
+                          
+                            
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<?php
 
+
+?>
     <!-- //////////////////script -->
 
 
-    <script src="./js/index.js"></script>
-    <script src="./js/sound.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

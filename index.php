@@ -58,16 +58,18 @@ nav {
     padding: 20px;
 }
 
+
 #header {
-    background: rgb(75, 75, 75);
-    /* height: 100px; */
-    color: #fff;
-}
+        background: rgb(75, 75, 75);
+        /* height: 100px; */
+        color: #fff;
+        
+    max-height : 100px;
+    }
 
-.text-header {
-    margin-top: 60px;
-}
-
+    .text-header {
+        margin-top: 40px;
+    }
 .underlineHover:after {
     display: block;
     left: 50%;
@@ -116,13 +118,13 @@ nav {
     background-color: #36b163;
 }
 
+
+
 #nav-body a {
     color: black;
 }
 
-    /* width: 1200px; */
-    color: #fff;
-}
+
 </style>
 
 <body id="body">

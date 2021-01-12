@@ -1,8 +1,3 @@
-// sound
-var s = document.getElementById("sound");
-var list = ["tg", "tg1", "tg2"];
-var text = ["tg", "tg1", "tg2"];
-
 function playAudio() {
     s.playbackRate = 1;
     s.play();

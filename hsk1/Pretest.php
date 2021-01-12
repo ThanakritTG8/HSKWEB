@@ -102,7 +102,8 @@ setTimeout("begintimer()",1000)
 </script>
 <div id=dplay ></div>
 <form  name= "frmTest" action="Pre_check.php" method="post">
-<input type="hidden" name="skip" value="3">
+<input type="hidden" name="skip" value="3"> 
+<!-- เมื่อหมด เวลา value = ค่าที่จะเริ่มข้อของอีก part  -->
 </form>
 
 </div>

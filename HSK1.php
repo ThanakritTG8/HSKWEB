@@ -42,6 +42,16 @@
     h4{
         color : white ;
     }
+    
+    #header {
+        background: rgb(75, 75, 75);
+        /* height: 100px; */
+        color: #fff;
+        
+    max-height : 100px;
+    }
+
+    
 </style>
 
 <body id="body">
@@ -67,11 +77,9 @@
                 </li>
               
                 <li class="nav-item">
-                    <a class="nav-link" href="#">HSK1</a>
+                    <a class="nav-link" href="HSK1.php">HSK1</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">แบบทดสอบ</a>
-                </li>
+               
 
             </ul>
             <form action="Login.html" class="form-inline my-2 my-lg-0">

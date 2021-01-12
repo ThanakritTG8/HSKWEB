@@ -5,7 +5,7 @@ include('../database/database.php');
 
 if (isset($_POST['skip'])) {
 
-    if ($_SESSION['topic_num']<$_POST['skip']) {
+    if ($_SESSION['topic_num']<$_POST['skip']) {  /// เมื่อหมดเวลาทำข้อสอบ จะให้ข้าม part และ รีเซตเวลาเป็น 20 นาที 
     $_SESSION['topic_num'] =  $_POST['skip'];
     unset($_SESSION['timeend']);
   
@@ -25,7 +25,11 @@ else {
 
 $_SESSION['score'] = $_SESSION['score'] + $_POST['select_ans'];
 $_SESSION['topic_num'] = $_SESSION['topic_num']+1;
-unset($_SESSION['timeend']);
+
+if ($_SESSION['topic_num']==3) {
+    unset($_SESSION['timeend']);   //เมื่อทำข้อสอบมาถึงข้อ.. ให้รีเซตค่าเวลา เป็น 20 นาที 
+}
+
 header('location: ./Pretest.php');
 
 if ($_SESSION['topic_num'] >4) {

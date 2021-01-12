@@ -11,6 +11,14 @@
     header('location: Login.php');
 }
 
+include('./database/database.php');
+$sesion = "session";
+$ses = $_GET['part'];
+ $query = "SELECT * FROM hsk1_lesson WHERE $sesion = $ses GROUP BY $sesion";
+ $result = mysqli_query($conn , $query);
+ $result_send = mysqli_fetch_assoc($result);
+$_SESSION['less_name']=$result_send['pic'];
+
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +49,13 @@
     }
     h4{
         color : white ;
+    }
+    #header {
+        background: rgb(75, 75, 75);
+        /* height: 100px; */
+        color: #fff;
+        
+    max-height : 100px;
     }
 </style>
 <body id="body">
@@ -116,7 +131,9 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="HSK1_lesson.php" class="card btn text-center" id="btn_menu">
+                <a href="
+                    HSK1_lesson.php?lesson=<?php echo $_GET['part'] ; ?>
+                    " class="card btn text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="/img/online-lesson.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title ">บทเรียน</h4>
