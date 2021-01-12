@@ -88,13 +88,16 @@ nav {
 }
 
 #btn_menu {
-    background-color: #941e1e;
-    height: 170px;
-    border-radius: 20px;
-    font-weight: 20px;
-    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.596);
-    margin-top: 50px;
-}
+        background-color: #941e1e;
+        max-height: 170px;
+        border-radius: 20px;
+        font-weight: 20px;
+        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.596);
+        margin-top: 50px;
+    }
+    h4{
+        color : white ;
+    }
 
 #Dis_btn_menu {
     background-color: gray;

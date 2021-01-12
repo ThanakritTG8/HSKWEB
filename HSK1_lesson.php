@@ -77,7 +77,7 @@
                             <i class="fa fa-play" aria-hidden="true"></i>
                         </button>
                         <button class="btn" onclick="slowAllAudio()" id="lesson-btn">
-                            <img src="/img/snail.png" alt="">
+                            <img src="./img/snail.png" alt="">
                         </button>
                         <button class="btn" onclick="pauseAllAudio()" id="lesson-btn">
                             <i class="fa fa-pause" aria-hidden="true"></i>
