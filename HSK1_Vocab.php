@@ -124,7 +124,7 @@ if ((mysqli_num_rows($result)>=1 )) {
    while($row = mysqli_fetch_assoc($result)){
 
        echo '  <tr class="table-light">
-                  
+                   <td>'.$row['vocab_no'].'</td>
                    <td>'.$row['ch'].'</td>
                    <td>'.$row['pinyin'].'</td>
                    <td>'.$row['th'].'</td>

@@ -58,7 +58,7 @@
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                บทเรียน HSK1
+                HSK1 บทเรียน ชุดที่1 
             </h1>
         </div>
     </header>
@@ -68,15 +68,7 @@
 
     <div class="wrapper">
         <div class="container">
-            <div class="row" id="nav-body">
-                <div class="col">
-                    <h6><a href="index.php">หน้าหลัก</a> >
-                    <a href="HSK1.php">HSK1</a> >
-                        <a href="HSK1_menu.php">HSK ชุดที่1</a>
-                        > บทเรียน
-                    </h6>
-                </div>
-            </div>
+          
 
             <div class="row">
                 <div class="col-sm-8">
