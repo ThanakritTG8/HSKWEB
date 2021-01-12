@@ -116,54 +116,10 @@ nav {
     background-color: #36b163;
 }
 
-#choice {
-    height: 140px;
-    margin-top: 30px;
-    background-color: #941e1e;
-    color: #fff;
-}
-
-#submit-pretest {
-    align-items: center;
-    margin-top: 50px;
-    padding: 10px 30px;
-}
-
 #nav-body a {
     color: black;
 }
 
-#content_lesson {
-    margin-top: 20px;
-}
-
-#card_lesson {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#list_lesson {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 500px;
-    overflow-y: scroll;
-}
-
-#img-lesson {
-    max-width: 100%;
-    height: auto;
-    align-items: center;
-}
-
-#lesson-btn {
-    background: rgb(94, 177, 255);
-}
-
-#lesson-btn img {
-    width: 25px;
-}
-
-#lesson-btn :hover {
     /* width: 1200px; */
     color: #fff;
 }
