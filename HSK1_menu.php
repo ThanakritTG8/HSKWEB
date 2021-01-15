@@ -45,7 +45,7 @@ $_SESSION['less_name']=$result_send['pic'];
         border-radius: 20px;
         font-weight: 20px;
         box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.596);
-        margin-top: 50px;
+        margin-top: 30px;
     }
     h4{
         color : white ;
@@ -63,21 +63,22 @@ $_SESSION['less_name']=$result_send['pic'];
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-        <?php if (isset($_SESSION['username'])) :?>
-        <h5 class="title">
-
-            <?php echo $_SESSION['username']; ?>
-
-        </h5>
-        <?php endif ?>
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+        <ul class="navbar-nav mr-auto " >    
+<li class="nav-item active nav-link" >
+              <img src="./img/user.png" alt="" style="width: 25px; ">
+              <?php if (isset($_SESSION['username'])) :?>       
+              <?php echo $_SESSION['username']; ?>
+              <?php endif ?>
+ </li>
+
+                <li class="nav-item ">
                     <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
 
@@ -90,10 +91,12 @@ $_SESSION['less_name']=$result_send['pic'];
                 </li>
 
             </ul>
-            <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button">
-                    <a href="index.php?logout='1'">LOG OUT</a>
-                </button>
+            <form action="Login.html" class="form-inline my-2 my-lg-0" >
+            <button class="btn btn-success fix-margin-btn" type="button" >
+            <a href="index.php?logout='1'" style="color:white">LOGOUT
+            <img src="./img/logout.png" alt="" style="width: 20px; ">
+            </a>
+        </button>
 
             </form>
         </div>
@@ -113,12 +116,10 @@ $_SESSION['less_name']=$result_send['pic'];
 
     <!-- ////////////////// body -->
 
-
-    <div class="wrapper">
         <div class="container">
 
             <!-- menu -->
-            <div class="row" id="index_menu">
+            <div class="row" >
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
                     <a href="
@@ -142,7 +143,7 @@ $_SESSION['less_name']=$result_send['pic'];
                 </div>
                 <div class="col-sm-2"></div>
             </div>
-            <div class="row" id="index_menu">
+            <div class="row" >
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
                     <a href="#" class="card btn text-center" id="btn_menu">
@@ -163,7 +164,7 @@ $_SESSION['less_name']=$result_send['pic'];
                 <div class="col-sm-2"></div>
             </div>
         </div>
-    </div>
+    
 
 
     <!-- //////////////////script -->

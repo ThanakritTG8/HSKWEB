@@ -52,11 +52,7 @@ nav {
     color: #fff;
 }
 
-.wrapper {
-    display: flex;
-    margin-top: 40px;
-    padding: 20px;
-}
+
 
 
 #header {
@@ -95,7 +91,7 @@ nav {
         border-radius: 20px;
         font-weight: 20px;
         box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.596);
-        margin-top: 50px;
+        margin-top: 30px;
     }
     h4{
         color : white ;
@@ -110,9 +106,7 @@ nav {
     margin-top: 50px;
 }
 
-#index_menu {
-    margin-top: -20px;
-}
+
 
 #btn_menu:hover {
     background-color: #36b163;
@@ -124,7 +118,6 @@ nav {
     color: black;
 }
 
-
 </style>
 
 <body id="body">
@@ -135,28 +128,36 @@ nav {
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-    <?php if (isset($_SESSION['username'])) :?>
-            <h5 class="title">
 
-                <?php echo $_SESSION['username']; ?>
-
-            </h5>
-            <?php endif ?>
+    
+   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+
+            <ul class="navbar-nav mr-auto " >
+
+            
+            <li class="nav-item active nav-link" >
+                          <img src="./img/user.png" alt="" style="width: 25px; ">
+                          <?php if (isset($_SESSION['username'])) :?>       
+                          <?php echo $_SESSION['username']; ?>
+                          <?php endif ?>
+             </li>
+
+                <li class="nav-item ">
                     <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
               
             </ul>
-            <form action="Login.html" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button">
-            <a href="index.php?logout='1'">LOG OUT</a>
+            <form action="Login.html" class="form-inline my-2 my-lg-0" >
+            <button class="btn btn-success " type="button" >
+            <a href="index.php?logout='1'" style="color:white">LOGOUT
+            <img src="./img/logout.png" alt="" style="width: 20px; ">
+            </a>
         </button>
 
             </form>
@@ -175,11 +176,11 @@ nav {
 
 
     <!-- content -->
-    <div class="wrapper">
+    
         <div class="container">
-            <div class="row" id="index_menu">
+            <div class="row" >
                 <div class="col-sm-4">
-                    <div class="card btn text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/personal-information.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">ข้อมูล</h4>
@@ -187,7 +188,7 @@ nav {
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="card btn text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/china.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">ไวยากรณ์</h4>
@@ -195,7 +196,7 @@ nav {
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="card btn text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/yueqin.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">พินอิน</h4>
@@ -203,10 +204,10 @@ nav {
                     </div>
                 </div>
             </div>
-            <div class="row" id="index_menu">
+            <div class="row" >
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4" onclick="btn_hsk1()">
-                    <div class="card btn text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK1</h4>
@@ -230,7 +231,7 @@ nav {
                 
                 if ($result['HSK1_Pretest']>=20 || $result['HSK1_Posttest']>=20  ) {
                     echo '<div class="col-sm-4">
-                    <div class="card btn text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK2</h4>
@@ -239,7 +240,7 @@ nav {
                 </div> ';
                 } else {
                     echo '  <div class="col-sm-4">
-                    <div class="card btn text-center" id="Dis_btn_menu">
+                    <div class=" text-center" id="Dis_btn_menu">
                         <div class="card-body ">
                             <img src="./img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK2</h4>
@@ -254,11 +255,7 @@ nav {
             </div>
 
         </div>
-    </div>
-
-    <style>
-
-    </style>
+  
     <!-- //////////////////script -->
 
 

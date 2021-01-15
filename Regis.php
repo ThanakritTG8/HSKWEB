@@ -49,14 +49,18 @@ unset($_SESSION['err']);
 
  h2 {
      text-align: center;
-     font-size: 16px;
      font-weight: 600;
      text-transform: uppercase;
      display: inline-block;
-     margin: 40px 8px 10px 8px;
-     color: #cccccc;
+     margin: 30px 0px;
+     color: #000033;
+     border-bottom:2px solid #e9645f;
  }
-
+ @media screen and (max-width: 400px){
+   h2{
+   font-size:20pt;
+   }
+ }
 
 
  /* STRUCTURE */
@@ -74,14 +78,22 @@ unset($_SESSION['err']);
      -webkit-border-radius: 10px 10px 10px 10px;
      border-radius: 10px 10px 10px 10px;
      background: #fff;
-
+    
      width: 90%;
      max-width: 550px;
      position: relative;
-     padding: 0px;
      -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
      box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 
+ }
+ .first{
+  margin-bottom: 20px;
+  padding: 0px 50px 0px 50px;
+ }
+ @media screen and (max-width: 350px){
+  .first{
+    padding: 0px 30px 0px 30px;
+   }
  }
 
  #formFooter {
@@ -116,7 +128,7 @@ unset($_SESSION['err']);
      background-color: #e9645f;
      border: none;
      color: white;
-     padding: 15px 80px;
+     padding: 15px 60px;
      text-align: center;
      text-decoration: none;
      display: inline-block;
@@ -126,13 +138,14 @@ unset($_SESSION['err']);
      box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
      -webkit-border-radius: 5px 5px 5px 5px;
      border-radius: 5px 5px 5px 5px;
-     margin: 5px 20px 40px 20px;
+     margin: 20px 0px 30px 0px;
      -webkit-transition: all 0.3s ease-in-out;
      -moz-transition: all 0.3s ease-in-out;
      -ms-transition: all 0.3s ease-in-out;
      -o-transition: all 0.3s ease-in-out;
      transition: all 0.3s ease-in-out;
  }
+
 
  input[type=button]:hover,
  input[type=submit]:hover,
@@ -268,12 +281,6 @@ unset($_SESSION['err']);
      animation-duration: 1s;
  }
 
- .first {
-     margin-top: 20px;
-     margin-bottom: 20px;
-
- }
-
  .fadeIn.first {
      -webkit-animation-delay: 0.4s;
      -moz-animation-delay: 0.4s;
@@ -342,25 +349,30 @@ unset($_SESSION['err']);
     <div id="formContent">
       <!-- Tabs Titles -->
       
-      <form action="Regis_check.php" method="post" class="needs-validation" novalidate >
+      <form action="Regis_check.php" method="post" class="needs-validation" novalidate autocomplete="off">
         <!-- Icon -->
         <div class="fadeIn first">
-          <h1 style="text-align: center; margin-bottom: 20px;">Register</h1>
+          <div class="text-center">
+
+          <h2 >
+            Register
+            <img src="./img/regis.png" alt="" style="width: 50px;">
+        </h2>
+          </div>
+          
           <div class="form-row">
-         <div class="col-2 col-md-1"></div>
-            <div class="form-group col-4 col-sm-4 col-md-5">
+            <div class="form-group col-12 col-md-6">
               <label for="inputEmail4">Firstname</label>
               <input type="text" class="form-control" name="Fname" required>
             </div>
-            <div class="form-group col-4 col-sm-4 col-md-5">
+            <div class="form-group col-12 col-md-6">
               <label for="inputEmail4">Lastname</label>
               <input type="text" class="form-control" name="Lname" required>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="col-2 col-md-1"></div>
-            <div class="form-group  col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-12  col-md-12">
               <label for="inputEmail4">Username</label>
               <input type="text" class="form-control" name="username"  required>
             </div>
@@ -368,16 +380,14 @@ unset($_SESSION['err']);
       
            
           <div class="form-row">
-            <div class="col-2 col-md-1"></div>
-            <div class="form-group  col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-12 col-md-12">
               <label for="inputEmail4">Password</label>
               <input type="password" class="form-control" name="password1" id="password" required>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="col-2 col-md-1"></div>
-            <div class="form-group  col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-12 col-md-12">
               <label for="inputEmail4">Confirm Password</label>
               <input type="password" class="form-control" name="password2" id="confirm_password" required>
               <span id='message'></span>
@@ -396,16 +406,14 @@ $('#password, #confirm_password').on('keyup', function () {
 
 
           <div class="form-row">
-            <div class="col-2 col-md-1"></div>
-            <div class="form-group  col-8 col-sm-8 col-md-10">
+            <div class="form-group  col-12  col-md-10">
               <label for="inputEmail4">Email</label>
               <input type="email" class="form-control" name="email" required>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="col-2 col-md-1 col-lg-1 "></div>
-            <div class="form-group col-5">
+            <div class="form-group col-8 col-md-6">
               <label for="inputEmail4" class="form-label">School</label>
               <select class="form-control" id="validationCustom" name = "sh" required >
               <option selected disabled value="">select </option>
@@ -426,18 +434,14 @@ $('#password, #confirm_password').on('keyup', function () {
           
             </div>
             </div>
-
-
-
-        </div>
-        <div class="row">
-          <div class="col-1 col-sm-3 col-md-3  fix" ></div>
-          <div class="col-1 col-sm-5 col-md-5">
-            <input  style="text-align: center;" type="submit" name = "reg_user" class="fadeIn fourth " value="SIGN UP">
-          </div>
         
-        </div>
 
+        <div class="text-center">   
+ 
+         <input  type="submit" name = "reg_user" class="fadeIn fourth " value="SIGN UP">
+                      
+        </div>
+        </div>
       </form>
 
       <script>

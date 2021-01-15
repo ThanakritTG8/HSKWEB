@@ -29,18 +29,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
-
+<style>
+    @media screen and (max-width: 500px) {  
+        .wrapper{
+            padding : 0px;
+        }
+  .table{
+    font-size:5pt
+  }
+  h1{
+      font-size:15pt;
+  }
+}
+   
+</style>
 <body id="body">
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-        <?php if (isset($_SESSION['username'])) :?>
-        <h5 class="title">
-
-            <?php echo $_SESSION['username']; ?>
-
-        </h5>
-        <?php endif ?>
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +55,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+            <li class="nav-item active nav-link" >
+              <img src="./img/user.png" alt="" style="width: 25px; ">
+              <?php if (isset($_SESSION['username'])) :?>       
+              <?php echo $_SESSION['username']; ?>
+              <?php endif ?>
+ </li>
+                <li class="nav-item ">
                     <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -59,10 +72,12 @@
                     <a class="nav-link" href="#">แบบทดสอบ</a>
                 </li>
             </ul>
-            <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button">
-                    <a href="index.php?logout='1'">LOG OUT</a>
-                </button>
+            <form action="Login.html" class="form-inline my-2 my-lg-0" >
+            <button class="btn btn-success fix-margin-btn" type="button" >
+            <a href="index.php?logout='1'" style="color:white">LOGOUT
+            <img src="./img/logout.png" alt="" style="width: 20px; ">
+            </a>
+        </button>
 
             </form>
         </div>
@@ -81,11 +96,7 @@
 
     <div class="wrapper">
         <div class="container">
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <?php
+  <?php
  include('./database/database.php');
 
 $session = "session";
@@ -118,13 +129,13 @@ $query = "SELECT * FROM hsk1_vocab WHERE type = '$type' AND type_word = '$type_w
 $result = mysqli_query($conn , $query);
   
 if ((mysqli_num_rows($result)>=1 )) {
-   echo '<div class="" id="table-vocab">
-   <table class="table">
+   echo '
+   <table class="table" >
        <tbody>';
    while($row = mysqli_fetch_assoc($result)){
 
        echo '  <tr class="table-light">
-                   <td>'.$row['vocab_no'].'</td>
+                   <td scope="row">'.$row['vocab_no'].'</td>
                    <td>'.$row['ch'].'</td>
                    <td>'.$row['pinyin'].'</td>
                    <td>'.$row['th'].'</td>
@@ -136,7 +147,7 @@ if ((mysqli_num_rows($result)>=1 )) {
 }
 echo '  </tbody>
 </table>
-</div>';
+';
 }else {
     echo "ไม่มี" ;
 }
@@ -150,8 +161,7 @@ echo '  </tbody>
 
 
 ?>
-                </div>
-            </div>
+              
         </div>
     </div>
 
