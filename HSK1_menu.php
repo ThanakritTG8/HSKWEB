@@ -57,6 +57,12 @@ $_SESSION['less_name']=$result_send['pic'];
         
     max-height : 100px;
     }
+    @media screen and (max-width: 500px) {  
+    
+    h1{
+        font-size:15pt;
+    }
+  }
 </style>
 <body id="body">
     <!-- navbar -->

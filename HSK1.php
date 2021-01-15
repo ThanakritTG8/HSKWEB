@@ -50,7 +50,16 @@
         
     max-height : 100px;
     }
-
+    .btn-post{
+        width:100%;
+        margin : 40px 0px 30px 0px;
+    }
+    @media screen and (max-width: 500px) {  
+    
+    h1{
+        font-size:15pt;
+    }
+  }
     
 </style>
 
@@ -151,6 +160,24 @@
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+            <div class="text-center row">
+                <div class="col-1 col-md-3" ></div>
+                <div class="col-10 col-md-6">
+            <button  type="button" class="btn btn-success btn-post">แบบทดสอบ Post test     
+                    <img src="./img/right-arrow.png" alt="" style="width: 30px; ">
+            </button>
+            </div>
+            </div>
+
+            <div class="text-center row">
+                <div class="col-1 col-md-3" ></div>
+                <div class="col-10 col-md-6">
+            <button  type="button" class="btn btn-secondary btn-post">แบบทดสอบ Post test     
+                    <img src="./img/lock.png" alt="" style="width: 30px; ">
+            </button>
+            </div>
+            </div>
+
         </div>
    
     <!-- //////////////////script -->

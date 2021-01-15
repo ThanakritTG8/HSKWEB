@@ -58,7 +58,7 @@ unset($_SESSION['err']);
  }
  @media screen and (max-width: 400px){
    h2{
-   font-size:20pt;
+   font-size:15pt;
    }
  }
 
@@ -87,7 +87,6 @@ unset($_SESSION['err']);
 
  }
  .first{
-  margin-bottom: 20px;
   padding: 0px 50px 0px 50px;
  }
  @media screen and (max-width: 350px){
@@ -471,7 +470,7 @@ $('#password, #confirm_password').on('keyup', function () {
 
       <!-- Remind Passowrd -->
       <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
-        <p class="text-center" style="color: white;"> Back </p>
+        <p class="text-center" style="color: white; margin-bottom: 5px;"> Back </p>
       </a>
     </div>
   </div>

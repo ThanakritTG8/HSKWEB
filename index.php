@@ -99,11 +99,11 @@ nav {
 
 #Dis_btn_menu {
     background-color: gray;
-    height: 170px;
+    max-height: 170px;
     border-radius: 20px;
     font-weight: 20px;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.596);
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 
@@ -117,6 +117,7 @@ nav {
 #nav-body a {
     color: black;
 }
+
 
 </style>
 
@@ -242,8 +243,8 @@ nav {
                     echo '  <div class="col-sm-4">
                     <div class=" text-center" id="Dis_btn_menu">
                         <div class="card-body ">
-                            <img src="./img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                            <h4 class="card-title">HSK2</h4>
+                            <img src="./img/lock.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                            <h4 class="card-title" style="color:#D3D3D3">HSK2</h4>
                         </div>
                     </div>
                 </div>' ;
