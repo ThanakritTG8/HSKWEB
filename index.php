@@ -110,6 +110,7 @@ nav {
 
 #btn_menu:hover {
     background-color: #36b163;
+    cursor : pointer ;
 }
 
 
@@ -150,8 +151,58 @@ nav {
              </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.php">หน้าแรก <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">หน้าแรก </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="profile.php">ข้อมูล </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="gramma.php">ไวยากรณ์ </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="pinin.php">พินอิน </a>
+                </li>
+                
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          HSK1
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="HSK1_menu.php?part=1">ชุดที่1</a>
+          <a class="dropdown-item" href="HSK1_menu.php?part=2">ชุดที่2</a>
+          <a class="dropdown-item" href="HSK1_menu.php?part=3">ชุดที่3</a>
+          <a class="dropdown-item" href="HSK1_menu.php?part=4">ชุดที่4</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="hsk1_post.php">แบบทดสอบหลังเรียน</a>
+        </div>
+      </li>
+
+      <!-- ถ้าคะแนน hsk1 post-test ยังไม่ผ่าน จะไม่ปรากฏ hsk2  -->
+             <?php                 
+                include('./database/database.php');
+                $sid = "SID";
+                $id = $_SESSION['SID'];
+                $check = "SELECT* FROM hsk_exam_score WHERE $sid  = $id " ;
+                 $query = mysqli_query($conn , $check);
+                 $result = mysqli_fetch_assoc($query);
+                
+                if ($result['HSK1_Pretest']>=20 || $result['HSK1_Posttest']>=20  ) {
+                    echo ' <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      HSK2
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="HSK2_menu.php?part=1">ชุดที่1</a>
+                      <a class="dropdown-item" href="HSK2_menu.php?part=2">ชุดที่2</a>
+                      <a class="dropdown-item" href="HSK2_menu.php?part=3">ชุดที่3</a>
+                      <a class="dropdown-item" href="HSK2_menu.php?part=4">ชุดที่4</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a>
+                    </div>
+                  </li> ';
+                }
+                ?>
+     
               
             </ul>
             <form action="Login.html" class="form-inline my-2 my-lg-0" >
@@ -180,7 +231,7 @@ nav {
     
         <div class="container">
             <div class="row" >
-                <div class="col-sm-4">
+                <div class="col-sm-4" onclick="btn_profile()">
                     <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
                             <img src="./img/personal-information.png" alt="" style="width: 50px; margin-bottom: 20px;">
@@ -188,6 +239,11 @@ nav {
                         </div>
                     </div>
                 </div>
+                <script>
+                function btn_profile() {
+                    window.location.replace('profile.php')
+                };
+                </script>
                 <div class="col-sm-4">
                     <div class=" text-center" id="btn_menu">
                         <div class="card-body underlineHover">
@@ -222,6 +278,7 @@ nav {
                 </script>
 
 
+      <!-- ถ้าคะแนน hsk1 post-test ยังไม่ผ่าน จะไม่ปรากฏ hsk2  -->
                 <?php                 
                 include('./database/database.php');
                 $sid = "SID";
