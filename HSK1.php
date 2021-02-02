@@ -60,6 +60,12 @@
         font-size:15pt;
     }
   }
+  @media (min-width: 576px){
+.jumbotron {
+    padding: 2rem 1rem !important;
+}
+}
+
     
 </style>
 

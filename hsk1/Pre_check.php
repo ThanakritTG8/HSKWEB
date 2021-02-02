@@ -14,8 +14,17 @@ if (isset($_POST['skip'])) {
         $_SESSION['All_score'] = $_SESSION['score'] ;
         $score =  $_SESSION['All_score'] ; 
         $SID =$_SESSION['SID'];
-        $sql = "INSERT INTO hsk_exam_score  VALUES( $SID ,$score,  '','','','','','','')";
+        $sql = "INSERT INTO HSK_Exam_Score  VALUES( $SID ,$score,'','','')";
         $results =   mysqli_query($conn , $sql);
+
+        
+    
+    $sql_hsk1 = "INSERT INTO HSK1_Exercise_Score  VALUES( $SID ,'', '','','')";
+    $results_hsk1 =   mysqli_query($conn , $sql_hsk1);
+
+    $sql_hsk2 = "INSERT INTO HSK2_Exercise_Score  VALUES( $SID ,'', '','','')";
+    $results_hsk2  =   mysqli_query($conn , $sqlhsk2 );
+
      
     header('location: ./Show_score.php');
     }
@@ -36,8 +45,15 @@ if ($_SESSION['topic_num'] >4) {
     $_SESSION['All_score'] = $_SESSION['score'] ;
 $score =  $_SESSION['All_score'] ; 
 $SID =$_SESSION['SID'];
-    $sql = "INSERT INTO hsk_exam_score  VALUES( $SID ,$score,  '','','','','','','')";
+    $sql = "INSERT INTO HSK_Exam_Score  VALUES( $SID ,$score, '','','')";
     $results =   mysqli_query($conn , $sql);
+
+    
+    $sql_hsk1 = "INSERT INTO HSK1_Exercise_Score  VALUES( $SID ,'', '','','')";
+    $results_hsk1 =   mysqli_query($conn , $sql_hsk1);
+
+    $sql_hsk2 = "INSERT INTO HSK2_Exercise_Score  VALUES( $SID ,'', '','','')";
+    $results_hsk2  =   mysqli_query($conn , $sql_hsk2 );
 
     header('location: ./Show_score.php');
 

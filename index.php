@@ -52,6 +52,12 @@ nav {
     color: #fff;
 }
 
+@media (min-width: 576px){
+.jumbotron {
+    padding: 2rem 1rem !important;
+}
+}
+
 
 
 

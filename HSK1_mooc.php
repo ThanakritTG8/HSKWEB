@@ -15,7 +15,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
+<style>
+@media (min-width: 576px){
+.jumbotron {
+    padding: 2rem 1rem !important;
+}
+}
 
+</style>
 <body id="body">
 
     <!-- navbar -->

@@ -72,6 +72,9 @@
         background: rgb(94, 177, 255);
         max-height: 30px;
     }
+    .jumbotron{
+        margin-bottom: 0px !important;
+    }
 
     #lesson-btn img{
         max-width: 25px;
@@ -90,6 +93,11 @@
   h1{
       font-size:15pt;
   }
+}
+@media (min-width: 576px){
+.jumbotron {
+    padding: 2rem 1rem !important;
+}
 }
 </style>
 <body id="body" >

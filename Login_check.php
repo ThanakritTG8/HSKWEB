@@ -59,6 +59,7 @@
         }
         else if (mysqli_num_rows($result_t)==1) {
             $_SESSION['username'] = $result_send_t['Tname'].' '. $result_send_t['TLname']; 
+            $_SESSION['TID']=  $result_send_t['TID']; 
             $_SESSION['success'] = "You are now log in";
 
             header('location:./teacher/Teacher_index.php');
