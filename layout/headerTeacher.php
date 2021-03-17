@@ -3,12 +3,12 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first!";
-    header('location: ../Login.php');
+    header('location: ../../Login.php');
 }
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: ../Login.php');
+    header('location: ../../Login.php');
 }
 if (isset($_SESSION['success'])) {
     $message = $_SESSION['success'];
@@ -78,7 +78,7 @@ if (isset($_SESSION['success'])) {
 
 
                 <li class="nav-item active nav-link">
-                    <img src="../img/user.png" alt="" style="width: 25px; ">
+                    <img src="../../img/user.png" alt="" style="width: 25px; ">
                     <?php if (isset($_SESSION['username'])) : ?>
                         <?php echo $_SESSION['username']; ?>
                     <?php endif ?>
@@ -94,7 +94,7 @@ if (isset($_SESSION['success'])) {
             <form action="Login.html" class="form-inline my-2 my-lg-0">
                 <button class="btn btn-success " type="button">
                     <a href="teacher_index.php?logout='1'" style="color:white">LOGOUT
-                        <img src="../img/logout.png" alt="" style="width: 20px; ">
+                        <img src="../../img/logout.png" alt="" style="width: 20px; ">
                     </a>
                 </button>
 

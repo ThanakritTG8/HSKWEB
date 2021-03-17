@@ -37,7 +37,6 @@ if (isset($_POST['reg_user'])) {
 
     $_SESSION['username'] = $Fname . ' ' . $Lname;
     $_SESSION['success'] = "You are now log in";
-    header('location:index.php');
+    header('location:./pages/student/index.php');
   }
 }
-?>

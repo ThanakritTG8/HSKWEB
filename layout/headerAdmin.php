@@ -3,12 +3,12 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first!";
-    header('location: ../Login.php');
+    header('location: ../../Login.php');
 }
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: ../Login.php');
+    header('location: ../../Login.php');
 }
 if (isset($_SESSION['success'])) {
     $message = $_SESSION['success'];
@@ -27,7 +27,7 @@ if (isset($_SESSION['success'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="../css/index.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -36,8 +36,19 @@ if (isset($_SESSION['success'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 
-    
+
 </head>
+<style>
+    #body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #fdb9b9;
+    }
+
+    nav {
+        background: rgb(122, 45, 45);
+        color: #fff;
+    }
+</style>
 
 <body id="body">
     <!-- notification -->
@@ -58,7 +69,7 @@ if (isset($_SESSION['success'])) {
 
 
                 <li class="nav-item active nav-link">
-                    <img src="../img/user.png" alt="" style="width: 25px; ">
+                    <img src="../../img/user.png" alt="" style="width: 25px; ">
                     <?php if (isset($_SESSION['username'])) : ?>
                         <?php echo $_SESSION['username']; ?>
                     <?php endif ?>
@@ -75,7 +86,7 @@ if (isset($_SESSION['success'])) {
                     <a class="nav-link" href="edit.php">แก้ไขบทเรียน </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="teacher.php">Teacher Account</a>
+                    <a class="nav-link" href="teacher.php">Account</a>
                 </li>
 
 
@@ -83,7 +94,7 @@ if (isset($_SESSION['success'])) {
             <form action="Login.html" class="form-inline my-2 my-lg-0">
                 <button class="btn btn-success " type="button">
                     <a href="Admin_index.php?logout='1'" style="color:white">LOGOUT
-                        <img src="../img/logout.png" alt="" style="width: 20px; ">
+                        <img src="../../img/logout.png" alt="" style="width: 20px; ">
                     </a>
                 </button>
 
