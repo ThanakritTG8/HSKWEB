@@ -83,7 +83,7 @@ if (isset($_SESSION['success'])) {
                     <a class="nav-link" href="score.php">ดูคะแนน </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="edit.php">แก้ไขบทเรียน </a>
+                    <a class="nav-link" href="editMenu.php">แก้ไขบทเรียน </a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="teacher.php">Account</a>

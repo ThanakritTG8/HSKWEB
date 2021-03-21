@@ -75,7 +75,7 @@
               <h5 class="card-title">แก้ไขบทเรียน</h5>
               <img src="../../img/personal-information.png" alt="" class="img-card"><br>
 
-              <a href="#" class="btn btn-success-admin btn-success">แก้ไขบทเรียน</a>
+              <a href="editMenu.php" class="btn btn-success-admin btn-success">แก้ไขบทเรียน</a>
           </div>
       </div>
       <div class="card text-center">

@@ -23,7 +23,6 @@
       }
 
       .form-control {
-          width: 80%;
           height: 30px;
       }
 
@@ -34,11 +33,6 @@
           text-transform: uppercase;
 
       }
-
-      .card-body {
-          padding: 20px 50px;
-      }
-
       .card {
           width: 100%;
           margin-top: 50px;
@@ -55,17 +49,11 @@
           cursor: pointer;
       }
 
-      .icon-edit {
-          color: #949425;
-          cursor: pointer;
-      }
-
-      .icon-edit:hover {
-          color: #d2d218;
-      }
-
       .icon-delete:hover {
           color: #e72c2c;
+      }
+      .modal-footer{
+        padding: 5px !important;
       }
 
       @media(max-width:700px) {
@@ -112,7 +100,38 @@
                   <div class="tab-pane fade" id="School" role="tabpanel" aria-labelledby="School-tab">
                       <h5 class="card-title">School Account</h5>
                       <div class="header d-flex justify-content-between">
-                          <div class="btn btn-success-teacher btn-success" data-toggle="modal" data-target="#modal-create">เพิ่ม<i class="fas fa-plus-circle" style="margin-left: 5px;"></i></div>
+                          <div class="btn btn-success-teacher btn-success" data-toggle="modal" data-target="#modal-create-school">เพิ่ม<i class="fas fa-plus-circle" style="margin-left: 5px;"></i></div>
+
+                          <!-- /// Modal Create -->
+                          <div class="modal fade" id="modal-create-school" tabindex="-1" aria-labelledby="modal-createLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+
+                                      <form action="Create.php" method="post" class="needs-validation" novalidate autocomplete="off">
+                                          <div class="modal-body">
+                                              Create
+                                              <hr>
+                                              <div class="d-flex justify-content-center">
+                                                  <div style="width: 70%;">
+                                                      <input type="text" class="form-control" placeholder="ชื่อโรงเรียน" name="nameSchool" required>
+
+
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <div class="modal-footer">
+
+                                              <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                              <button type="submit" class="btn btn-primary">save</button>
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- //// -->
+
+
                           <div class="d-flex justify-content-end">
                               <input class="form-control p-2" id="schoolInput" type="text" placeholder="Search..">
                           </div>
@@ -124,7 +143,7 @@
                                   <tr>
                                       <th scope="col">ชื่อโรงเรียน</th>
 
-                                      <th scope="col">แก้ไข</th>
+                                      <th scope="col">ลบ</th>
                                   </tr>
                               </thead>
                               <tbody id="schoolTable">
@@ -139,23 +158,22 @@
                                         echo
                                         ' <tr>
       <td>' . $row['SchoolName'] . '</td>
-      <td><i  class="fas fa-edit icon-edit" data-toggle="modal" data-target="#modal-delete' . $row['SchoolID'] . '"></i></td>
+      <td><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['SchoolID'] . '"></i></td>
       <!-- /// Modal Delete -->
       <div class="modal fade" id="modal-delete' . $row['SchoolID'] . '" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
 
-                  <form action="schoolDelete.php" class="needs-validation" novalidate autocomplete="off" method="post">
-                  <div class="modal-body" style="
-                  background-color: whitesmoke;">
-                      แก้ไข <i class="fas fa-edit"></i>
+                  <form action="Delete.php" class="needs-validation" novalidate autocomplete="off" method="post">
+                  <div class="modal-body" >
+                     คุณต้องการที่จะลบ ?
                       <hr>
                      <div class="d-flex justify-content-center">
-                      <input type="text" class="form-control text-center" id="text-school" name="text-edit" value = " ' . $row['SchoolName'] . '" required>
+                        <span>โรงเรียน ' . $row['SchoolName'] . '</span> 
                       </div>
                   </div>
                   <div class="modal-footer">
-<input type="hidden" name="edit" value="' . $row['SchoolID'] . '">
+                        <input type="hidden" name="sh_delete" value="' . $row['SchoolID'] . '">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="submit" class="btn btn-primary">Save</button>
                      
@@ -185,7 +203,7 @@
                       <h5 class="card-title">Teacher Account</h5>
 
                       <div class="header d-flex justify-content-between">
-                          <div class="btn btn-success-teacher btn-success" data-toggle="modal" data-target="#modal-create">Create<i class="fas fa-plus-circle" style=" margin-left: 5px;"></i></div>
+                          <div class="btn btn-success-teacher btn-success" data-toggle="modal" data-target="#modal-create">เพิ่ม<i class="fas fa-plus-circle" style=" margin-left: 5px;"></i></div>
                           <div class="d-flex justify-content-end">
                               <input class="form-control p-2" id="teacherInput" type="text" placeholder="Search..">
                           </div>
@@ -198,12 +216,12 @@
                           <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
 
-                                  <form action="teacherCreate.php" method="post" class="needs-validation" novalidate autocomplete="off">
+                                  <form action="Create.php" method="post" class="needs-validation" novalidate autocomplete="off">
                                       <div class="modal-body">
                                           Create Accout
                                           <hr>
                                           <div class="d-flex justify-content-center">
-                                              <div style="width: 70%;">
+                                              <div>
                                                   <input type="text" class="form-control" placeholder="ชื่อ" name="name" required>
                                                   <input type="text" class="form-control" placeholder="นามสกุล" name="Lname" required>
                                                   <input type="text" class="form-control" placeholder="Username" name="username" required>
@@ -278,12 +296,12 @@
                       <hr>
                     
                       <p>Account : ' . $row['Tname'] . ' ' . $row['TLname'] . ' </p>
-                      <p>School : ' . $row['SchoolName'] . '  </p>
+                      <p>โรงเรียน ' . $row['SchoolName'] . '  </p>
                      
                     
                   </div>
                   <div class="modal-footer">
-                  <form action="teacherDelete.php" method="post">
+                  <form action="Delete.php" method="post">
 <input type="hidden" name="delete" value="' . $row['TID'] . '">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="submit" class="btn btn-primary">Delete</button>

@@ -1,20 +1,20 @@
-<?php include('header.php');?>
+<?php include('header.php'); ?>
 
 <div class="wrapper">
         <div class="container">
 
-<form action="../index.php" >
+                <form action="../pages/student/index.php">
 
-<!-- ///// คะแนน  -->
-<div>
-<h3><?php echo $_SESSION['All_score'];?>/40</h3>
-</div>
+                        <!-- ///// คะแนน  -->
+                        <div>
+                                <h3><?php echo $_SESSION['All_score']; ?>/40</h3>
+                        </div>
 
-<div><button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Next >></button></div>
+                        <div><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Next >></button></div>
 
-</form>
+                </form>
 
-</div>
+        </div>
 </div>
 
 <?php include('footer.php'); ?>
