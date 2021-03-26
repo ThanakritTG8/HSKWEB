@@ -1,19 +1,7 @@
   <!-- <include header> -->
-  <?php include('../../layout/headerAdmin.php');
+  <?php include('../../layout/headerAdmin.php'); ?>
 
-    if (isset($_SESSION['delete'])) {
-        $message = $_SESSION['delete'];
-        echo  "<script type='text/javascript'>alert('$message');</script>";
-
-        unset($_SESSION['delete']);
-    }
-    if (isset($_SESSION['create'])) {
-        $message = $_SESSION['create'];
-        echo  "<script type='text/javascript'>alert('$message');</script>";
-
-        unset($_SESSION['create']);
-    }
-    ?>
+   
 
   <style>
       .container {

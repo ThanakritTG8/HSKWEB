@@ -55,7 +55,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
-            <form action="teacherCreate.php" method="post" class="needs-validation" novalidate autocomplete="off">
+            <form action="Create.php?vocab='1'&&set=<?= $_GET['set'] ?>&&part=<?= $_GET['part'] ?>" method="post" class="needs-validation" novalidate autocomplete="off">
                 <div class="modal-body">
                     เพิ่มคำศัพท์
                     <hr>
@@ -66,39 +66,40 @@
                                 <option selected disabled value="">หมวด </option>
                                 <?php
                                 include('../../database/database.php');
-
-                                $query = "SELECT * FROM hsk1_vocab GROUP BY type";
+                                $set = 'Hsk' . $_GET['set'] . '_vocab';
+                                $query = "SELECT * FROM $set GROUP BY type";
                                 $result = mysqli_query($conn, $query);
 
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<option value = ' . $row['type'] . '>' . $row['type'] . '</option>';
+                                    echo "<option value = " . $row['type'] . ">" . $row['type'] . "</option>";
                                 }
 
                                 ?>
+                              
                             </select>
                             <label>ประเภทคำศัพท์</label>
                             <select class="form-control" id="validationCustom" name="type_word" required>
                                 <option selected disabled value="">ประเภทคำศัพท์ </option>
                                 <?php
                                 include('../../database/database.php');
-
-                                $query = "SELECT * FROM hsk1_vocab GROUP BY type_word";
+                                $set = 'Hsk' . $_GET['set'] . '_vocab';
+                                $query = "SELECT * FROM $set GROUP BY type_word";
                                 $result = mysqli_query($conn, $query);
 
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<option value = ' . $row['type_word'] . '>' . $row['type_word'] . '</option>';
+                                    echo "<option value = " . $row['type_word'] . ">" . $row['type_word'] . "</option>";
                                 }
 
                                 ?>
                             </select>
                             <label>No.</label>
-                            <input type="text" class="form-control" placeholder="3" name="vocab_no" required>
+                            <input type="text" class="form-control" placeholder="3" name="vocab_no">
                             <label>คำศัพท์</label>
                             <input type="text" class="form-control" placeholder="下个星期" name="ch" required>
                             <label>พินอิน</label>
                             <input type="text" class="form-control" placeholder="xiàge xīngqī" name="pinyin" required>
                             <label>ประเภท</label>
-                            <input type="text" class="form-control" placeholder="(代) " name="type_ch" required>
+                            <input type="text" class="form-control" placeholder="(代) " name="type_ch">
                             <label>คำแปล</label>
                             <input type="text" class="form-control" placeholder="สัปดาห์หน้า" name="th" required>
                             <label>เสียง</label>
@@ -152,12 +153,13 @@
                     $set = 'hsk' . $_GET['set'] . '_vocab';
                     $part = $_GET['part'];
                     $ses = 'session';
+                    $no = 0;
                     $query = "SELECT * FROM $set WHERE $ses =  $part";
                     $result = mysqli_query($conn, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
-
+                        $no += 1;
                         echo '  <tr>
-      <th scope="row">' .  $row['HSK1_VocabID'] . '</th>
+      <th scope="row">' .  $no . '</th>
       <th scope="row">' .  $row['type'] . '</th>
       <th scope="row">' .  $row['type_word'] . '</th>
       <th scope="row">' .  $row['vocab_no'] . '</th>
@@ -213,3 +215,33 @@
     </div>
 </div>
 <?php include('../../layout/footerAdmin.php'); ?>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+    // function setValue() {
+    //     var selectBox = document.getElementById("validationCustom");
+    //     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      
+    //     console.log(selectedValue);
+    //     // document.getElementById(target).value = seclectedValue;
+    // }
+</script>

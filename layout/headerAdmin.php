@@ -16,8 +16,20 @@ if (isset($_SESSION['success'])) {
 
     unset($_SESSION['success']);
 }
+if (isset($_SESSION['delete'])) {
+    $message = $_SESSION['delete'];
+    echo  "<script type='text/javascript'>alert('$message');</script>";
 
+    unset($_SESSION['delete']);
+}
+if (isset($_SESSION['create'])) {
+    $message = $_SESSION['create'];
+    echo  "<script type='text/javascript'>alert('$message');</script>";
+
+    unset($_SESSION['create']);
+}
 ?>
+
 
 
 <!DOCTYPE html>
