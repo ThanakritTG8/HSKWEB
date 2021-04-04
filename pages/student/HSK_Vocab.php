@@ -75,7 +75,7 @@ if (isset($_GET['logout'])) {
 
             $session = "session";
             $ses = $_GET['vocab'];
-            $set = "hsk" . $_GET['set'] . "_vocab";
+            $set = "HSK" . $_GET['set'] . "_Vocab";
             ////หาประเภทคำ type 
             $query_type = "SELECT * FROM $set WHERE $session = $ses GROUP BY type  ";
             $result_type = mysqli_query($conn, $query_type);

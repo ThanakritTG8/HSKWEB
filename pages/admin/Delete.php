@@ -7,7 +7,7 @@ $hsk = '';
 $vocabId = '';
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
 if (isset($_GET['vocabId'])) {
-    $hsk = 'Hsk' . $_GET['set'] . '_vocab';
+    $hsk = 'Hsk' . $_GET['set'] . '_Vocab';
     $vocabId = $_GET['vocabId'];
     $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
 } else {
@@ -26,7 +26,7 @@ if(isset($_GET['vocabId'])){
     header('location:./editVocab.php?set=' .$_GET['set'] . '&&part=' . $_GET['part']);
 }
 elseif ($tid) {
-    $query = "DELETE FROM teacher WHERE TID = '$tid' ";
+    $query = "DELETE FROM Teacher WHERE TID = '$tid' ";
     $result = mysqli_query($conn, $query);
     $_SESSION['delete'] = "ลบข้อมูลสำเร็จ";
     header('location:./teacher.php');
@@ -34,7 +34,7 @@ elseif ($tid) {
 }
 
 elseif ($sh_id) {
-    $query = "DELETE FROM school WHERE SchoolID = '$sh_id' ";
+    $query = "DELETE FROM School WHERE SchoolID = '$sh_id' ";
     $result = mysqli_query($conn, $query);
     $_SESSION['delete'] = "ลบข้อมูลสำเร็จ";
     header('location:./teacher.php');

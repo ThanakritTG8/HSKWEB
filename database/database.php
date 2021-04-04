@@ -1,13 +1,13 @@
 <?php
-// $servername = "localhost";
-// $username = "chinyhot_HSK13";
-// $password = "hsk13";
-// $db_name = 'chinyhot_HSK';
-
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "chinyhot_HSK13";
+$password = "hsk13";
 $db_name = 'chinyhot_HSK';
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $db_name = 'chinyhot_HSK';
 
 
 // Create connection

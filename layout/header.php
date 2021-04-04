@@ -75,7 +75,7 @@
             include('../../database/database.php');
             $sid = "SID";
             $id = $_SESSION['SID'];
-            $check = "SELECT* FROM hsk_exam_score WHERE $sid  = $id ";
+            $check = "SELECT* FROM HSK_Exam_Score WHERE $sid  = $id ";
             $query = mysqli_query($conn, $check);
             $result = mysqli_fetch_assoc($query);
 

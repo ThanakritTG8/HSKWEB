@@ -150,7 +150,7 @@ if (isset($_GET['logout'])) {
                             $sesion = "session";
                             $ses = $_GET['lesson'];
                             $set = $_GET['set'];
-                            $query = "SELECT * FROM hsk" . $set . "_lesson WHERE $sesion = $ses AND pic = '$less_name'";
+                            $query = "SELECT * FROM HSK" . $set . "_lesson WHERE $sesion = $ses AND pic = '$less_name'";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -188,7 +188,7 @@ if (isset($_GET['logout'])) {
                                 include('../../database/database.php');
                                 $sesion = "session";
                                 $ses = $_GET['lesson'];
-                                $query = "SELECT * FROM hsk" . $set . "_lesson WHERE $sesion = $ses ";
+                                $query = "SELECT * FROM HSK" . $set . "_lesson WHERE $sesion = $ses ";
                                 $result = mysqli_query($conn, $query);
 
                                 while ($row = mysqli_fetch_assoc($result)) {

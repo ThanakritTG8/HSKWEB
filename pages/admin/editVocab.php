@@ -66,7 +66,7 @@
                                 <option selected disabled value="">หมวด </option>
                                 <?php
                                 include('../../database/database.php');
-                                $set = 'Hsk' . $_GET['set'] . '_vocab';
+                                $set = 'HSK' . $_GET['set'] . '_Vocab';
                                 $query = "SELECT * FROM $set GROUP BY type";
                                 $result = mysqli_query($conn, $query);
 
@@ -82,7 +82,7 @@
                                 <option selected disabled value="">ประเภทคำศัพท์ </option>
                                 <?php
                                 include('../../database/database.php');
-                                $set = 'Hsk' . $_GET['set'] . '_vocab';
+                                $set = 'HSK' . $_GET['set'] . '_Vocab';
                                 $query = "SELECT * FROM $set GROUP BY type_word";
                                 $result = mysqli_query($conn, $query);
 
@@ -150,7 +150,7 @@
 
                     <?php
                     include('../../database/database.php');
-                    $set = 'Hsk' . $_GET['set'] . '_vocab';
+                    $set = 'HSK' . $_GET['set'] . '_Vocab';
                     $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
                     $part = $_GET['part'];
                     $ses = 'session';

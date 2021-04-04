@@ -140,7 +140,7 @@
                                   <?php
 
                                     include('../../database/database.php');
-                                    $query = "SELECT * FROM school";
+                                    $query = "SELECT * FROM School";
                                     $result = mysqli_query($conn, $query);
 
                                     while ($row = mysqli_fetch_assoc($result)) {
@@ -263,7 +263,7 @@
                                   <?php
 
                                     include('../../database/database.php');
-                                    $query = "SELECT * FROM teacher INNER JOIN school ON teacher.SchoolID = school.SchoolID ";
+                                    $query = "SELECT * FROM Teacher INNER JOIN School ON Teacher.SchoolID = School.SchoolID ";
                                     $result = mysqli_query($conn, $query);
 
                                     while ($row = mysqli_fetch_assoc($result)) {

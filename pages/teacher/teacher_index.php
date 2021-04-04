@@ -95,7 +95,7 @@
         <?php
         include('../../database/database.php');
         $tid = $_SESSION['TID'];
-        $query_name = "SELECT * FROM teacher INNER JOIN school ON teacher.SchoolID = school.SchoolID WHERE TID= $tid";
+        $query_name = "SELECT * FROM Teacher INNER JOIN School ON Teacher.SchoolID = School.SchoolID WHERE TID= $tid";
         $result_name = mysqli_query($conn, $query_name);
 
         while ($row_name = mysqli_fetch_assoc($result_name)) {
@@ -132,17 +132,17 @@
             include('../../database/database.php');
             $no = 0;
             $tid = $_SESSION['TID'];
-            $query_t = "SELECT * FROM teacher WHERE TID =$tid";
+            $query_t = "SELECT * FROM Teacher WHERE TID =$tid";
             $result_t = mysqli_query($conn, $query_t);
 
             while ($row_t = mysqli_fetch_assoc($result_t)) {
               $schID = $row_t['SchoolID'];
 
               /////////// ตางรางคะแนน pretest และ post 
-              $query = "SELECT * FROM (((student 
- INNER JOIN hsk_exam_score ON student.SID = hsk_exam_score.SID)
- INNER JOIN hsk1_exercise_score ON student.SID =hsk1_exercise_score.SID)
- INNER JOIN hsk2_exercise_score ON student.SID =hsk2_exercise_score.SID) WHERE SchoolID = $schID";
+              $query = "SELECT * FROM (((Student 
+ INNER JOIN HSK_Exam_Score ON Student.SID = HSK_Exam_Score.SID)
+ INNER JOIN HSK1_Exercise_Score ON Student.SID =HSK1_Exercise_Score.SID)
+ INNER JOIN HSK2_Exercise_Score ON Student.SID =HSK2_Exercise_Score.SID) WHERE SchoolID = $schID";
               $result = mysqli_query($conn, $query);
 
               while ($row = mysqli_fetch_assoc($result)) {

@@ -165,9 +165,9 @@ if (isset($_GET['logout'])) {
         $id = $_SESSION['SID'];
 
         if ($_GET['set'] = 1) {
-            $check = "SELECT* FROM hsk1_exercise_score WHERE $sid  = $id ";
+            $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
         } elseif ($_GET['set'] = 2) {
-            $check = "SELECT* FROM hsk2_exercise_score WHERE $sid  = $id ";
+            $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
         }
         $query = mysqli_query($conn, $check);
         $result = mysqli_fetch_assoc($query);

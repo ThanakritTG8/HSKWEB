@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
 
         $SID = "SID";
         $sid = $result_send[$SID];
-        $check_score = "SELECT * FROM hsk_exam_score WHERE $SID ='$sid'";
+        $check_score = "SELECT * FROM HSK_Exam_Score WHERE $SID ='$sid'";
         $result_score = mysqli_query($conn, $check_score);
 
 

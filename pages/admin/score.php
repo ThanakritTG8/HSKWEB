@@ -144,10 +144,10 @@
                                   <?php
                                     $no = 0;
                                     include('../../database/database.php');
-                                    $query = "SELECT * FROM (((student 
-                                 INNER JOIN hsk_exam_score ON student.SID = hsk_exam_score.SID)
-                                 INNER JOIN hsk1_exercise_score ON student.SID =hsk1_exercise_score.SID)
-                                 INNER JOIN school ON student.SchoolID =school.SchoolID)";
+                                    $query = "SELECT * FROM (((Student 
+                                 INNER JOIN HSK_Exam_Score ON Student.SID = HSK_Exam_Score.SID)
+                                 INNER JOIN HSK1_Exercise_Score ON Student.SID =HSK1_Exercise_Score.SID)
+                                 INNER JOIN School ON student.SchoolID =School.SchoolID)";
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $no += 1;
@@ -237,10 +237,10 @@
                                   <?php
                                     $no = 0;
                                     include('../../database/database.php');
-                                    $query = "SELECT * FROM (((student 
-                                 INNER JOIN hsk_exam_score ON student.SID = hsk_exam_score.SID)
-                                 INNER JOIN hsk2_exercise_score ON student.SID =hsk2_exercise_score.SID)
-                                 INNER JOIN school ON student.SchoolID =school.SchoolID)";
+                                    $query = "SELECT * FROM (((Student 
+                                 INNER JOIN HSK_Exam_Score ON Student.SID = HSK_Exam_Score.SID)
+                                 INNER JOIN HSK2_Exercise_Score ON Student.SID =HSK2_Exercise_Score.SID)
+                                 INNER JOIN School ON Student.SchoolID =School.SchoolID)";
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $no += 1;

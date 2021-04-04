@@ -171,7 +171,7 @@ if (isset($_SESSION['success'])) {
                                     $schoolid =   $result['SchoolID'];
 
 
-                                    $check_school = "SELECT * FROM school WHERE SchoolID =  $schoolid ";
+                                    $check_school = "SELECT * FROM School WHERE SchoolID =  $schoolid ";
                                     $query_school = mysqli_query($conn, $check_school);
                                     $result_school = mysqli_fetch_assoc($query_school);
                                     echo   $result_school['SchoolName'];
@@ -209,7 +209,7 @@ if (isset($_SESSION['success'])) {
 
                                         $sid = "SID";
                                         $id =  $_SESSION['SID'];
-                                        $check = "SELECT * FROM hsk1_exercise_score WHERE $sid =  $id";
+                                        $check = "SELECT * FROM HSK1_Exercise_Score WHERE $sid =  $id";
                                         $query = mysqli_query($conn, $check);
                                         $result = mysqli_fetch_assoc($query);
                                         if ($result['hsk1_session_1'] == 0) {
@@ -241,7 +241,7 @@ if (isset($_SESSION['success'])) {
                                         include('../../database/database.php');
                                         $sid = "SID";
                                         $id =  $_SESSION['SID'];
-                                        $check = "SELECT * FROM hsk2_exercise_score WHERE $sid =  $id";
+                                        $check = "SELECT * FROM HSK2_Exercise_Score WHERE $sid =  $id";
                                         $query = mysqli_query($conn, $check);
                                         $result = mysqli_fetch_assoc($query);
                                         if ($result['hsk2_session_1'] == 0) {
@@ -289,7 +289,7 @@ if (isset($_SESSION['success'])) {
                                         include('../../database/database.php');
                                         $sid = "SID";
                                         $id =  $_SESSION['SID'];
-                                        $check = "SELECT * FROM hsk_exam_score WHERE $sid =  $id";
+                                        $check = "SELECT * FROM HSK_Exam_Score WHERE $sid =  $id";
                                         $query = mysqli_query($conn, $check);
                                         $result = mysqli_fetch_assoc($query);
                                         if ($result['HSK1_Pretest'] == 0) {
@@ -310,7 +310,7 @@ if (isset($_SESSION['success'])) {
                                         include('../../database/database.php');
                                         $sid = "SID";
                                         $id =  $_SESSION['SID'];
-                                        $check = "SELECT * FROM hsk_exam_score WHERE $sid =  $id";
+                                        $check = "SELECT * FROM HSK_Exam_Score WHERE $sid =  $id";
                                         $query = mysqli_query($conn, $check);
                                         $result = mysqli_fetch_assoc($query);
                                         if ($result['HSK2_Pretest'] == 0) {

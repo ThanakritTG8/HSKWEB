@@ -48,7 +48,7 @@ if (isset($_GET['set'])) {
     $_SESSION['create'] = "create account สำเร็จ!";
     header('location:./editVocab.php?set=' . $set . '&&part=' . $part);
 } elseif ($name_Sh) {
-    $user_check_query = "SELECT * FROM school WHERE SchoolName = '$name_Sh' ";
+    $user_check_query = "SELECT * FROM School WHERE SchoolName = '$name_Sh' ";
     $query_ch = mysqli_query($conn, $user_check_query);
     $result_ch = mysqli_fetch_assoc($query_ch);
     if ($result_ch) {
@@ -62,7 +62,7 @@ if (isset($_GET['set'])) {
         header('location:./teacher.php');
     }
 } else {
-    $user_check_query = "SELECT * FROM teacher WHERE TUsername = '$user' ";
+    $user_check_query = "SELECT * FROM Teacher WHERE TUsername = '$user' ";
     $query_ch = mysqli_query($conn, $user_check_query);
     $result_ch = mysqli_fetch_assoc($query_ch);
 
