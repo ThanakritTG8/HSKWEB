@@ -30,6 +30,7 @@ if (isset($_SESSION['err'])) {
   #body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background-color: #fff0f0;
   }
 
   a {

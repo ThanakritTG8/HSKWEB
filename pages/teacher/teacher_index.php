@@ -1,11 +1,19 @@
   <!-- <include header> -->
   <?php include('../../layout/headerTeacher.php'); ?>
   <style>
+    .topic {
+      text-align: center;
+      background-color: bisque;
+      font-weight: bolder;
+    }
+    h4{
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
     #info {
       width: 100%;
       height: 80%;
       margin-top: 30px;
-
       padding: 10px;
     }
 
@@ -162,7 +170,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>HSK1 </p>
+        <p class="topic">HSK1 </p>
         <p>Pretest   :   ' . $row['HSK1_Pretest'] . ' </p>
         <p>Posttest  :   ' . $row['HSK1_Posttest'] . ' </p>
         <p> ชุดที่1  : ' . $row['hsk1_session_1'] . '  </p>
@@ -170,7 +178,7 @@
         <p> ชุดที่3 : ' . $row['hsk1_session_3'] . ' </p>
         <p> ชุดที่4  : ' . $row['hsk1_session_4'] . ' </p>
         <hr>  <hr>
-        <p>HSK2 </p>
+        <p class="topic">HSK2 </p>
         <p>Pretest   : ' . $row['HSK2_Pretest'] . ' </p>
         <p>Posttest  : ' . $row['HSK2_Posttest'] . ' </p>
         <p> ชุดที่1 : ' . $row['hsk2_session_1'] . ' </p>

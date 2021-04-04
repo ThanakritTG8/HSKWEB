@@ -17,7 +17,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บทเรียน HSK1</title>
+    <title>บทเรียน</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -29,7 +29,7 @@ if (isset($_GET['logout'])) {
 <style>
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fdb9b9;
+        background-color: #fff0f0;
     }
 
 
@@ -111,7 +111,7 @@ if (isset($_GET['logout'])) {
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK1 บทเรียน ชุดที่<?php echo $_GET['lesson']; ?>
+                HSK<?php echo $_GET['set']; ?> บทเรียน ชุดที่<?php echo $_GET['lesson']; ?>
             </h1>
         </div>
     </header>
@@ -149,11 +149,12 @@ if (isset($_GET['logout'])) {
                             $less_name = $_SESSION['less_name'];
                             $sesion = "session";
                             $ses = $_GET['lesson'];
-                            $query = "SELECT * FROM hsk1_lesson WHERE $sesion = $ses AND pic = '$less_name'";
+                            $set = $_GET['set'];
+                            $query = "SELECT * FROM hsk" . $set . "_lesson WHERE $sesion = $ses AND pic = '$less_name'";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo '<img src="../../img/บทเรียนHSK1_ชุดที่' . $ses . '/' . $row['pic'] . '" alt=""  id="img-lesson">';
+                                echo '<img src="../../img/บทเรียนHSK' . $set . '_ชุดที่' . $ses . '/' . $row['pic'] . '" alt=""  id="img-lesson">';
                             }
                             ?>
 
@@ -187,12 +188,12 @@ if (isset($_GET['logout'])) {
                                 include('../../database/database.php');
                                 $sesion = "session";
                                 $ses = $_GET['lesson'];
-                                $query = "SELECT * FROM hsk1_lesson WHERE $sesion = $ses ";
+                                $query = "SELECT * FROM hsk" . $set . "_lesson WHERE $sesion = $ses ";
                                 $result = mysqli_query($conn, $query);
 
                                 while ($row = mysqli_fetch_assoc($result)) {
 
-                                    echo '<form action="HSK1_lesson_check.php" method="post">
+                                    echo '<form action="HSK' . $set . '_lesson_check.php" method="post">
 <input type="hidden"  name="lesson_name"  value=' . $row['pic'] . '>
 <input type="hidden"  name="lesson"  value=' . $ses . '>
 <button type="submit" class="btn-submit list-group-item list-group-item-action text-center"
@@ -233,14 +234,9 @@ if (isset($_GET['logout'])) {
         }
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -75,7 +75,7 @@
                                 }
 
                                 ?>
-                              
+
                             </select>
                             <label>ประเภทคำศัพท์</label>
                             <select class="form-control" id="validationCustom" name="type_word" required>
@@ -112,9 +112,9 @@
                 </div>
 
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
 
-                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">save</button>
                 </div>
             </form>
         </div>
@@ -150,7 +150,8 @@
 
                     <?php
                     include('../../database/database.php');
-                    $set = 'hsk' . $_GET['set'] . '_vocab';
+                    $set = 'Hsk' . $_GET['set'] . '_vocab';
+                    $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
                     $part = $_GET['part'];
                     $ses = 'session';
                     $no = 0;
@@ -168,9 +169,9 @@
       <th scope="row">' .  $row['type_ch'] . '</th>
       <th scope="row">' .  $row['th'] . '</th>
       <th scope="row">' .  $row['sound'] . '</th>
-      <th scope="row"><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal' . $row['HSK1_VocabID'] . '"></i></th>
+      <th scope="row"><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal' . $row[$HSK_id] . '"></i></th>
       <!-- /// Modal Delete -->
-      <div class="modal fade" id="modal' . $row['HSK1_VocabID'] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modal' . $row[$HSK_id] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -178,7 +179,7 @@
            
           </div>
           <div class="modal-body">
-          <form>
+          <form action="Delete.php">
           <div class="form-group">
             <label for="exampleFormControlInput1">คำศัพท์</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['ch'] . '">
@@ -195,13 +196,15 @@
       <label for="exampleFormControlInput1">คำแปล</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['th'] . '">
     </div>
-         
-        </form>
+          <input type="hidden" value="' . $row[$HSK_id] . '" name="vocabId">
+          <input type="hidden" value="' .$_GET['set'] . '" name="set">
+          <input type="hidden" value="' .$_GET['part'] . '" name="part">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">ยืนยัน</button>
+            <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-          </div>
+          </div> 
+           </form>
         </div>
       </div>
     </div>
@@ -236,12 +239,4 @@
                 }, false)
             })
     })()
-
-    // function setValue() {
-    //     var selectBox = document.getElementById("validationCustom");
-    //     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-      
-    //     console.log(selectedValue);
-    //     // document.getElementById(target).value = seclectedValue;
-    // }
 </script>

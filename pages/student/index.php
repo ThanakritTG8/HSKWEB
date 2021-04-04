@@ -41,11 +41,7 @@ if (isset($_SESSION['success'])) {
         font-family: 'Prompt', sans-serif;
     }
 
-    #body {
-        font-family: 'Prompt', sans-serif;
-        background-color: #fdb9b9;
-    }
-
+   
 
     @media (min-width: 576px) {
         .jumbotron {
@@ -53,14 +49,7 @@ if (isset($_SESSION['success'])) {
         }
     }
 
-    #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
-        max-height: 100px;
-    }
-
+  
     .text-header {
         margin-top: 40px;
     }
@@ -180,7 +169,10 @@ if (isset($_SESSION['success'])) {
             </div>
             <script>
                 function btn_hsk1() {
-                    window.location.replace('HSK1.php')
+                    window.location.replace('HSK.php?set=1')
+                };
+                function btn_hsk2() {
+                    window.location.replace('HSK.php?set=2')
                 };
             </script>
 
@@ -196,7 +188,7 @@ if (isset($_SESSION['success'])) {
 
             if ($result['HSK1_Pretest'] >= 20 || $result['HSK1_Posttest'] >= 20) {
                 echo '<div class="col-sm-4">
-                    <div class=" text-center" id="btn_menu">
+                    <div class=" text-center" id="btn_menu"  onclick="btn_hsk2()">
                         <div class="card-body underlineHover">
                             <img src="../../img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                             <h4 class="card-title">HSK2</h4>
@@ -224,15 +216,9 @@ if (isset($_SESSION['success'])) {
     <!-- //////////////////script -->
 
 
-    <script src="./js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </div>
 </body>
 

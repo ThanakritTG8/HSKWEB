@@ -31,6 +31,7 @@ if (isset($_SESSION['err'])) {
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background-color: #fff0f0;
   }
 
   a {
@@ -413,7 +414,7 @@ if (isset($_SESSION['err'])) {
 
 
           <div class="form-row">
-            <div class="form-group  col-12  col-md-10">
+            <div class="form-group  col-12  col-md-12">
               <label for="inputEmail4">Email</label>
               <input type="email" class="form-control" name="email" required>
             </div>

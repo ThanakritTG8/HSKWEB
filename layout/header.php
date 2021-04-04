@@ -10,7 +10,10 @@
         }
     }
 
-
+    #body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #fff0f0;
+    }
     #header {
         background: rgb(75, 75, 75);
         /* height: 100px; */
@@ -58,10 +61,10 @@
                     HSK1
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HSK1_menu.php?part=1">ชุดที่1</a>
-                    <a class="dropdown-item" href="HSK1_menu.php?part=2">ชุดที่2</a>
-                    <a class="dropdown-item" href="HSK1_menu.php?part=3">ชุดที่3</a>
-                    <a class="dropdown-item" href="HSK1_menu.php?part=4">ชุดที่4</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=1&&set=1">ชุดที่1</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=2&&set=1">ชุดที่2</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=3&&set=1">ชุดที่3</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=4&&set=1">ชุดที่4</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="hsk1_post.php">แบบทดสอบหลังเรียน</a>
                 </div>
@@ -82,10 +85,10 @@
                       HSK2
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="HSK2_menu.php?part=1">ชุดที่1</a>
-                      <a class="dropdown-item" href="HSK2_menu.php?part=2">ชุดที่2</a>
-                      <a class="dropdown-item" href="HSK2_menu.php?part=3">ชุดที่3</a>
-                      <a class="dropdown-item" href="HSK2_menu.php?part=4">ชุดที่4</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=1&&set=2">ชุดที่1</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=2&&set=2">ชุดที่2</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=3&&set=2">ชุดที่3</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=4&&set=2">ชุดที่4</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a>
                     </div>

@@ -1,7 +1,7 @@
   <!-- <include header> -->
   <?php include('../../layout/headerAdmin.php'); ?>
 
-   
+
 
   <style>
       .container {
@@ -21,6 +21,7 @@
           text-transform: uppercase;
 
       }
+
       .card {
           width: 100%;
           margin-top: 50px;
@@ -40,8 +41,9 @@
       .icon-delete:hover {
           color: #e72c2c;
       }
-      .modal-footer{
-        padding: 5px !important;
+
+      .modal-footer {
+          padding: 5px !important;
       }
 
       @media(max-width:700px) {
@@ -109,9 +111,9 @@
                                           </div>
 
                                           <div class="modal-footer">
+                                              <button type="submit" class="btn btn-primary">ยืนยัน</button>
 
-                                              <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                              <button type="submit" class="btn btn-primary">save</button>
+                                              <button type="reset" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                                           </div>
                                       </form>
                                   </div>
@@ -162,8 +164,8 @@
                   </div>
                   <div class="modal-footer">
                         <input type="hidden" name="sh_delete" value="' . $row['SchoolID'] . '">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Save</button>
+                      <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                      
                   </div>
                   </form>
@@ -237,9 +239,8 @@
                                       </div>
 
                                       <div class="modal-footer">
-
-                                          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <button type="submit" class="btn btn-primary">save</button>
+                                          <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                                          <button type="reset" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                                       </div>
                                   </form>
                               </div>

@@ -53,7 +53,11 @@ if (isset($_SESSION['create'])) {
 <style>
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fdb9b9;
+        background-color: #fff0f0;
+    }
+    .card{
+        box-shadow: 0 20px 30px 0 rgba(100, 100, 100);
+
     }
 
     nav {
