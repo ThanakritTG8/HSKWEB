@@ -147,7 +147,7 @@
                                     $query = "SELECT * FROM (((Student 
                                  INNER JOIN HSK_Exam_Score ON Student.SID = HSK_Exam_Score.SID)
                                  INNER JOIN HSK1_Exercise_Score ON Student.SID =HSK1_Exercise_Score.SID)
-                                 INNER JOIN School ON student.SchoolID =School.SchoolID)";
+                                 INNER JOIN School ON Student.SchoolID =School.SchoolID)";
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $no += 1;

@@ -14,12 +14,18 @@
         font-family: 'Prompt', sans-serif;
         background-color: #fff0f0;
     }
+
     #header {
         background: rgb(75, 75, 75);
         /* height: 100px; */
         color: #fff;
 
         max-height: 100px;
+    }
+    .item-dis{
+        cursor: help;
+        margin-bottom: 0px !important;
+        text-align: center;
     }
 </style>
 <!-- navbar -->
@@ -66,7 +72,25 @@
                     <a class="dropdown-item" href="HSK_menu.php?part=3&&set=1">ชุดที่3</a>
                     <a class="dropdown-item" href="HSK_menu.php?part=4&&set=1">ชุดที่4</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="hsk1_post.php">แบบทดสอบหลังเรียน</a>
+                    <?php
+
+                    include('../../database/database.php');
+                    $sid = "SID";
+                    $id = $_SESSION['SID'];
+
+                    if ($_GET['set'] = 1) {
+                        $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
+                    } elseif ($_GET['set'] = 2) {
+                        $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
+                    }
+                    $query = mysqli_query($conn, $check);
+                    $result = mysqli_fetch_assoc($query);
+                    if ($result['hsk1_session_4'] >= 20) :
+                    ?>
+                        <a class="dropdown-item" href="hsk_post.php">แบบทดสอบหลังเรียน</a>
+                    <?php else : ?>
+                        <p class="item-dis">แบบทดสอบหลังเรียน </p>
+                    <?php endif ?>
                 </div>
             </li>
 

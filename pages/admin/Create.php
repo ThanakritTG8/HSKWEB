@@ -28,7 +28,7 @@ if (isset($_GET['vocab'])) {
     $type_ch = $_POST['type_ch'];
     $th = $_POST['th'];
     $sound = $_POST['sound'];
-    $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
+    $HSK_id = 'HSK' . $_GET['set'] . '_VocabID';
 } else {
     ///////// set ตัวแปลส่วนของหน้า techer
     $name_Sh =  $_POST['nameSchool'];
@@ -40,7 +40,7 @@ if (isset($_GET['vocab'])) {
 }
 
 if (isset($_GET['set'])) {
-    echo $_GET['set'] ;
+    echo $_GET['set'];
     $part = $_GET['part'];
     $set = $_GET['set'];
     $sql = "INSERT INTO  $hsk VALUES(NULL,'$type','$type_word',' $vocab_no',' $ch','$pinyin','$type_ch','$th','$sound',' $part')";
@@ -55,7 +55,7 @@ if (isset($_GET['set'])) {
         $_SESSION['create'] = "มีชื่อโรงเรียน " . $user . " ในฐานระบบแล้ว!";
     } else {
 
-        $sql = "INSERT INTO school  VALUES(NULL,'$name_Sh')";
+        $sql = "INSERT INTO School  VALUES(NULL,'$name_Sh')";
         $results =   mysqli_query($conn, $sql);
         $_SESSION['create'] = "create school account สำเร็จ!";
 
@@ -70,7 +70,7 @@ if (isset($_GET['set'])) {
         $_SESSION['create'] = "มีผู้ใช้งาน user : " . $user . " แล้ว!";
     } else {
 
-        $sql = "INSERT INTO teacher  VALUES(NULL,'$name','$Lname','$passw','$sh','$user')";
+        $sql = "INSERT INTO Teacher  VALUES(NULL,'$name','$Lname','$passw','$sh','$user')";
         $results =   mysqli_query($conn, $sql);
         $_SESSION['create'] = "create account สำเร็จ!";
 

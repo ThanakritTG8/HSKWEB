@@ -7,7 +7,7 @@ $hsk = '';
 $vocabId = '';
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
 if (isset($_GET['vocabId'])) {
-    $hsk = 'Hsk' . $_GET['set'] . '_Vocab';
+    $hsk = 'HSK' . $_GET['set'] . '_Vocab';
     $vocabId = $_GET['vocabId'];
     $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
 } else {
@@ -15,7 +15,6 @@ if (isset($_GET['vocabId'])) {
     $tid =  $_POST['delete'];
     $sh_id = $_POST['sh_delete'];
 }
-
 
 
 if(isset($_GET['vocabId'])){
