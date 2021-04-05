@@ -19,7 +19,7 @@ $sound = '';
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
 if (isset($_GET['vocab'])) {
     $ch = $_POST['ch'];
-    $hsk = 'Hsk' . $_GET['set'] . '_vocab';
+    $hsk = 'HSK' . $_GET['set'] . '_vocab';
     $type = $_POST['type'];
     $type_word = $_POST['type_word'];
     $vocab_no = $_POST['vocab_no'];
@@ -45,7 +45,7 @@ if (isset($_GET['set'])) {
     $set = $_GET['set'];
     $sql = "INSERT INTO  $hsk VALUES(NULL,'$type','$type_word',' $vocab_no',' $ch','$pinyin','$type_ch','$th','$sound',' $part')";
     $results =   mysqli_query($conn, $sql);
-    $_SESSION['create'] = "create account สำเร็จ!";
+    $_SESSION['create'] = "เพิ่มคำศัพท์ สำเร็จ!";
     header('location:./editVocab.php?set=' . $set . '&&part=' . $part);
 } elseif ($name_Sh) {
     $user_check_query = "SELECT * FROM School WHERE SchoolName = '$name_Sh' ";
@@ -57,7 +57,7 @@ if (isset($_GET['set'])) {
 
         $sql = "INSERT INTO School  VALUES(NULL,'$name_Sh')";
         $results =   mysqli_query($conn, $sql);
-        $_SESSION['create'] = "create school account สำเร็จ!";
+        $_SESSION['create'] = "เพิ่ม school account สำเร็จ!";
 
         header('location:./teacher.php');
     }
@@ -72,7 +72,7 @@ if (isset($_GET['set'])) {
 
         $sql = "INSERT INTO Teacher  VALUES(NULL,'$name','$Lname','$passw','$sh','$user')";
         $results =   mysqli_query($conn, $sql);
-        $_SESSION['create'] = "create account สำเร็จ!";
+        $_SESSION['create'] = "เพิ่ม account สำเร็จ!";
 
         header('location:./teacher.php');
     }
