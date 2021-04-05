@@ -19,7 +19,7 @@ $sound = '';
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
 if (isset($_GET['vocab'])) {
     $ch = $_POST['ch'];
-    $hsk = 'HSK' . $_GET['set'] . '_vocab';
+    $hsk = 'HSK' . $_GET['set'] . '_Vocab';
     $type = $_POST['type'];
     $type_word = $_POST['type_word'];
     $vocab_no = $_POST['vocab_no'];

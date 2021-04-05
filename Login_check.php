@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
         $_SESSION['TID'] =  $result_send_t['TID'];
         $_SESSION['success'] = "You are now log in";
 
-        header('location:./pages/teacher/Teacher_index.php');
+        header('location:./pages/teacher/teacher_index.php');
     } else if (mysqli_num_rows($result_a) == 1) {
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now log in";
