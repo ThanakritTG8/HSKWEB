@@ -183,7 +183,7 @@ if (isset($_GET['logout'])) {
                             <!-- <audio src="/sound/20th Century Recorder Edition.mp3" id="sound"></audio> -->
 
 
-                            <form action="HSK1_lesson_check.php" method="post">
+                            <form action="HSK_lesson_check.php?set=<?= $set ?>" method="post">
                                 <?php
                                 include('../../database/database.php');
                                 $sesion = "session";
@@ -193,7 +193,7 @@ if (isset($_GET['logout'])) {
 
                                 while ($row = mysqli_fetch_assoc($result)) {
 
-                                    echo '<form action="HSK' . $set . '_lesson_check.php" method="post">
+                                    echo '<form action="HSK_lesson_check.php?set=' . $set . '" method="post">
 <input type="hidden"  name="lesson_name"  value=' . $row['pic'] . '>
 <input type="hidden"  name="lesson"  value=' . $ses . '>
 <button type="submit" class="btn-submit list-group-item list-group-item-action text-center"

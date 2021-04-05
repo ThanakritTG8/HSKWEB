@@ -16,6 +16,7 @@ if (isset($_GET['logout'])) {
 <html lang="en">
 
 <head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocab</title>
@@ -29,7 +30,6 @@ if (isset($_GET['logout'])) {
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
 <style>
-  
     @media screen and (max-width: 500px) {
         .wrapper {
             padding: 0px;
@@ -82,30 +82,31 @@ if (isset($_GET['logout'])) {
 
             while ($row_type = mysqli_fetch_assoc($result_type)) {
                 $type = $row_type['type'];
-
-
+         
                 ////// หาประเภทคำ type_word
                 $query_type_word = "SELECT * FROM $set WHERE type = '$type' GROUP BY type_word ";
                 $result_type_word = mysqli_query($conn, $query_type_word);
 
                 if ((mysqli_num_rows($result_type_word) >= 1)) {
-
+              
                     while ($row_type_word = mysqli_fetch_assoc($result_type_word)) {
                         if (!$row_type_word['type_word']) {
                             echo '<h5 class="title" id="subtitle-vocab">' . $type . '</h5>';
+                  
                         } else {
                             echo '<h5 class="title" id="subtitle-vocab">' . $row_type_word['type_word'] . '</h5>';
+                     
                         }
                         $type_word = $row_type_word['type_word'];
 
                         ////// หาคำศัพท์
                         $query = "SELECT * FROM $set WHERE type = '$type' AND type_word = '$type_word'  ";
                         $result = mysqli_query($conn, $query);
+                
 
                         if ((mysqli_num_rows($result) >= 1)) {
-                            echo '
-   <table class="table" >
-       <tbody>';
+                            echo '<table class="table" >
+                         <tbody>';
                             while ($row = mysqli_fetch_assoc($result)) {
 
                                 echo '  <tr class="table-light">
@@ -115,17 +116,16 @@ if (isset($_GET['logout'])) {
                    <td>' . $row['th'] . '</td>
                    <td><a href=""><i class="fas fa-volume-up"></i></a></td>
                    
-               </tr>
-               ';
+                               </tr>
+                                   ';
                             }
                             echo '  </tbody>
-</table>
-';
+                                        </table>';
                         } else {
                             echo "ไม่มี";
                         }
                     }
-                }
+                } 
             }
 
 
