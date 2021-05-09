@@ -391,6 +391,7 @@ if (isset($_SESSION['err'])) {
             <div class="form-group  col-12 col-md-12">
               <label for="inputEmail4">Password</label>
               <input type="password" class="form-control" name="password1" id="password" minlength="6" maxlength="10" required>
+              <small id="password" class="form-text text-muted">อย่างน้อย 6-10 ตัวอักษร</small>
             </div>
           </div>
 

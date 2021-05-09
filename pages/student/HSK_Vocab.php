@@ -82,27 +82,25 @@ if (isset($_GET['logout'])) {
 
             while ($row_type = mysqli_fetch_assoc($result_type)) {
                 $type = $row_type['type'];
-         
+
                 ////// หาประเภทคำ type_word
                 $query_type_word = "SELECT * FROM $set WHERE type = '$type' GROUP BY type_word ";
                 $result_type_word = mysqli_query($conn, $query_type_word);
 
                 if ((mysqli_num_rows($result_type_word) >= 1)) {
-              
+
                     while ($row_type_word = mysqli_fetch_assoc($result_type_word)) {
                         if (!$row_type_word['type_word']) {
                             echo '<h5 class="title" id="subtitle-vocab">' . $type . '</h5>';
-                  
                         } else {
                             echo '<h5 class="title" id="subtitle-vocab">' . $row_type_word['type_word'] . '</h5>';
-                     
                         }
                         $type_word = $row_type_word['type_word'];
 
                         ////// หาคำศัพท์
                         $query = "SELECT * FROM $set WHERE type = '$type' AND type_word = '$type_word'  ";
                         $result = mysqli_query($conn, $query);
-                
+
 
                         if ((mysqli_num_rows($result) >= 1)) {
                             echo '<table class="table" >
@@ -125,7 +123,7 @@ if (isset($_GET['logout'])) {
                             echo "ไม่มี";
                         }
                     }
-                } 
+                }
             }
 
 
@@ -138,7 +136,6 @@ if (isset($_GET['logout'])) {
     <!-- //////////////////script -->
 
 
-    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
