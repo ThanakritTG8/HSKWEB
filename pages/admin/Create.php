@@ -28,7 +28,21 @@ if (isset($_GET['vocab'])) {
     $type_ch = $_POST['type_ch'];
     $th = $_POST['th'];
     $sound = $_POST['sound'];
-    $HSK_id = 'HSK' . $_GET['set'] . '_VocabID';
+}
+
+///////// set ตัวแปลส่วนของหน้า บทเรียน
+elseif (isset($_GET['less'])) {
+    $hsk = 'HSK' . $_GET['set'] . '_lesson';
+    $part = $_GET['part'];
+    $set = $_GET['set'];
+    $less_name = $_POST['less_name'];
+    $sound = $_FILES['sound']['name'];
+    $tmp_name_sound =  $_FILES['sound']['tmp_name'];
+    $pic = $_FILES['pic']['name'];
+    $tmp_name_pic =  $_FILES['pic']['tmp_name'];
+    ////// โฟลเดอ img ที่จะ upload
+    $locate_img = '../../img/บทเรียนHSK' . $set . '_ชุดที่' . $part . '/';
+    move_uploaded_file($tmp_name_pic, $locate_img . $pic);
 } else {
     ///////// set ตัวแปลส่วนของหน้า techer
     $name_Sh =  $_POST['nameSchool'];
@@ -39,14 +53,22 @@ if (isset($_GET['vocab'])) {
     $sh =  $_POST['sh'];
 }
 
-if (isset($_GET['set'])) {
-    echo $_GET['set'];
+if (isset($_GET['vocab'])) {
     $part = $_GET['part'];
     $set = $_GET['set'];
     $sql = "INSERT INTO  $hsk VALUES(NULL,'$type','$type_word',' $vocab_no',' $ch','$pinyin','$type_ch','$th','$sound',' $part')";
     $results =   mysqli_query($conn, $sql);
     $_SESSION['create'] = "เพิ่มคำศัพท์ สำเร็จ!";
     header('location:./editVocab.php?set=' . $set . '&&part=' . $part);
+} elseif (isset($_GET['less'])) {
+
+    $part = $_GET['part'];
+    $set = $_GET['set'];
+    echo  'hsk ' . $hsk . 'pic' . $pic . 'sound' . $sound . 'part' . $part . 'less_name' . $less_name;
+    $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name')";
+    $results =   mysqli_query($conn, $sql);
+    $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
+    header('location:./editLess.php?set=' . $set . '&&part=' . $part);
 } elseif ($name_Sh) {
     $user_check_query = "SELECT * FROM School WHERE SchoolName = '$name_Sh' ";
     $query_ch = mysqli_query($conn, $user_check_query);

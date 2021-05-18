@@ -13,7 +13,7 @@
       }
 
       .filter {
-          width: 100%;
+          width: 250px;
       }
 
       .form-label {
@@ -55,6 +55,12 @@
       .table-scroll {
           overflow-x: scroll;
       }
+      @media (min-width : 750px) {
+        .filter {
+          width: 450px;
+      }
+
+      }
 
       @media (min-width : 1000px) {
           .table-scroll {
@@ -90,40 +96,7 @@
                               <input class="form-control p-2" id="score" type="text" placeholder="Search..">
                           </div>
 
-                          <div class="filter">
-                              <div class="form-select select">
-                                  <label class="form-label d-flex align-items-center">Filter by School :</label>
-                                  <select class=" form-control " id="select" name="sh" required>
-                                      <option selected disabled value="">select </option>
-                                      <option value="">All </option>
-                                      <?php
-                                        include('../../database/database.php');
-
-                                        $query = "SELECT * FROM School ";
-                                        $result = mysqli_query($conn, $query);
-
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value = ' . $row['SchoolName'] .  '>' . $row['SchoolName'] . '</option>';
-                                        }
-
-                                        ?>
-                                  </select>
-
-                              </div>
-                              <div class="form-select select">
-                                  <label class="form-label d-flex align-items-center">Sort by :</label>
-                                  <select class=" form-control " id="select" name="sh" required>
-                                      <option selected disabled value="">Sort </option>
-                                      <option value="">Pretest </option>
-                                      <option value="">Postest </option>
-                                      <option value="">ชุดที่ 1</option>
-                                      <option value="">ชุดที่ 2 </option>
-                                      <option value="">ชุดที่ 3 </option>
-                                      <option value="">ชุดที่ 4 </option>
-
-                                  </select>
-                              </div>
-                          </div>
+                        
                       </div>
                       <div class="table-scroll">
                           <table class="table table-bordered  text-center">
@@ -181,41 +154,7 @@
                           <div class="d-flex align-items-end filter">
                               <input class="form-control p-2" id="score" type="text" placeholder="Search..">
                           </div>
-                          <div class="filter">
-                              <div class="form-select select">
-                                  <label class="form-label d-flex align-items-center">Filter by School :</label>
-                                  <select class=" form-control " id="select" name="sh" required>
-                                      <option selected disabled value="">select </option>
-                                      <option value="">All </option>
-                                      <?php
-                                        include('../../database/database.php');
 
-                                        $query = "SELECT * FROM School ";
-                                        $result = mysqli_query($conn, $query);
-
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value = ' . $row['SchoolName'] .  '>' . $row['SchoolName'] . '</option>';
-                                        }
-
-                                        ?>
-                                  </select>
-
-                              </div>
-                              <div class="form-select select">
-                                  <label class="form-label d-flex align-items-center">Sort by :</label>
-                                  <select class=" form-control " id="select" name="sh" required>
-                                      <option selected disabled value="">Sort </option>
-                                      <option value="">Pretest </option>
-                                      <option value="">Postest </option>
-                                      <option value="">ชุดที่ 1</option>
-                                      <option value="">ชุดที่ 2 </option>
-                                      <option value="">ชุดที่ 3 </option>
-                                      <option value="">ชุดที่ 4 </option>
-
-                                  </select>
-                              </div>
-
-                          </div>
 
                       </div>
                       <div class="table-scroll">
@@ -274,15 +213,6 @@
   <script>
       $(document).ready(function() {
           $("#score").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
-              $("#scoreTable tr").filter(function() {
-                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
-          });
-
-      });
-      $(document).ready(function() {
-          $("#select").on("change", function() {
               var value = $(this).val().toLowerCase();
               $("#scoreTable tr").filter(function() {
                   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)

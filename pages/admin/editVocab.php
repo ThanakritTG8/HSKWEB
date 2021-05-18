@@ -54,11 +54,12 @@
 <div class="modal fade" id="modal-create" tabindex="-1" aria-labelledby="modal-createLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title">เพิ่มคำศัพท์</h5>
+            </div>
             <form action="Create.php?vocab='1'&&set=<?= $_GET['set'] ?>&&part=<?= $_GET['part'] ?>" method="post" class="needs-validation" novalidate autocomplete="off">
                 <div class="modal-body">
-                    เพิ่มคำศัพท์
-                    <hr>
+
                     <div class="d-flex justify-content-center">
                         <div style="width: 70%;">
                             <label>หมวด</label>
@@ -93,15 +94,17 @@
                                 ?>
                             </select>
                             <label>No.</label>
-                            <input type="text" class="form-control" placeholder="3" name="vocab_no">
+                            <input type="text" class="form-control" name="vocab_no">
                             <label>คำศัพท์</label>
-                            <input type="text" class="form-control" placeholder="下个星期" name="ch" required>
+                            <input type="text" class="form-control" name="ch" required>
                             <label>พินอิน</label>
-                            <input type="text" class="form-control" placeholder="xiàge xīngqī" name="pinyin" required>
+                            <input type="text" class="form-control" name="pinyin" required>
                             <label>ประเภท</label>
-                            <input type="text" class="form-control" placeholder="(代) " name="type_ch">
+                            <input type="text" class="form-control" name="type_ch">
+                            <div class="form-text text-end">( Ex. 代 )</div>
                             <label>คำแปล</label>
-                            <input type="text" class="form-control" placeholder="สัปดาห์หน้า" name="th" required>
+                            <input type="text" class="form-control" name="th" required>
+                            <div class="form-text text-end">( Ex.สัปดาห์หน้า )</div>
                             <label>เสียง</label>
                             <input type="file" class="form-control-file" name="sound">
 
@@ -128,7 +131,7 @@
                 <span><?php echo 'HSK' . $_GET['set'] . ' ชุดที่' . $_GET['part'] ?> </span>
             </div>
         </div>
-        <div class="btn btn-success-teacher btn-success" data-toggle="modal" data-target="#modal-create">เพิ่ม<i class="fas fa-plus-circle" style="margin-left: 5px;"></i></div>
+        <div class="btn btn-success" data-toggle="modal" data-target="#modal-create">เพิ่มคำศัพท์<i class="fas fa-plus-circle" style="margin-left: 5px;"></i></div>
 
         <div class="set-table">
             <table class="table table-striped table-bordered">
@@ -151,7 +154,7 @@
                     <?php
                     include('../../database/database.php');
                     $set = 'HSK' . $_GET['set'] . '_Vocab';
-                    $HSK_id = 'HSK'. $_GET['set'] .'_VocabID';
+                    $HSK_id = 'HSK' . $_GET['set'] . '_VocabID';
                     $part = $_GET['part'];
                     $ses = 'session';
                     $no = 0;
@@ -172,33 +175,22 @@
       <th scope="row"><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal' . $row[$HSK_id] . '"></i></th>
       <!-- /// Modal Delete -->
       <div class="modal fade" id="modal' . $row[$HSK_id] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title " id="exampleModalLabel">ลบ</h5>
+            <h5 class="modal-title " id="exampleModalLabel">คุณต้องการจะลบ ?</h5>
            
           </div>
           <div class="modal-body">
           <form action="Delete.php">
           <div class="form-group">
-            <label for="exampleFormControlInput1">คำศัพท์</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['ch'] . '">
+            <h5 for="exampleFormControlInput1" class="text-center" style =" width:100%" >คำศัพท์ : ' .  $row['ch'] . '</h5>
+       
           </div>
-          <div class="form-group">
-          <label for="exampleFormControlInput1">พินอิน</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['pinyin'] . '">
-          </div>
-        <div class="form-group">
-        <label for="exampleFormControlInput1">ประเภท</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['type_ch'] . '">
-      </div>
-      <div class="form-group">
-      <label for="exampleFormControlInput1">คำแปล</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="' .  $row['th'] . '">
-    </div>
+     
           <input type="hidden" value="' . $row[$HSK_id] . '" name="vocabId">
-          <input type="hidden" value="' .$_GET['set'] . '" name="set">
-          <input type="hidden" value="' .$_GET['part'] . '" name="part">
+          <input type="hidden" value="' . $_GET['set'] . '" name="set">
+          <input type="hidden" value="' . $_GET['part'] . '" name="part">
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">ยืนยัน</button>

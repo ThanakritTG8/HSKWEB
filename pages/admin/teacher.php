@@ -291,9 +291,10 @@
                   </div>
                   <div class="modal-footer">
                   <form action="Delete.php" method="post">
-<input type="hidden" name="delete" value="' . $row['TID'] . '">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Delete</button>
+                       <input type="hidden" name="delete" value="' . $row['TID'] . '">
+                        <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                      
                       </form>
                   </div>
               </div>
