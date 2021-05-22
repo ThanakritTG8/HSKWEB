@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+if (isset($_GET['hsk_1'])) {
+    $hsk_set = 1;
+} elseif (isset($_GET['hsk_2'])) {
+    $hsk_set = 2;
+}
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first!";
     header('location: Login.php');
@@ -14,8 +18,8 @@ if (isset($_GET['logout'])) {
 include('../../database/database.php');
 $sesion = "session";
 $ses = $_GET['part'];
-$set = 'HSK' . $_GET['set'] . '_lesson';
-$query = "SELECT * FROM $set WHERE $sesion = $ses GROUP BY $sesion";
+$hsk = 'HSK' .  $hsk_set . '_lesson';
+$query = "SELECT * FROM $hsk WHERE $sesion = $ses GROUP BY $sesion";
 $result = mysqli_query($conn, $query);
 $result_send = mysqli_fetch_assoc($result);
 $_SESSION['less_name'] = $result_send['pic'];
@@ -110,17 +114,16 @@ $_SESSION['less_name'] = $result_send['pic'];
     <?php include('../../layout/header.php'); ?>
 
 
+
     <!-- header -->
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK<?= $_GET['set']; ?> ชุดที่ <?= $_GET['part']; ?>
+                HSK<?= $hsk_set;  ?> ชุดที่ <?= $_GET['part']; ?>
             </h1>
 
         </div>
     </header>
-
-
     <!-- ////////////////// body -->
 
     <div class="container">
@@ -130,7 +133,7 @@ $_SESSION['less_name'] = $result_send['pic'];
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
                 <a href="
-                    HSK_Vocab.php?vocab=<?= $_GET['part']; ?>&&set=<?= $_GET['set']; ?>
+                    HSK_Vocab.php?vocab=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/flag-china.png" alt="" style="width: 50px; margin-bottom: 20px;">
@@ -140,7 +143,7 @@ $_SESSION['less_name'] = $result_send['pic'];
             </div>
             <div class="col-sm-4">
                 <a href="
-                    HSK_lesson.php?lesson=<?= $_GET['part']; ?>&&set=<?= $_GET['set']; ?>
+                    HSK_lesson.php?lesson=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/online-lesson.png" alt="" style="width: 50px; margin-bottom: 20px;">
@@ -154,7 +157,7 @@ $_SESSION['less_name'] = $result_send['pic'];
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
                 <a href="
-                    HSK_mooc.php?mooc=<?= $_GET['part']; ?>&&set=<?= $_GET['set']; ?>
+                    HSK_mooc.php?mooc=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/multimedia.png" alt="" style="width: 50px; margin-bottom: 20px;">

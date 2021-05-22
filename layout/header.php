@@ -67,10 +67,10 @@
                     HSK1
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HSK_menu.php?part=1&&set=1">ชุดที่1</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=2&&set=1">ชุดที่2</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=3&&set=1">ชุดที่3</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=4&&set=1">ชุดที่4</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=1&&hsk_1">ชุดที่1</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=2&&hsk_1">ชุดที่2</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=3&&hsk_1">ชุดที่3</a>
+                    <a class="dropdown-item" href="HSK_menu.php?part=4&&hsk_1">ชุดที่4</a>
                     <div class="dropdown-divider"></div>
                     <?php
 
@@ -78,9 +78,9 @@
                     $sid = "SID";
                     $id = $_SESSION['SID'];
 
-                    if ($_GET['set'] = 1) {
+                    if ($_GET['hsk'] = 1) {
                         $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
-                    } elseif ($_GET['set'] = 2) {
+                    } elseif ($_GET['hsk'] = 2) {
                         $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
                     }
                     $query = mysqli_query($conn, $check);
@@ -109,10 +109,10 @@
                       HSK2
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="HSK_menu.php?part=1&&set=2">ชุดที่1</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=2&&set=2">ชุดที่2</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=3&&set=2">ชุดที่3</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=4&&set=2">ชุดที่4</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=1&&hsk_2">ชุดที่1</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=2&&hsk_2">ชุดที่2</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=3&&hsk_2">ชุดที่3</a>
+                      <a class="dropdown-item" href="HSK_menu.php?part=4&&hsk_2">ชุดที่4</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a>
                     </div>

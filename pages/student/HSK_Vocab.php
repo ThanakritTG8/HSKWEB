@@ -55,13 +55,19 @@ if (isset($_GET['logout'])) {
 
 
     <!-- <include header> -->
-    <?php include('../../layout/header.php'); ?>
+    <?php include('../../layout/header.php');
+    if (isset($_GET['hsk_1'])) {
+        $hsk_set = 1;
+    } elseif (isset($_GET['hsk_2'])) {
+        $hsk_set = 2;
+    }
+    ?>
 
     <!-- header -->
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK<?php echo $_GET['set']; ?> คำศัพท์พื้นฐาน ชุดที่ <?php echo $_GET['vocab']; ?>
+                HSK<?php echo $hsk_set; ?> คำศัพท์พื้นฐาน ชุดที่ <?php echo $_GET['vocab']; ?>
             </h1>
         </div>
     </header>
@@ -75,16 +81,16 @@ if (isset($_GET['logout'])) {
 
             $session = "session";
             $ses = $_GET['vocab'];
-            $set = "HSK" . $_GET['set'] . "_Vocab";
+            $hsk = "HSK" . $hsk_set . "_Vocab";
             ////หาประเภทคำ type 
-            $query_type = "SELECT * FROM $set WHERE $session = $ses GROUP BY type  ";
+            $query_type = "SELECT * FROM $hsk WHERE $session = $ses GROUP BY type  ";
             $result_type = mysqli_query($conn, $query_type);
 
             while ($row_type = mysqli_fetch_assoc($result_type)) {
                 $type = $row_type['type'];
 
                 ////// หาประเภทคำ type_word
-                $query_type_word = "SELECT * FROM $set WHERE type = '$type' GROUP BY type_word ";
+                $query_type_word = "SELECT * FROM $hsk WHERE type = '$type' GROUP BY type_word ";
                 $result_type_word = mysqli_query($conn, $query_type_word);
 
                 if ((mysqli_num_rows($result_type_word) >= 1)) {
@@ -98,7 +104,7 @@ if (isset($_GET['logout'])) {
                         $type_word = $row_type_word['type_word'];
 
                         ////// หาคำศัพท์
-                        $query = "SELECT * FROM $set WHERE type = '$type' AND type_word = '$type_word'  ";
+                        $query = "SELECT * FROM $hsk WHERE type = '$type' AND type_word = '$type_word'  ";
                         $result = mysqli_query($conn, $query);
 
 

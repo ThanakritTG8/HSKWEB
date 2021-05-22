@@ -169,10 +169,10 @@ if (isset($_SESSION['success'])) {
             </div>
             <script>
                 function btn_hsk1() {
-                    window.location.replace('HSK.php?set=1')
+                    window.location.replace('HSK.php?hsk_1')
                 };
                 function btn_hsk2() {
-                    window.location.replace('HSK.php?set=2')
+                    window.location.replace('HSK.php?hsk_2')
                 };
             </script>
 

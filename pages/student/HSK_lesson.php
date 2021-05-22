@@ -105,13 +105,19 @@ if (isset($_GET['logout'])) {
 <body id="body">
 
     <!-- <include header> -->
-    <?php include('../../layout/header.php'); ?>
+    <?php include('../../layout/header.php');
+      if (isset($_GET['hsk_1'])) {
+        $hsk_set = 1;
+    } elseif (isset($_GET['hsk_2'])) {
+        $hsk_set = 2;
+    }
+    ?>
 
     <!-- header -->
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK<?php echo $_GET['set']; ?> บทเรียน ชุดที่<?php echo $_GET['lesson']; ?>
+                HSK<?php echo $hsk_set; ?> บทเรียน ชุดที่<?php echo $_GET['lesson']; ?>
             </h1>
         </div>
     </header>
@@ -149,12 +155,12 @@ if (isset($_GET['logout'])) {
                             $less_name = $_SESSION['less_name'];
                             $sesion = "session";
                             $ses = $_GET['lesson'];
-                            $set = $_GET['set'];
-                            $query = "SELECT * FROM HSK" . $set . "_lesson WHERE $sesion = $ses AND pic = '$less_name'";
+                            $hsk = $hsk_set;
+                            $query = "SELECT * FROM HSK" . $hsk . "_lesson WHERE $sesion = $ses AND pic = '$less_name'";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo '<img src="../../img/บทเรียนHSK' . $set . '_ชุดที่' . $ses . '/' . $row['pic'] . '" alt=""  id="img-lesson">';
+                                echo '<img src="../../img/บทเรียนHSK' . $hsk . '_ชุดที่' . $ses . '/' . $row['pic'] . '" alt=""  id="img-lesson">';
                             }
                             ?>
 
@@ -183,17 +189,17 @@ if (isset($_GET['logout'])) {
                             <!-- <audio src="/sound/20th Century Recorder Edition.mp3" id="sound"></audio> -->
 
 
-                            <form action="HSK_lesson_check.php?set=<?= $set ?>" method="post">
+                            <form action="HSK_lesson_check.php?hsk=<?= $hsk ?>" method="post">
                                 <?php
                                 include('../../database/database.php');
                                 $sesion = "session";
                                 $ses = $_GET['lesson'];
-                                $query = "SELECT * FROM HSK" . $set . "_lesson WHERE $sesion = $ses ";
+                                $query = "SELECT * FROM HSK" . $hsk . "_lesson WHERE $sesion = $ses ";
                                 $result = mysqli_query($conn, $query);
 
                                 while ($row = mysqli_fetch_assoc($result)) {
 
-                                    echo '<form action="HSK_lesson_check.php?set=' . $set . '" method="post">
+                                    echo '<form action="HSK_lesson_check.php?hsk=' . $hsk . '" method="post">
 <input type="hidden"  name="lesson_name"  value=' . $row['pic'] . '>
 <input type="hidden"  name="lesson"  value=' . $ses . '>
 <button type="submit" class="btn-submit list-group-item list-group-item-action text-center"
