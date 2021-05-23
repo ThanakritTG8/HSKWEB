@@ -20,12 +20,12 @@ if (isset($_POST['reg_user'])) {
   if ($result) {
     if ($result['SUsername'] === $username) {
 
-      $_SESSION['err'] = 'Username alredy exists';
+      $_SESSION['err'] = 'Username มีผู้ใช้งานแล้ว';
 
       header('location:Regis.php');
     }
     if ($result['Semail'] === $email) {
-      $_SESSION['err'] = 'email alredy exists';
+      $_SESSION['err'] = 'email มีผู้ใช้งานแล้ว';
       header('location:Regis.php');
     }
   }
@@ -35,7 +35,6 @@ if (isset($_POST['reg_user'])) {
     $sql = "INSERT INTO Student  VALUES(NULL,'$Fname','$Lname','$password','$email','$sh','$username')";
     $results =   mysqli_query($conn, $sql);
     $_SESSION['username'] = $Fname . ' ' . $Lname;
-    $_SESSION['success'] = "You are now log in";
     $_SESSION['topic_num'] = '1';
     unset($_SESSION['timeend']);
 

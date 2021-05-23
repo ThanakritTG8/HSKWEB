@@ -1,10 +1,9 @@
 <?php session_start();
 if (isset($_SESSION['err'])) {
   $message = $_SESSION['err'];
-  echo  "<script type='text/javascript'>alert('$message');</script>";
   session_destroy();
   unset($_SESSION['err']);
-}
+} else  $message = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +13,8 @@ if (isset($_SESSION['err'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
@@ -180,8 +179,8 @@ if (isset($_SESSION['err'])) {
   .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   }
@@ -255,33 +254,15 @@ if (isset($_SESSION['err'])) {
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s;
   }
 
   .fadeIn.first {
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-  }
-
-  .fadeIn.second {
-    -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-  }
-
-  .fadeIn.third {
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-  }
-
-  .fadeIn.fourth {
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    animation-delay: 1s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
   }
 
   /* Simple CSS3 Fade-in Animation */
@@ -317,6 +298,13 @@ if (isset($_SESSION['err'])) {
     /* height: 150px; */
 
   }
+  .form-row{
+    display: flex;
+    justify-content: center;
+  }
+  .form-control{
+    max-height: 45px;
+  }
 
   @media screen and (max-width: 500px) {
     #icon {
@@ -339,7 +327,7 @@ if (isset($_SESSION['err'])) {
       <!-- Login Form -->
       <form action="Login_check.php" method="post" class="needs-validation" novalidate autocomplete="off">
         <div class="form-row">
-          <div class="col-1 col-md-1"></div>
+          
           <div class="form-group  col-10 col-sm-8 col-md-10">
 
             <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -347,14 +335,19 @@ if (isset($_SESSION['err'])) {
         </div>
 
         <div class="form-row">
-          <div class="col-1 col-md-1"></div>
+          
           <div class="form-group  col-10 col-sm-8 col-md-10">
 
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group col-10 col-sm-8 col-md-10" style="font-size: 12px;">
 
-        <input type="submit" class="fadeIn fourth" name="login" value="Log In">
+            <?php include('./plugin/alert_err.php');?>
+        </div>
+
+        <input type="submit" class="fadeIn first" name="login" value="Log In">
 
 
       </form>
@@ -387,14 +380,13 @@ if (isset($_SESSION['err'])) {
         <img src="./img/pen.png" alt="" style="width: 20px;">
       </div>
 
+     
+
     </div>
+
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>

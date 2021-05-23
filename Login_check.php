@@ -33,9 +33,7 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['username'] = $result_send['Sname'] . ' ' . $result_send['SLname'];
-        $_SESSION['success'] = "You are now log in";
-
-        $SID = "SID";
+            $SID = "SID";
         $sid = $result_send[$SID];
         $check_score = "SELECT * FROM HSK_Exam_Score WHERE $SID ='$sid'";
         $result_score = mysqli_query($conn, $check_score);
@@ -53,16 +51,14 @@ if (isset($_POST['login'])) {
     } else if (mysqli_num_rows($result_t) == 1) {
         $_SESSION['username'] = $result_send_t['Tname'] . ' ' . $result_send_t['TLname'];
         $_SESSION['TID'] =  $result_send_t['TID'];
-        $_SESSION['success'] = "You are now log in";
 
         header('location:./pages/teacher/teacher_index.php');
     } else if (mysqli_num_rows($result_a) == 1) {
         $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now log in";
 
         header('location:./pages/admin/Admin_index.php');
     } else {
-        $_SESSION['err'] = 'Plase check username and password';
+        $_SESSION['err'] = 'กรุณาตรวจสอบ username และ password';
         header('location:Login.php');
     }
 }
