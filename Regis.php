@@ -4,10 +4,9 @@
 session_start();
 if (isset($_SESSION['err'])) {
   $message = $_SESSION['err'];
-  echo  "<script type='text/javascript'>alert('$message');</script>";
   session_destroy();
   unset($_SESSION['err']);
-}
+} else $message = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +14,14 @@ if (isset($_SESSION['err'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <title>HSk</title>
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
   /* BASIC */
@@ -206,8 +204,8 @@ if (isset($_SESSION['err'])) {
   .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   }
@@ -281,35 +279,16 @@ if (isset($_SESSION['err'])) {
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s;
   }
 
   .fadeIn.first {
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    animation-delay: 0.4s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
   }
-
-  .fadeIn.second {
-    -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-  }
-
-  .fadeIn.third {
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-  }
-
-  .fadeIn.fourth {
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    animation-delay: 1s;
-  }
-
   /* Simple CSS3 Fade-in Animation */
   .underlineHover:after {
     display: block;
@@ -348,6 +327,10 @@ if (isset($_SESSION['err'])) {
 
     padding: 20px;
   }
+
+  .text-muted {
+    font-size: 11px;
+  }
 </style>
 
 <body id="body">
@@ -378,7 +361,12 @@ if (isset($_SESSION['err'])) {
               <input type="text" class="form-control" name="Lname" required>
             </div>
           </div>
-
+          <div class="form-row">
+            <div class="form-group  col-12  col-md-12">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+          </div>
           <div class="form-row">
             <div class="form-group  col-12  col-md-12">
               <label for="inputEmail4">Username</label>
@@ -413,14 +401,6 @@ if (isset($_SESSION['err'])) {
             });
           </script>
 
-
-          <div class="form-row">
-            <div class="form-group  col-12  col-md-12">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" name="email" required>
-            </div>
-          </div>
-
           <div class="form-row">
             <div class="form-group col-8 col-md-6">
               <label for="inputEmail4" class="form-label">School</label>
@@ -444,47 +424,50 @@ if (isset($_SESSION['err'])) {
             </div>
           </div>
 
-
+          <div class="form-row">
+            <div class="col-12  col-md-12">
+              <?php include('./plugin/alert_err.php'); ?>
+            </div>
+          </div>
           <div class="text-center">
 
-            <input type="submit" name="reg_user" class="fadeIn fourth " value="SIGN UP">
+            <input type="submit" name="reg_user" class="fadeIn first " value="SIGN UP">
 
           </div>
-        </div>
+
       </form>
 
-      <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-          'use strict'
-
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
-
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-            .forEach(function(form) {
-              form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
-      </script>
-
-      <!-- Login Form -->
-
-      <!-- Remind Passowrd -->
       <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
         <p class="text-center" style="color: white; margin-bottom: 5px;"> Back </p>
       </a>
     </div>
   </div>
 
+
 </body>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
