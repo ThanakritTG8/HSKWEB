@@ -42,7 +42,11 @@ elseif (isset($_GET['less'])) {
     $tmp_name_pic =  $_FILES['pic']['tmp_name'];
     ////// โฟลเดอ img ที่จะ upload
     $locate_img = '../../img/บทเรียนHSK' . $set . '_ชุดที่' . $part . '/';
-    move_uploaded_file($tmp_name_pic, $locate_img . $pic);
+    $locate_sound = '../../sound/HSK' . $set . '_' . $part . '/';
+
+    //เช็ค type of file 
+    $img_type = strrchr($_FILES['pic']['type'], "/");
+    $sound_type = strrchr($_FILES['sound']['type'], "/");
 } else {
     ///////// set ตัวแปลส่วนของหน้า techer
     $name_Sh =  $_POST['nameSchool'];
@@ -54,6 +58,7 @@ elseif (isset($_GET['less'])) {
 }
 
 if (isset($_GET['vocab'])) {
+    /////คำศัพท์
     $part = $_GET['part'];
     $set = $_GET['set'];
     $sql = "INSERT INTO  $hsk VALUES(NULL,'$type','$type_word',' $vocab_no',' $ch','$pinyin','$type_ch','$th','$sound',' $part')";
@@ -61,15 +66,21 @@ if (isset($_GET['vocab'])) {
     $_SESSION['create'] = "เพิ่มคำศัพท์ สำเร็จ!";
     header('location:./editVocab.php?set=' . $set . '&&part=' . $part);
 } elseif (isset($_GET['less'])) {
+    /////บทเรียน
+    if ($img_type !== '/png' ||  $sound_type !== '/mpeg') {
+        $_SESSION['create'] = "กรุณาตรวจประเภทของไฟล์รูปภาพและคลิปเสียง !";
+        header('location:./editLess.php?set=' . $set . '&&part=' . $part);
+    } else {
+        move_uploaded_file($tmp_name_pic, $locate_img . $pic);
+        move_uploaded_file($tmp_name_sound, $locate_sound . $sound);
+        $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name')";
+        $results =   mysqli_query($conn, $sql);
 
-    $part = $_GET['part'];
-    $set = $_GET['set'];
-    echo  'hsk ' . $hsk . 'pic' . $pic . 'sound' . $sound . 'part' . $part . 'less_name' . $less_name;
-    $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name')";
-    $results =   mysqli_query($conn, $sql);
-    $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
-    header('location:./editLess.php?set=' . $set . '&&part=' . $part);
+        $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
+        header('location:./editLess.php?set=' . $set . '&&part=' . $part);
+    }
 } elseif ($name_Sh) {
+    /////แอคเคาท์โรงเรียน
     $user_check_query = "SELECT * FROM School WHERE SchoolName = '$name_Sh' ";
     $query_ch = mysqli_query($conn, $user_check_query);
     $result_ch = mysqli_fetch_assoc($query_ch);
@@ -84,6 +95,7 @@ if (isset($_GET['vocab'])) {
         header('location:./teacher.php');
     }
 } else {
+    /////แอคเคาท์ครู
     $user_check_query = "SELECT * FROM Teacher WHERE TUsername = '$user' ";
     $query_ch = mysqli_query($conn, $user_check_query);
     $result_ch = mysqli_fetch_assoc($query_ch);

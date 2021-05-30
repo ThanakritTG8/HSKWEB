@@ -79,7 +79,7 @@
 
                             </select>
                             <label>ประเภทคำศัพท์</label>
-                            <select class="form-control" id="validationCustom" name="type_word" required>
+                            <select class="form-control" id="validationCustom" name="type_word" >
                                 <option selected disabled value="">ประเภทคำศัพท์ </option>
                                 <?php
                                 include('../../database/database.php');
@@ -105,9 +105,6 @@
                             <label>คำแปล</label>
                             <input type="text" class="form-control" name="th" required>
                             <div class="form-text text-end">( Ex.สัปดาห์หน้า )</div>
-                            <label>เสียง</label>
-                            <input type="file" class="form-control-file" name="sound">
-
 
 
                         </div>
@@ -145,7 +142,6 @@
                         <th scope="col">พินอิน</th>
                         <th scope="col">ประเภท</th>
                         <th scope="col">คำแปล</th>
-                        <th scope="col">เสียง</th>
                         <th scope="col">ลบ</th>
                     </tr>
                 </thead>
@@ -171,7 +167,6 @@
       <th scope="row">' .  $row['pinyin'] . '</th>
       <th scope="row">' .  $row['type_ch'] . '</th>
       <th scope="row">' .  $row['th'] . '</th>
-      <th scope="row">' .  $row['sound'] . '</th>
       <th scope="row"><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal' . $row[$HSK_id] . '"></i></th>
       <!-- /// Modal Delete -->
       <div class="modal fade" id="modal' . $row[$HSK_id] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

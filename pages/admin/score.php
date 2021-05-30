@@ -99,8 +99,8 @@
                         
                       </div>
                       <div class="table-scroll">
-                          <table class="table table-bordered  text-center">
-                              <thead style=" background-color: #ececec;">
+                          <table class="table table-striped table-bordered table-bordered  text-center">
+                              <thead>
                                   <tr>
                                       <th>No. </th>
                                       <th>Name </th>
@@ -158,8 +158,8 @@
 
                       </div>
                       <div class="table-scroll">
-                          <table class="table table-bordered  text-center">
-                              <thead style=" background-color: #ececec;">
+                          <table class="table table-striped table-bordered table-bordered  text-center">
+                              <thead >
                                   <tr>
                                       <th>No. </th>
                                       <th>Name </th>

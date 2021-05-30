@@ -85,7 +85,7 @@
 
                     while ($row = mysqli_fetch_assoc($result)) {
                         $num += 1;
-                        if ($num < 2) {
+                        if ($num < 1) {
                             echo '<tr><td>' . $num . '</td>
                     <td class="td_img"><img src="../../img/บทเรียนHSK' . $_GET['set'] . '_ชุดที่' . $_GET['part'] . '/' . $row['pic'] . '" height="200"></td>
                     <td>' . $row['voice'] . '</td>
@@ -111,7 +111,8 @@
                           <h5 for="exampleFormControlInput1" >ชื่อบทเรียน : ' . $row['lesson_name'] . '</h5>
                           <img src="../../img/บทเรียนHSK' . $_GET['set'] . '_ชุดที่' . $_GET['part'] . '/' . $row['pic'] . '" height="200">
                         </div>
-                   
+                        <input type="hidden" value="' . $row['voice'] . '" name="name_sound">
+                        <input type="hidden" value="' . $row['pic'] . '" name="name_img">
                         <input type="hidden" value="' . $row[$HSK_id] . '" name="lessId">
                         <input type="hidden" value="' . $_GET['set'] . '" name="set">
                         <input type="hidden" value="' . $_GET['part'] . '" name="part">

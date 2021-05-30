@@ -49,6 +49,10 @@ if (isset($_GET['logout'])) {
             padding: 2rem 1rem !important;
         }
     }
+    .sound{
+        cursor: pointer;
+        color: blue;
+    }
 </style>
 
 <body id="body">
@@ -118,7 +122,6 @@ if (isset($_GET['logout'])) {
                    <td>' . $row['ch'] . '</td>
                    <td>' . $row['pinyin'] . '</td>
                    <td>' . $row['th'] . '</td>
-                   <td><a href=""><i class="fas fa-volume-up"></i></a></td>
                    
                                </tr>
                                    ';
