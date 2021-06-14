@@ -22,10 +22,20 @@
 
         max-height: 100px;
     }
-    .item-dis{
+
+    .item-dis {
         cursor: help;
         margin-bottom: 0px !important;
         text-align: center;
+        display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        color: #d0d6db;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
     }
 </style>
 <!-- navbar -->
@@ -78,11 +88,9 @@
                     $sid = "SID";
                     $id = $_SESSION['SID'];
 
-                    if ($_GET['hsk'] = 1) {
-                        $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
-                    } elseif ($_GET['hsk'] = 2) {
-                        $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
-                    }
+
+                    $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
+
                     $query = mysqli_query($conn, $check);
                     $result = mysqli_fetch_assoc($query);
                     if ($result['hsk1_session_4'] >= 20) :
@@ -113,10 +121,21 @@
                       <a class="dropdown-item" href="HSK_menu.php?part=2&&hsk_2">ชุดที่2</a>
                       <a class="dropdown-item" href="HSK_menu.php?part=3&&hsk_2">ชุดที่3</a>
                       <a class="dropdown-item" href="HSK_menu.php?part=4&&hsk_2">ชุดที่4</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">แบบทดสอบหลังเรียน</a>
-                    </div>
-                  </li> ';
+                      <div class="dropdown-divider"></div>';
+
+
+
+                $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
+
+                $query = mysqli_query($conn, $check);
+                $result = mysqli_fetch_assoc($query);
+                if ($result['hsk2_session_4'] >= 20) {
+
+                    echo '<a class="dropdown-item" href="hsk_post.php">แบบทดสอบหลังเรียน</a>';
+                } else {
+                    echo '<p class="item-dis">แบบทดสอบหลังเรียน </p>';
+                }
+                echo ' </div> </li> ';
             }
             ?>
 

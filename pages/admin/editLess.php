@@ -42,9 +42,17 @@
         margin-bottom: 10px;
     }
 
+    .alert-warning {
+        font-size: 11px;
+    }
+
     @media screen and (min-width: 780px) {
         .t-scroll {
             overflow-x: unset;
+        }
+
+        .alert-warning {
+            font-size: 15px;
         }
     }
 </style>
@@ -146,9 +154,12 @@
             </div>
             <form action="Create.php?less='1'&&set=<?= $_GET['set'] ?>&&part=<?= $_GET['part'] ?>" method="post" enctype="multipart/form-data" class="needs-validation" novalidate autocomplete="off">
                 <div class="modal-body">
-    
+
                     <div class="d-flex justify-content-center">
-                        <div style="width: 70%;">
+                        <div style="width: 80%;">
+                            <div class="alert alert-warning" role="alert">
+                                <strong>warning: </strong>กรุณาใช้ไฟล์รูปภาพที่มีนามสกุลไฟล์.png และ คลิปเสียงที่มีนามสกุลไฟล์ .mp3 เท่านั้น
+                            </div>
                             <label>ภาพ</label>
                             <input type="file" class="form-control-file" name="pic" required>
                             <hr>
