@@ -1,294 +1,298 @@
-<?php include_once('../../layout/herderPretest.php') ?>
-    <div class="container d-grid justify-content-center">
-        <div class="herder">
+<?php include_once('../../layout/headerPretest.php') ?>
 
-            <p>HSK（一级）课前自测 【แบบทดสอบก่อนเรียน (Pre-test) HSK 1】</p>
-
-            <p>注意【คำอธิบาย】</p>
-            <p> 一、HSK（一级）分两部分【HSK 1 แบ่งเป็น 2 ทักษะ】</p>
-            <p>1．听力：20 题，13 分钟【การฟัง：20 ข้อ 13 นาที】</p>
-            <p>2．阅读：20 题，17 分钟【การอ่าน：20 ข้อ 17 นาที】</p>
-            <p>二、全部考试：40 题，30 分钟【การสอบทั้งหมด：40 ข้อ 30 นาที】</p>
-            <p>三、满分 40 分 / 24 分为合格【คะแนนเต็ม 40 คะแนน / สอบผ่าน 24 คะแนน】</p>
-
-        </div>
-        <!-- //// ส่วนที่1 -->
-        <div class="text-center">
-            <p>一、听力【1 การฟัง】</p>
-            <p> 第一部分【ส่วนที่ 1】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 1-5 题【ข้อ 1-5】</p>
-
-            <form id="part1_1">
-                <table class="table table-bordered text-center responsive">
-
-                    <tr>
-                        <td scope="col" rowspan="4" style="padding-top: 90px;">例如 :</td>
-                        <td scope="col">
-                            <div class="pin-in"> hěn xǐhuan</div>
-                            <div> 很 喜欢</div>
-                        </td>
-                        <td scope="col" rowspan="2" style="padding-top: 50px; "><i class="fas fa-check correct"></i></td>
-
-                    </tr>
-                    <tr>
-                        <td scope="col">ชอบมาก</td>
-
-                    </tr>
-                    <tr>
-                        <td scope="col">
-                            <div class="pin-in">kàn shū </div>
-                            <div> 看 书</div>
-                        </td>
-                        <td scope="col" rowspan="2" style="padding-top: 50px; color:red"><i class="fas fa-times"></i></td>
-
-                    </tr>
-                    <tr>
-                        <td scope="col">กินผลไม้</td>
-                    </tr>
-
-                    <tbody id="sesion1">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่2 -->
-        <div class="text-center">
-            <p> 第二部分【ส่วนที่ 2】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 6-10 题【ข้อ 6-10】</p>
-            <form id="part1_2">
-                <table class="table table-bordered text-center responsive">
-
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 45px;">例如 :</td>
-
-                        <td scope="col" colspan="3">
-                            <div class="pin-in">Wǒ xiǎng chī shuǐguǒ .</div>
-                            <div>我 想 吃 水果 。</div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td scope="col"> A ดื่มน้ำ
-                        </td>
-                        <td scope="col"> B ซื้อเสื้อผ้า </td>
-                        <td scope="col">C กินผลไม้ <i class="fas fa-check correct"></i></td>
-                    </tr>
-                    <tbody id="sesion2">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่3 -->
-        <div class="text-center">
-            <p> 第三部分【ส่วนที่ 3】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 11-15 题【ข้อ 11-15】</p>
-            <form id="part1_3">
-                <table class="table table-bordered text-center responsive">
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 40px;">例如：</td>
-
-                        <td scope="col">
-                            <div style="padding-left: 30px;" class="pin-in">Nǐ xǐhuan kàn shū ma ?</div>
-                            <div>男：你 喜欢 看 书 吗 ？</div>
-                            <div style="padding-left: 30px;" class="pin-in">Hěn xǐhuan .</div>
-                            <div>女：很 喜欢 。</div>
-                        </td>
-                        <td class="col-2  col-md-1" style="padding-top: 40px;">
-                            <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
-                        </td>
-                        <td scope="col" style="padding-top: 35px;">
-                        </td>
-                    </tr>
-                    <tbody id="sesion3">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่4 -->
-        <div class="text-center">
-            <p> 第四部分【ส่วนที่ 4】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 16-20 题【ข้อ 16-20】</p>
-            <form id="part1_4">
-                <table class="table table-bordered text-center responsive">
-
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 60px;">例如：</td>
-
-                        <td scope="col" colspan="3">
-                            <div class="pin-in">Shàngwǔ tā qù shūdiàn mǎi shū.</div>
-                            <div>上午 他 去 书店 买 书</div>
-                            <div class="pin-in pl-2"> Tā shàngwǔ qù nǎlǐ ?</div>
-                            <div>问：他 上午 去 哪里 ？</div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td scope="col">
-                            <div class="pin-in pl-2"> fàndiàn</div>
-                            <div>A 饭店</div>
-                        </td>
-                        <td scope="col">
-                            <div class="pin-in pl-2"> shāngdiàn</div>
-                            <div>B 商店</div>
-                        </td>
-                        <td scope="col">
-                            <div class="pin-in pl-2"> shūdiàn </div>
-                            <div>C 书店 <i class="fas fa-check correct"></i></div>
-                        </td>
-                    </tr>
-                    <tbody id="sesion4">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่1 การอ่าน -->
-        <div class="text-center">
-            <p>二、阅读【2 การอ่าน】</p>
-            <p>第一部分【ส่วนที่ 1】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 21-25 题【ข้อ 21-25】</p>
-
-            <form id="part2_1">
-                <table class="table table-bordered text-center responsive">
-
-                    <tr>
-                        <td scope="col" rowspan="4" style="padding-top: 50px;">例如 :</td>
-                        <td scope="col">ผลไม้</td>
-                        <td scope="col">
-                            <div class="pin-in"> shuǐguǒ</div>
-                            <div> 水果</div>
-                        </td>
-                        <td scope="col" style="padding-top: 15px; "><i class="fas fa-check correct"></i></td>
-
-                    </tr>
-
-                    <tr>
-                        <td scope="col">หนังสือ</td>
-                        <td scope="col">
-                            <div class="pin-in">diànnǎo</div>
-                            <div> 电脑</div>
-                        </td>
-                        <td scope="col" style="padding-top: 15px; color:red"><i class="fas fa-times"></i></td>
-
-                    </tr>
-
-
-                    <tbody id="sesion2_1">
-                    </tbody>
-                </table>
-            </form>
-            <button id="con">set</button>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่2 การอ่าน-->
-        <div class="text-center">
-            <p> 第二部分【ส่วนที่ 2】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 26-30 题【ข้อ 26-30】</p>
-            <form id="part2_2">
-                <table class="table table-bordered text-center responsive">
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 20px;">例如：</td>
-
-                        <td scope="col">
-                            <div class="pin-in">Wǒ hěn xǐhuan chī shuǐguǒ .</div>
-                            <div>我 很 喜欢 吃 水果 。</div>
-                        </td>
-                        <td class="col-2  col-md-1" style="padding-top: 20px;">
-                            <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
-                        </td>
-                        <td scope="col" style="padding-top: 20px;">
-
-                        </td>
-                    </tr>
-                    <tbody id="sesion2_2">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่3 การอ่าน-->
-        <div class="text-center">
-            <p> 第三部分【ส่วนที่ 3】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 31-35 题【ข้อ 31-35】</p>
-            <form id="part2_3">
-                <table class="table table-bordered text-center responsive">
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 20px;">例如：</td>
-
-                        <td scope="col">
-                            <div class="pin-in">Nǐ xǐhuan chī shuǐguǒ ma ?</div>
-                            <div>你 喜欢 吃 水果 吗 ？</div>
-                        </td>
-                        <td class="col-2  col-md-1" style="padding-top: 15px;">
-                            <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
-                        </td>
-                        <td scope="col">
-                            <div id="part2_3_choice1" class="pin-in"></div>
-                            <div id="part2_3_choice2"></div>
-                        </td>
-                    </tr>
-                    <tbody id="sesion2_3">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <hr>
-        <!-- //// ส่วนที่4 การอ่าน-->
-        <div class="text-center">
-            <p> 第四部分【ส่วนที่ 4】</p>
-        </div>
-        <div class="table-responsive">
-            <p>第 36-40 题【ข้อ 36-40】</p>
-            <form id="part2_4">
-                <table class="table table-bordered text-center responsive">
-                    <tr>
-                        <td scope="col" rowspan="2" style="padding-top: 20px;">例如：</td>
-
-                        <td scope="col" class="d-flex justify-content-center align-items-end">
-                            <div>
-                                <div class="pin-in"> Wǒ</div>
-                                <div>我 </div>
-                            </div>
-                            <div> <span>（ F ）</span>
-
-                            </div>
-                            <div>
-                                <div class="pin-in">xǐhuan chī shuǐguǒ .</div>
-                                <div>喜欢 吃 水果 。</div>
-                            </div>
-
-                        </td>
-                        <td class="col-2  col-md-1" style="padding-top: 15px;">
-                            <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
-                        </td>
-                        <td scope="col">
-                            <div id="part2_4_choice1" class="pin-in"></div>
-                            <div id="part2_4_choice2"></div>
-                        </td>
-                    </tr>
-                    <tbody id="sesion2_4">
-                    </tbody>
-                </table>
-            </form>
+<div class="container d-grid justify-content-center">
+    <div class="timer">
+        <div class="timer-body">
+            <?php
+            $set_time = "0:30:1";
+            include_once('../../plugin/alert_time.php');
+            ?>
         </div>
     </div>
+
+    <!-- //// ส่วนที่1 -->
+    <div class="text-center">
+        <p style="background-color: blanchedalmond;">一、听力【1 การฟัง】</p>
+        <p> 第一部分【ส่วนที่ 1】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 1-5 题【ข้อ 1-5】</p>
+
+        <form id="part1_1">
+            <table class="table table-bordered text-center responsive">
+
+                <tr>
+                    <td scope="col" rowspan="4" style="padding-top: 90px;" class="first">例如 :</td>
+                    <td scope="col">
+                        <div class="pin-in"> hěn xǐhuan</div>
+                        <div> 很 喜欢</div>
+                    </td>
+                    <td scope="col" rowspan="2" style="padding-top: 50px; "><i class="fas fa-check correct"></i></td>
+
+                </tr>
+                <tr>
+                    <td scope="col">ชอบมาก</td>
+
+                </tr>
+                <tr>
+                    <td scope="col">
+                        <div class="pin-in">kàn shū </div>
+                        <div> 看 书</div>
+                    </td>
+                    <td scope="col" rowspan="2" style="padding-top: 50px; color:red"><i class="fas fa-times"></i></td>
+
+                </tr>
+                <tr>
+                    <td scope="col">กินผลไม้</td>
+                </tr>
+
+                <tbody id="sesion1">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่2 -->
+    <div class="text-center">
+        <p> 第二部分【ส่วนที่ 2】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 6-10 题【ข้อ 6-10】</p>
+        <form id="part1_2">
+            <table class="table table-bordered text-center responsive">
+
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 45px;" class="first">例如 :</td>
+
+                    <td scope="col" colspan="3">
+                        <div class="pin-in">Wǒ xiǎng chī shuǐguǒ .</div>
+                        <div>我 想 吃 水果 。</div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td scope="col"> A ดื่มน้ำ
+                    </td>
+                    <td scope="col"> B ซื้อเสื้อผ้า </td>
+                    <td scope="col">C กินผลไม้ <i class="fas fa-check correct"></i></td>
+                </tr>
+                <tbody id="sesion2">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่3 -->
+    <div class="text-center">
+        <p> 第三部分【ส่วนที่ 3】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 11-15 题【ข้อ 11-15】</p>
+        <form id="part1_3">
+            <table class="table table-bordered text-center responsive">
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 40px;" class="first">例如：</td>
+
+                    <td scope="col">
+                        <div style="padding-left: 30px;" class="pin-in">Nǐ xǐhuan kàn shū ma ?</div>
+                        <div>男：你 喜欢 看 书 吗 ？</div>
+                        <div style="padding-left: 30px;" class="pin-in">Hěn xǐhuan .</div>
+                        <div>女：很 喜欢 。</div>
+                    </td>
+                    <td class="col-2  col-md-1" style="padding-top: 40px;">
+                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                    </td>
+                    <td scope="col" style="padding-top: 35px;" id="part3_choice1">
+                    </td>
+                </tr>
+                <tbody id="sesion3">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่4 -->
+    <div class="text-center">
+        <p> 第四部分【ส่วนที่ 4】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 16-20 题【ข้อ 16-20】</p>
+        <form id="part1_4">
+            <table class="table table-bordered text-center responsive">
+
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 60px;" class="first">例如：</td>
+
+                    <td scope="col" colspan="3">
+                        <div class="pin-in">Shàngwǔ tā qù shūdiàn mǎi shū.</div>
+                        <div>上午 他 去 书店 买 书</div>
+                        <div class="pin-in pl-2"> Tā shàngwǔ qù nǎlǐ ?</div>
+                        <div>问：他 上午 去 哪里 ？</div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td scope="col">
+                        <div class="pin-in pl-2"> fàndiàn</div>
+                        <div>A 饭店</div>
+                    </td>
+                    <td scope="col">
+                        <div class="pin-in pl-2"> shāngdiàn</div>
+                        <div>B 商店</div>
+                    </td>
+                    <td scope="col">
+                        <div class="pin-in pl-2"> shūdiàn </div>
+                        <div>C 书店 <i class="fas fa-check correct"></i></div>
+                    </td>
+                </tr>
+                <tbody id="sesion4">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่1 การอ่าน -->
+    <div class="text-center">
+        <p style="background-color: blanchedalmond;">二、阅读【2 การอ่าน】</p>
+        <p>第一部分【ส่วนที่ 1】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 21-25 题【ข้อ 21-25】</p>
+
+        <form id="part2_1">
+            <table class="table table-bordered text-center responsive">
+
+                <tr>
+                    <td scope="col" rowspan="4" style="padding-top: 50px;" class="first">例如 :</td>
+                    <td scope="col">ผลไม้</td>
+                    <td scope="col">
+                        <div class="pin-in"> shuǐguǒ</div>
+                        <div> 水果</div>
+                    </td>
+                    <td scope="col" style="padding-top: 15px; "><i class="fas fa-check correct"></i></td>
+
+                </tr>
+
+                <tr>
+                    <td scope="col">หนังสือ</td>
+                    <td scope="col">
+                        <div class="pin-in">diànnǎo</div>
+                        <div> 电脑</div>
+                    </td>
+                    <td scope="col" style="padding-top: 15px; color:red"><i class="fas fa-times"></i></td>
+
+                </tr>
+
+
+                <tbody id="sesion2_1">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่2 การอ่าน-->
+    <div class="text-center">
+        <p> 第二部分【ส่วนที่ 2】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 26-30 题【ข้อ 26-30】</p>
+        <form id="part2_2">
+            <table class="table table-bordered text-center responsive">
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
+
+                    <td scope="col">
+                        <div class="pin-in">Wǒ hěn xǐhuan chī shuǐguǒ .</div>
+                        <div>我 很 喜欢 吃 水果 。</div>
+                    </td>
+                    <td class="col-2  col-md-1" style="padding-top: 20px;">
+                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                    </td>
+                    <td scope="col" style="padding-top: 20px;" id="part2_2_choice1">
+
+                    </td>
+                </tr>
+                <tbody id="sesion2_2">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่3 การอ่าน-->
+    <div class="text-center">
+        <p> 第三部分【ส่วนที่ 3】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 31-35 题【ข้อ 31-35】</p>
+        <form id="part2_3">
+            <table class="table table-bordered text-center responsive">
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
+
+                    <td scope="col">
+                        <div class="pin-in">Nǐ xǐhuan chī shuǐguǒ ma ?</div>
+                        <div>你 喜欢 吃 水果 吗 ？</div>
+                    </td>
+                    <td class="col-2  col-md-1" style="padding-top: 15px;">
+                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                    </td>
+                    <td scope="col">
+                        <div id="part2_3_choice1" class="pin-in"></div>
+                        <div id="part2_3_choice2"></div>
+                    </td>
+                </tr>
+                <tbody id="sesion2_3">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <!-- //// ส่วนที่4 การอ่าน-->
+    <div class="text-center">
+        <p> 第四部分【ส่วนที่ 4】</p>
+    </div>
+    <div class="table-responsive">
+        <p>第 36-40 题【ข้อ 36-40】</p>
+        <form id="part2_4">
+            <table class="table table-bordered text-center responsive">
+                <tr>
+                    <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
+
+                    <td scope="col" class="d-flex justify-content-center align-items-end">
+                        <div>
+                            <div class="pin-in"> Wǒ</div>
+                            <div>我 </div>
+                        </div>
+                        <div> <span>（ F ）</span>
+
+                        </div>
+                        <div>
+                            <div class="pin-in">xǐhuan chī shuǐguǒ .</div>
+                            <div>喜欢 吃 水果 。</div>
+                        </div>
+
+                    </td>
+                    <td class="col-2  col-md-1" style="padding-top: 15px;">
+                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                    </td>
+                    <td scope="col">
+                        <div id="part2_4_choice1" class="pin-in"></div>
+                        <div id="part2_4_choice2"></div>
+                    </td>
+                </tr>
+                <tbody id="sesion2_4">
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center mt-1 mb-4">
+        <?php $mess_send = "ส่งคำตอบ";
+        include_once('../../plugin/sent_button.php')
+        ?>
+    </div>
+
+</div>
 <?php include_once('../../layout/footerPretest.php') ?>
 
 <script>
@@ -305,7 +309,7 @@
                 } else {
                     setAnswer.push(0, 1);
                 }
-                let td = `<tr> <th scope="row">${i+1}</th>
+                let td = `<tr> <th scope="row" class="first">${i+1}</th>
                         <td>${e.topic}</td>
                         <td>
                             <div class="form-check form-check-inline">
@@ -333,7 +337,7 @@
                 } else if (e.answer == 'b') {
                     setAnswer.push(0, 1, 0);
                 } else setAnswer.push(0, 0, 1);
-                let td = `<tr> <th scope="row">${i+6}</th>
+                let td = `<tr> <th scope="row" class="first">${i+6}</th>
                         <td class="text-left">
                             <div class="form-check form-check-inline">
                                 <input  type="radio" id="topic2_1_${i}" name="no${i+1}" value="${setAnswer[0]}" >
@@ -362,7 +366,7 @@
             const data_part3 = [];
             answer.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col">${i+11}</th>
+                            <th scope="col" class="first">${i+11}</th>
                             <td scope="col">
                             </td>
                             <td class="col-2  col-md-1" >
@@ -390,7 +394,7 @@
                 } else if (e.answer == 'b') {
                     setAnswer.push(0, 1, 0);
                 } else setAnswer.push(0, 0, 1);
-                let td = `<tr> <th scope="row">${i+16}</th>
+                let td = `<tr> <th scope="row" class="first">${i+16}</th>
                         <td class="text-left">
                             <div class="form-check form-check-inline">
                                 <input  type="radio" id="topic4_1_${i}" name="no${i+1}" value="${setAnswer[0]}" >
@@ -424,7 +428,7 @@
                 } else {
                     setAnswer.push(0, 1);
                 }
-                let td = `<tr> <th scope="row">${i+21}</th>
+                let td = `<tr> <th scope="row" class="first">${i+21}</th>
                         <td>${e.topic.th}</td>
                         <td><div class="pin-in">${e.topic.pinin}</div>
                                 <div">${e.topic.ch}</div>
@@ -452,7 +456,7 @@
             const data_part2_2 = [];
             part2_2.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col">${i+26}</th>
+                            <th scope="col" class="first">${i+26}</th>
                             <td scope="col">
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
@@ -478,7 +482,7 @@
             const data_part2_3 = [];
             part2_3.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col">${i+31}</th>
+                            <th scope="col" class="first">${i+31}</th>
                             <td scope="col">
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
@@ -510,7 +514,7 @@
                 let td
                 if (e.pinin_end) {
                     td = `<tr>
-                            <th scope="col">${i+36}</th>
+                            <th scope="col" class="first">${i+36}</th>
                             <td scope="col" class="d-flex justify-content-center align-items-end">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
@@ -532,8 +536,8 @@
                         </tr>`;
                 } else if (e.pinin_sec) {
                     if (e.pinin_sec_end) {
-                         td = `<tr>
-                            <th scope="col" style="padding-top: 30px;">${i+36}</th>
+                        td = `<tr>
+                            <th scope="col" style="padding-top: 30px;" class="first">${i+36}</th>
                             <td scope="col" >
                            
                             <div class="pin-in">${e.pinin}</div>
@@ -541,9 +545,8 @@
                             <div class="d-flex justify-content-center align-items-end">
                             <div>
                             <div class="pin-in">${e.pinin_sec}</div>
-                            <div>${e.ch_sec}</div>
+                            <div>${e.ch_sec}<span>（  ） 。</span></div>
                             </div>
-                            <div> <span>（  ） 。</span></div>
                             <div>
                             <div class="pin-in">${e.pinin_sec_end}</div>
                             <div>${e.ch_sec_end}</div>
@@ -559,10 +562,10 @@
                             </td>
                         </tr>`;
                     }
-                   
+
                 } else {
                     td = `<tr>
-                            <th scope="col">${i+36}</th>
+                            <th scope="col" class="first">${i+36}</th>
                             <td scope="col" class="d-flex justify-content-center align-items-end">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
@@ -593,8 +596,21 @@
 
 
 
-            $("#con").click(() => {
-                $.fn.countScore();
+            $("#send").click(() => {
+                Swal.fire({
+                    icon: 'question',
+                    title: 'คุณต้องการจะส่งคำตอบ ?',
+                    showCancelButton: true,
+                    showConfirmButton: true,
+                    confirmButtonText: `ยืนยัน`,
+                    cancelButtonText: `ยกเลิก`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.fn.countScore();
+
+                    }
+                })
+
 
             });
             $.fn.count_part3 = function(answers, listen, part) {
@@ -652,8 +668,39 @@
                 const sum_part2_3 = $.fn.count_part3(answer2_3, false, 3);
                 const sum_part2_4 = $.fn.count_part3(answer2_4, false, 4);
                 let total_reading = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4;
-                const total = total_listen+total_reading;
-                console.log(total);
+                const total = total_listen + total_reading;
+
+                ///send score
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        if (total >= 24) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'สอบผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.href = "../student/index.php"
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'สอบไม่ผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.href = "../student/index.php"
+                            })
+                        }
+                    }
+                };
+                xmlhttp.open("GET", "../../models/submitTest.php?score=" + total + "&&hsk=1", true);
+                xmlhttp.send();
+
+
+
             }
 
         });

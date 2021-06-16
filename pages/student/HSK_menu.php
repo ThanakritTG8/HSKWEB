@@ -6,7 +6,6 @@ if (isset($_GET['hsk_1'])) {
     $hsk_set = 2;
 }
 if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first!";
     header('location: Login.php');
 }
 if (isset($_GET['logout'])) {

@@ -289,6 +289,7 @@ if (isset($_SESSION['err'])) {
     -moz-animation-delay: 0.2s;
     animation-delay: 0.2s;
   }
+
   /* Simple CSS3 Fade-in Animation */
   .underlineHover:after {
     display: block;
@@ -378,7 +379,7 @@ if (isset($_SESSION['err'])) {
           <div class="form-row">
             <div class="form-group  col-12 col-md-12">
               <label for="inputEmail4">Password</label>
-              <input type="password" class="form-control" name="password1" id="password" minlength="6" maxlength="10" required>
+              <input type="password" class="form-control" name="password" id="password" minlength="6" maxlength="10" required>
               <small id="password" class="form-text text-muted">อย่างน้อย 6-10 ตัวอักษร</small>
             </div>
           </div>
@@ -426,7 +427,6 @@ if (isset($_SESSION['err'])) {
 
           <div class="form-row">
             <div class="col-12  col-md-12">
-              <?php include('./plugin/alert_err.php'); ?>
             </div>
           </div>
           <div class="text-center">
@@ -436,11 +436,10 @@ if (isset($_SESSION['err'])) {
           </div>
 
       </form>
-
-      <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
-        <p class="text-center" style="color: white; margin-bottom: 5px;"> Back </p>
-      </a>
     </div>
+    <a id="formFooter" class="btn underlineHover" style="width: 100%;" href="Login.php">
+      <p class="text-center" style="color: white; margin-bottom: 5px;"> Back </p>
+    </a>
   </div>
 
 
@@ -469,5 +468,18 @@ if (isset($_SESSION['err'])) {
   })()
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  var strMessage = '<?= $message ?>';
+  if (strMessage) {
+    console.log(strMessage);
+    Swal.fire({
+      heightAuto: false,
+      text: strMessage,
+      icon: 'error',
+      padding: '3em'
+    })
+  } 
+</script>
 
 </html>

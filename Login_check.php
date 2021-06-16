@@ -33,17 +33,16 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['username'] = $result_send['Sname'] . ' ' . $result_send['SLname'];
-            $SID = "SID";
+        $SID = "SID";
         $sid = $result_send[$SID];
         $check_score = "SELECT * FROM HSK_Exam_Score WHERE $SID ='$sid'";
         $result_score = mysqli_query($conn, $check_score);
 
 
         if (mysqli_num_rows($result_score) < 1) {
-            header('location:./hsk1/Pretest.php');
+            header('location:./pages/introTest.php?hsk=1');
             $_SESSION['SID'] = $sid;
-            $_SESSION['topic_num'] = '1';
-            unset($_SESSION['timeend']);
+            $_SESSION['HSK1'] = true;
         } else {
             header('location:./pages/student/index.php');
             $_SESSION['SID'] = $sid;

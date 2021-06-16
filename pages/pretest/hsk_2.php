@@ -1,20 +1,18 @@
-<?php include_once('../../layout/herderPretest.php') ?>
+<?php include_once('../../layout/headerPretest.php') ?>
+
 <div class="container d-grid justify-content-center">
-    <div class="herder">
-
-        <p class="text-center">HSK（二级）课前自测 【แบบทดสอบก่อนเรียน (Pre-test) HSK 2】</p>
-
-        <p>注意【คำอธิบาย】</p>
-        <p> 一、HSK（二级）分两部分【HSK 2 แบ่งเป็น 2 ทักษะ】</p>
-        <p>1．听力：35 题，25 分钟【การฟัง：35 ข้อ 25 นาที】</p>
-        <p>2．阅读：25 题，25 分钟【การอ่าน：25 ข้อ 25 นาที】</p>
-        <p>二、全部考试：60 题，50 分钟【การสอบทั้งหมด：60 ข้อ 50 นาที】</p>
-        <p>三、满分 60 分 / 36 分为合格【คะแนนเต็ม 60 คะแนน / สอบผ่าน 36 คะแนน】</p>
-
+    <div class="timer">
+        <div class="timer-body">
+            <?php
+            $set_time = "0:50:1";
+            include_once('../../plugin/alert_time.php');
+            ?>
+        </div>
     </div>
+
     <!-- //// ส่วนที่1 -->
     <div class="text-center">
-        <p>一、听力【1 การฟัง】</p>
+        <p style="background-color: blanchedalmond;">一、听力【1 การฟัง】</p>
         <p> 第一部分【ส่วนที่ 1】</p>
     </div>
     <div class="table-responsive">
@@ -24,7 +22,7 @@
             <table class="table table-bordered text-center responsive">
 
                 <tr>
-                    <td scope="col" rowspan="2" style="padding-top: 30px;" class="col-2">例如：</td>
+                    <td scope="col" rowspan="2" style="padding-top: 30px;" class="col-2 first">例如：</td>
                     <td scope="col">
                         <div> แมว 1 ตัว</div>
                     </td>
@@ -52,7 +50,7 @@
 
         <table class="table table-bordered text-center responsive">
             <tr>
-                <td scope="col" rowspan="2" style="padding-top: 40px;" class="col-2">例如：</td>
+                <td scope="col" rowspan="2" style="padding-top: 40px;" class="col-2 first">例如：</td>
 
                 <td scope="col">
                     <div class="pin-in" style="padding-left: 30px;">Nǐ xǐhuan shénme yánsè ?</div>
@@ -91,7 +89,7 @@
             <table class="table table-bordered text-center responsive">
 
                 <tr>
-                    <td scope="col" rowspan="2" style="padding-top: 45px;">例如 :</td>
+                    <td scope="col" rowspan="2" style="padding-top: 45px;" class="first">例如 :</td>
 
                     <td scope="col" colspan="3" class="text-left">
                         <div class="pin-in pl-3">Nǐ hǎo, zhège bēizi shì nǐ de ma ?</div>
@@ -136,7 +134,7 @@
             <table class="table table-bordered text-center responsive">
 
                 <tr>
-                    <td scope="col" rowspan="2" style="padding-top: 45px;">例如 :</td>
+                    <td scope="col" rowspan="2" style="padding-top: 45px;" class="first">例如 :</td>
 
                     <td scope="col" colspan="3" class="text-left">
                         <div class="pin-in pl-3"> Nǐ jiā lí gōngsī yuǎn ma ?</div>
@@ -178,7 +176,7 @@
     <hr>
     <!-- //// ส่วนที่1 การอ่าน -->
     <div class="text-center">
-        <p> 二、阅读【2 การอ่าน】</p>
+        <p style="background-color: blanchedalmond;"> 二、阅读【2 การอ่าน】</p>
         <p> 第一部分【ส่วนที่ 1】</p>
     </div>
     <div class="table-responsive">
@@ -186,7 +184,7 @@
 
         <table class="table table-bordered text-center responsive">
             <tr>
-                <td scope="col" rowspan="2" class="col-2 pt-2">例如：</td>
+                <td scope="col" rowspan="2" class="col-2 pt-2 first">例如：</td>
 
                 <td scope="col">
                     <div class="pin-in pl-3">Wǒ měitiān zǎoshang dōu yào chūqù pǎobù .</div>
@@ -212,7 +210,7 @@
         <p>第 41-45 题【ข้อ 41-45】</p>
         <table class="table table-bordered text-center responsive">
             <tr>
-                <td scope="col" rowspan="2" style="padding-top: 20px;">例如：</td>
+                <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
 
                 <td scope="col" class="d-flex justify-content-center align-items-end">
                     <div>
@@ -240,7 +238,8 @@
             </tbody>
         </table>
     </div>
-    <!-- //// ส่วนที่3 -->
+    <hr>
+    <!-- //// ส่วนที่3 การอ่าน -->
     <div class="text-center">
         <p>第三部分【ส่วนที่ 3】</p>
     </div>
@@ -251,7 +250,7 @@
             <table class="table table-bordered text-center responsive">
 
                 <tr>
-                    <td scope="col" rowspan="2" style="padding-top: 80px;" class="col-2">例如：</td>
+                    <td scope="col" rowspan="2" style="padding-top: 80px;" class="col-2 first">例如：</td>
                     <td scope="col" class="text-left">
                         <div class="pin-in ">Xiǎo Wáng shì wǒmen de xīn tóngxué, tā hěn ài bāngzhù rén,</div>
                         <div> 小 王 是 我们 的 新 同学， 他 很 爱 帮助 人，</div>
@@ -281,7 +280,7 @@
     </div>
     <hr>
 
-    <!-- //// ส่วนที่1 การอ่าน -->
+    <!-- //// ส่วนที่4 การอ่าน -->
     <div class="text-center">
 
         <p> 第四部分【ส่วนที่ 4】</p>
@@ -302,7 +301,7 @@
         <p>F . 没 关系， 电影 还 没 开始 呢 ？</p>
         <table class="table table-bordered text-center responsive">
             <tr>
-                <td scope="col" rowspan="2" class="col-2 pt-2">例如：</td>
+                <td scope="col" rowspan="2" class="col-2 pt-2 first">例如：</td>
 
                 <td scope="col">
                     <div class="pin-in ">Duìbuqǐ, wǒ lái wǎn le fēnzhōng . </div>
@@ -327,7 +326,7 @@
         <p>D . 外面 很 冷，出 门 时 你 多 穿 几 件 衣服 。</p>
         <div class="pin-in pl-2">Wǒ shì xīn lái de, suǒyǐ nǐ méi jiànguo wǒ .</div>
         <p>E . 我 是 新 来 的，所以 你 没 见过 我 。</p>
-        <table class="table table-bordered text-center responsive">
+        <table class="table table-bordered text-center responsive ">
 
             <tbody id="sesion2_4_1">
             </tbody>
@@ -335,7 +334,12 @@
     </div>
     <hr>
 
-    <button id="con">set</button>
+    <div class="d-flex justify-content-center mt-1 mb-4">
+        <?php $mess_send = "ส่งคำตอบ";
+        include_once('../../plugin/sent_button.php')
+        ?>
+    </div>
+
 </div>
 
 
@@ -355,7 +359,7 @@
                 } else {
                     setAnswer.push(0, 1);
                 }
-                let td = `<tr> <th scope="row">${i+1}</th>
+                let td = `<tr> <th scope="row" class="first">${i+1}</th>
                         <td>${e.topic}</td>
                         <td class="col-4">
                             <div class="form-check form-check-inline">
@@ -380,7 +384,7 @@
             const data_part2_2 = [];
             choice_1.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col" >${i+11}</th>
+                            <th scope="col" class="first">${i+11}</th>
                             <td scope="col" class="col-4">
                             
 
@@ -394,7 +398,7 @@
                         </tr>`;
 
                 let td_2 = `<tr>
-                            <th scope="col" class="col-2">${i+16}</th>
+                            <th scope="col" class="col-2 first">${i+16}</th>
                             <td scope="col" class="col-4">
                             
 
@@ -423,7 +427,7 @@
                 } else if (e.answer == 'b') {
                     setAnswer.push(0, 1, 0);
                 } else setAnswer.push(0, 0, 1);
-                let td = `<tr> <th scope="row">${i+21}</th>
+                let td = `<tr> <th scope="row" class="first">${i+21}</th>
                         <td class="text-left">
                             <div class="form-check form-check-inline">
                                 <input  type="radio" id="topic3_1_${i}" name="no${i+1}" value="${setAnswer[0]}" >
@@ -466,7 +470,7 @@
                 } else if (e.answer == 'b') {
                     setAnswer.push(0, 1, 0);
                 } else setAnswer.push(0, 0, 1);
-                let td = `<tr> <th scope="row">${i+31}</th>
+                let td = `<tr> <th scope="row" class="first">${i+31}</th>
                         <td class="text-left">
                             <div class="form-check form-check-inline">
                                 <input  type="radio" id="topic4_1_${i}" name="no${i+1}" value="${setAnswer[0]}" >
@@ -507,7 +511,7 @@
             const data_read_1 = [];
             topic.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col" >${i+36}</th>
+                            <th scope="col" class="first">${i+36}</th>
                             <td scope="col" class="col-6">
                             <div class="pin-in">${e.pinin} </div>
                             <div>${e.ch} </div>
@@ -534,13 +538,13 @@
                 let td
                 if (e.pinin_end) {
                     td = `<tr>
-                            <th scope="col">${i+41}</th>
-                            <td scope="col" class="d-flex justify-content-center align-items-end">
+                            <th scope="col" class="first">${i+41}</th>
+                            <td scope="col" class="d-flex justify-content-center extream">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
                             </div>
-                            <div> <span>（  ） 。</span></div>
+                             <span style="min-width: 60px;">（  ） 。</span>
                             <div>
                             <div class="pin-in">${e.pinin_end}</div>
                             <div>${e.ch_end}</div>
@@ -557,21 +561,26 @@
                 } else if (e.pinin_sec) {
                     if (e.pinin_sec_end) {
                         td = `<tr>
-                            <th scope="col" style="padding-top: 30px;">${i+41}</th>
-                            <td scope="col" >
-                           
-                            <div class="pin-in pl-3">${e.pinin}</div>
-                            <div>${e.ch}</div>
-                            <div class="d-flex justify-content-center align-items-end">
+                            <th scope="col" style="padding-top: 30px;" class="first ">${i+41}</th>
+                            <td scope="col" class=" justify-content-center extream">
                             <div>
-                            <div class="pin-in pl-3">${e.pinin_sec}</div>
-                            <div>${e.ch_sec}</div>
+                            <div class="pin-in extream-pl">${e.pinin}</div>
+                            <div>${e.ch}</div>
                             </div>
-                            <div> <span>（  ） 。</span></div>
+
+                            <div class="d-flex justify-content-center">
+                           
+                            <div>
+                            <div class="pin-in extream-pl">${e.pinin_sec}</div>
+                            <div>${e.ch_sec} <span style="min-width: 60px;">（  ） 。</span></div>
+                            </div>
                             <div>
                             <div class="pin-in ">${e.pinin_sec_end}</div>
                             <div>${e.ch_sec_end}</div>
                             </div>
+
+                       
+
                             </div>
                             </td>
                             <td class="col-2  col-md-1" style="padding-top: 30px;" >
@@ -586,13 +595,13 @@
 
                 } else {
                     td = `<tr>
-                            <th scope="col">${i+41}</th>
-                            <td scope="col" class="d-flex justify-content-center align-items-end">
+                            <th scope="col" class="first">${i+41}</th>
+                            <td scope="col" class="d-flex justify-content-center extream">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
                             </div>
-                            <div> <span>（  ） 。</span></div>
+                            <div style="min-width: 60px;"> <span>（  ） 。</span></div>
                             </td>
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_2_${i+1}">
@@ -617,7 +626,7 @@
                 } else {
                     setAnswer.push(0, 1);
                 }
-                let td = `<tr> <th scope="row">${i+46}</th>
+                let td = `<tr> <th scope="row" class="first">${i+46}</th>
                         <td class="text-left">
                         <div class="pin-in ">${e.topic.pinin}</div>
                         <div>${e.topic.ch}</div>
@@ -654,7 +663,7 @@
             const data_read_4_1 = [];
             topic_2_4.forEach((e, i) => {
                 let td = `<tr>
-                            <th scope="col" class="col-2">${i+51}</th>
+                            <th scope="col" class="col-2 first" >${i+51}</th>
                             <td scope="col" class="col-6">
                             <div class="pin-in">${e.pinin} </div>
                             <div>${e.ch} </div>
@@ -665,7 +674,7 @@
                            
                         </tr>`;
                 let td_1 = `<tr>
-                            <th scope="col" class="col-2">${i+56}</th>
+                            <th scope="col" class="col-2 first">${i+56}</th>
                             <td scope="col" class="col-6">
                             <div class="pin-in">${e.pinin} </div>
                             <div>${e.ch} </div>
@@ -685,8 +694,19 @@
 
 
 
-            $("#con").click(() => {
-                $.fn.countScore();
+            $("#send").click(() => {
+                Swal.fire({
+                    icon: 'question',
+                    title: 'คุณต้องการจะส่งคำตอบ ?',
+                    showCancelButton: true,
+                    showConfirmButton: true,
+                    confirmButtonText: `ยืนยัน`,
+                    cancelButtonText: `ยกเลิก`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.fn.countScore();
+                    }
+                })
 
             });
 
@@ -748,7 +768,35 @@
                 let total_read = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4 + sum_part2_4_1;
 
                 let total = total_listen + total_read
-                console.log(total);
+
+                ///send score
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (total >= 24) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'สอบผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.href = "../student/index.php"
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'สอบไม่ผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.href = "../student/index.php"
+                            })
+                        }
+                    }
+                };
+                xmlhttp.open("GET", "../../models/submitTest.php?score=" + total + "&&hsk=2", true);
+                xmlhttp.send();
+
             }
 
         });
