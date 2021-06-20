@@ -297,11 +297,13 @@ if (isset($_SESSION['err'])) {
     /* height: 150px; */
 
   }
-  .form-row{
+
+  .form-row {
     display: flex;
     justify-content: center;
   }
-  .form-control{
+
+  .form-control {
     max-height: 45px;
   }
 
@@ -326,7 +328,7 @@ if (isset($_SESSION['err'])) {
       <!-- Login Form -->
       <form action="Login_check.php" method="post" class="needs-validation" novalidate autocomplete="off">
         <div class="form-row">
-          
+
           <div class="form-group  col-10 col-sm-8 col-md-10">
 
             <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -334,7 +336,7 @@ if (isset($_SESSION['err'])) {
         </div>
 
         <div class="form-row">
-          
+
           <div class="form-group  col-10 col-sm-8 col-md-10">
 
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
@@ -343,51 +345,60 @@ if (isset($_SESSION['err'])) {
         <div class="form-row">
           <div class="form-group col-10 col-sm-8 col-md-10" style="font-size: 12px;">
 
-            <?php include('./plugin/alert_err.php');?>
-        </div>
+          </div>
 
-        <input type="submit" class="fadeIn first" name="login" value="Log In">
+          <input type="submit" class="fadeIn first" name="login" value="Log In">
 
 
       </form>
-      <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-          'use strict'
 
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
+    </div>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict'
 
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-            .forEach(function(form) {
-              form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
 
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
-      </script>
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
 
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" style="color: white;" href="Regis.php">Register </a>
-        <img src="./img/pen.png" alt="" style="width: 20px;">
-      </div>
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
 
-     
-
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" style="color: white;" href="Regis.php">Register </a>
+      <img src="./img/pen.png" alt="" style="width: 20px;">
     </div>
 
   </div>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+  var strMessage = '<?= $message ?>';
+  if (strMessage) {
+    console.log(strMessage);
+    Swal.fire({
+      heightAuto: false,
+      text: strMessage,
+      icon: 'error',
+      padding: '3em'
+    })
+  } 
+</script>
 
 </html>
