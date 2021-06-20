@@ -349,7 +349,6 @@ if (isset($_SESSION['err'])) {
 
           <input type="submit" class="fadeIn first" name="login" value="Log In">
 
-
       </form>
 
     </div>
@@ -381,7 +380,6 @@ if (isset($_SESSION['err'])) {
       <a class="underlineHover" style="color: white;" href="Regis.php">Register </a>
       <img src="./img/pen.png" alt="" style="width: 20px;">
     </div>
-
 
   </div>
 
