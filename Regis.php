@@ -29,7 +29,6 @@ if (isset($_SESSION['err'])) {
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
-    background-color: #fff0f0;
   }
 
   a {
@@ -52,7 +51,7 @@ if (isset($_SESSION['err'])) {
     text-transform: uppercase;
     display: inline-block;
     margin: 30px 0px;
-    color: #000033;
+    color: #941e1e;
     border-bottom: 2px solid #e9645f;
   }
 
@@ -98,8 +97,8 @@ if (isset($_SESSION['err'])) {
   }
 
   #formFooter {
-    background-color: #e9645f;
-    border-top: 1px solid #e9645f;
+    background-color: #941e1e;
+    border-top: 1px solid #941e1e;
 
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
@@ -126,7 +125,7 @@ if (isset($_SESSION['err'])) {
   input[type=button],
   input[type=submit],
   input[type=reset] {
-    background-color: #e9645f;
+    background-color: #941e1e;
     border: none;
     color: white;
     padding: 15px 60px;

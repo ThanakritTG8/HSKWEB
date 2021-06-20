@@ -45,7 +45,6 @@ if (isset($_SESSION['success'])) {
 
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fff0f0;
     }
 
     nav {

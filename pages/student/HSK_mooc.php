@@ -37,7 +37,7 @@ if (isset($_GET['logout'])) {
         }
 
         h1 {
-            font-size: 15pt;
+            font-size: 25pt;
         }
     }
 

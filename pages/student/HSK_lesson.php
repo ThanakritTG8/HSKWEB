@@ -27,7 +27,6 @@ if (isset($_GET['logout'])) {
 <style>
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fff0f0;
     }
 
 
@@ -36,10 +35,8 @@ if (isset($_GET['logout'])) {
     }
 
     #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
+        background: transparent;
+        color: #941e1e;
         max-height: 100px;
     }
 
@@ -89,7 +86,7 @@ if (isset($_GET['logout'])) {
     @media screen and (max-width: 500px) {
 
         h1 {
-            font-size: 15pt;
+            font-size: 25pt;
         }
     }
 
