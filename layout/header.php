@@ -12,14 +12,11 @@
 
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fff0f0;
     }
 
     #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
+        background: transparent;
+        color: #941e1e;
         max-height: 100px;
     }
 

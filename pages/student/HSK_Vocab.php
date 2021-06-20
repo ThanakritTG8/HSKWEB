@@ -39,7 +39,7 @@ if (isset($_GET['logout'])) {
         }
 
         h1 {
-            font-size: 15pt;
+            font-size: 25pt;
         }
     }
 
@@ -117,10 +117,10 @@ if (isset($_GET['logout'])) {
                             while ($row = mysqli_fetch_assoc($result)) {
 
                                 echo '  <tr class="table-light">
-                   <td scope="row">' . $row['vocab_no'] . '</td>
-                   <td>' . $row['ch'] . '</td>
-                   <td>' . $row['pinyin'] . '</td>
-                   <td>' . $row['th'] . '</td>
+                   <td scope="row" class="col-3">' . $row['vocab_no'] . '</td>
+                   <td class="col-3">' . $row['ch'] . '</td>
+                   <td class="col-3">' . $row['pinyin'] . '</td>
+                   <td class="col-3">' . $row['th'] . '</td>
                    
                                </tr>
                                    ';

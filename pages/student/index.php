@@ -46,9 +46,17 @@ if (isset($_SESSION['success'])) {
     @media (min-width: 576px) {
         .jumbotron {
             padding: 2rem 1rem !important;
+            margin-bottom: 0px;
         }
     }
 
+    .jumbotron {
+        margin-bottom: 0px;
+    }
+
+    .container {
+        margin-bottom: 30px;
+    }
 
     .text-header {
         margin-top: 40px;

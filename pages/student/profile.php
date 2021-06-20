@@ -43,10 +43,8 @@ if (isset($_SESSION['success'])) {
     }
 
     #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
+        background: transparent;
+        color: #941e1e;
         max-height: 100px;
     }
 

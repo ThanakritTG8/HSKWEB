@@ -31,7 +31,21 @@ if (isset($_GET['logout'])) {
 <style>
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fff0f0;
+    }
+
+    @media (min-width: 576px) {
+        .jumbotron {
+            padding: 2rem 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+    }
+
+    .jumbotron {
+        margin-bottom: 0px;
+    }
+
+    .container {
+        margin-bottom: 30px;
     }
 
     #btn_menu:hover {
@@ -72,22 +86,20 @@ if (isset($_GET['logout'])) {
     }
 
     #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
+        background: transparent;
+        color: #941e1e;
         max-height: 100px;
     }
 
     .btn-post {
         width: 100%;
-        margin: 40px 0px 30px 0px;
+        margin: 60px 0px 30px 0px;
     }
 
     @media screen and (max-width: 500px) {
 
         h1 {
-            font-size: 15pt;
+            font-size: 25pt;
         }
     }
 
@@ -101,12 +113,12 @@ if (isset($_GET['logout'])) {
 <body id="body">
 
     <!-- <include header> -->
-    <?php include('../../layout/header.php'); 
-    
+    <?php include('../../layout/header.php');
+
     if (isset($_GET['hsk_1'])) {
-        $hsk_set = 1 ;
-    }elseif (isset($_GET['hsk_2'])) {
-        $hsk_set = 2 ;
+        $hsk_set = 1;
+    } elseif (isset($_GET['hsk_2'])) {
+        $hsk_set = 2;
     }
     ?>
 
@@ -115,9 +127,9 @@ if (isset($_GET['logout'])) {
     <header class="masthead">
         <div class="jumbotron jumbotron-fluid" id="header">
             <h1 class="text-center">
-                HSK <?php echo  $hsk_set; ?> 
+                HSK <?php echo  $hsk_set; ?>
             </h1>
-            
+
         </div>
     </header>
 
@@ -129,7 +141,7 @@ if (isset($_GET['logout'])) {
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
-                <a href='HSK_menu.php?part=1&&hsk_<?=  $hsk_set ?>' class="card btn text-center" id="btn_menu">
+                <a href='HSK_menu.php?part=1&&hsk_<?= $hsk_set ?>' class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">HSK ชุดที่ 1</h4>
@@ -137,7 +149,7 @@ if (isset($_GET['logout'])) {
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="HSK_menu.php?part=2&&hsk_<?=  $hsk_set ?>" class="card btn text-center" id="btn_menu">
+                <a href="HSK_menu.php?part=2&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">HSK ชุดที่ 2</h4>
@@ -149,7 +161,7 @@ if (isset($_GET['logout'])) {
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
-                <a href="HSK_menu.php?part=3&&hsk_<?=  $hsk_set ?>" class="card btn text-center" id="btn_menu">
+                <a href="HSK_menu.php?part=3&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">HSK ชุดที่ 3 </h4>
@@ -157,7 +169,7 @@ if (isset($_GET['logout'])) {
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="HSK_menu.php?part=4&&hsk_<?=  $hsk_set ?>" class="card btn text-center" id="btn_menu">
+                <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">HSK ชุดที่ 4</h4>
@@ -166,39 +178,75 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="col-sm-2"></div>
         </div>
-        <?php
+        <?php if ($hsk_set == 1) : ?>
+            <?php
+            include('../../database/database.php');
+            $sid = "SID";
+            $id = $_SESSION['SID'];
 
-        include('../../database/database.php');
-        $sid = "SID";
-        $id = $_SESSION['SID'];
-
-        if ( $hsk_set = 1) {
             $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
-        } elseif ( $hsk_set = 2) {
+            $query = mysqli_query($conn, $check);
+            $result = mysqli_fetch_assoc($query);
+
+            $check_pretest = "SELECT* FROM HSK_Exam_Score WHERE $sid  = $id ";
+            $query_pretest = mysqli_query($conn, $check_pretest);
+            $result_pretest = mysqli_fetch_assoc($query_pretest);
+
+            if ($result['hsk1_session_4'] >= 20 || $result_pretest['HSK1_Pretest'] >= 24) :
+            ?>
+                <div class="text-center row">
+                    <div class="col-1 col-md-3"></div>
+                    <div class="col-10 col-md-6">
+                        <button type="button" class="btn btn-success btn-post">แบบทดสอบหลังเรียน
+                            <img src="../../img/posttest.png" alt="" style="width: 30px; ">
+                        </button>
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="text-center row">
+                    <div class="col-1 col-md-3"></div>
+                    <div class="col-10 col-md-6">
+                        <button type="button" class="btn btn-secondary btn-post" disabled>แบบทดสอบหลังเรียน
+                            <img src="../../img/lock.png" alt="" style="width: 30px; ">
+                        </button>
+                    </div>
+                </div>
+            <?php endif ?>
+        <?php else : ?>
+            <?php
+            include('../../database/database.php');
+            $sid = "SID";
+            $id = $_SESSION['SID'];
+
             $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
-        }
-        $query = mysqli_query($conn, $check);
-        $result = mysqli_fetch_assoc($query);
-        if ($result['hsk1_session_4']>=20) :
-        ?>
-        <div class="text-center row">
-            <div class="col-1 col-md-3"></div>
-            <div class="col-10 col-md-6">
-                <button type="button" class="btn btn-success btn-post">แบบทดสอบหลังเรียน
-                    <img src="../../img/posttest.png" alt="" style="width: 30px; ">
-                </button>
-            </div>
-        </div>
-        <?php else :?>
-        <div class="text-center row">
-            <div class="col-1 col-md-3"></div>
-            <div class="col-10 col-md-6">
-                <button type="button" class="btn btn-secondary btn-post" disabled>แบบทดสอบหลังเรียน
-                    <img src="../../img/lock.png" alt="" style="width: 30px; ">
-                </button>
-            </div>
-        </div>
-        <?php endif?>
+            $query = mysqli_query($conn, $check);
+            $result = mysqli_fetch_assoc($query);
+
+            $check_pretest = "SELECT* FROM HSK_Exam_Score WHERE $sid  = $id ";
+            $query_pretest = mysqli_query($conn, $check_pretest);
+            $result_pretest = mysqli_fetch_assoc($query_pretest);
+
+            if ($result['hsk2_session_4'] >= 20 || $result_pretest['HSK2_Pretest'] >= 36) :
+            ?>
+                <div class="text-center row">
+                    <div class="col-1 col-md-3"></div>
+                    <div class="col-10 col-md-6">
+                        <button type="button" class="btn btn-success btn-post">แบบทดสอบหลังเรียน
+                            <img src="../../img/posttest.png" alt="" style="width: 30px; ">
+                        </button>
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="text-center row">
+                    <div class="col-1 col-md-3"></div>
+                    <div class="col-10 col-md-6">
+                        <button type="button" class="btn btn-secondary btn-post" disabled>แบบทดสอบหลังเรียน
+                            <img src="../../img/lock.png" alt="" style="width: 30px; ">
+                        </button>
+                    </div>
+                </div>
+            <?php endif ?>
+        <?php endif ?>
     </div>
 
     <!-- //////////////////script -->

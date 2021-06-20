@@ -44,7 +44,21 @@ $_SESSION['less_name'] = $result_send['pic'];
 <style>
     #body {
         font-family: 'Prompt', sans-serif;
-        background-color: #fff0f0;
+    }
+
+    @media (min-width: 576px) {
+        .jumbotron {
+            padding: 2rem 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+    }
+
+    .jumbotron {
+        margin-bottom: 0px;
+    }
+
+    .container {
+        margin-bottom: 30px;
     }
 
     #btn_menu:hover {
@@ -85,17 +99,15 @@ $_SESSION['less_name'] = $result_send['pic'];
     }
 
     #header {
-        background: rgb(75, 75, 75);
-        /* height: 100px; */
-        color: #fff;
-
+        background: transparent;
+        color: #941e1e;
         max-height: 100px;
     }
 
     @media screen and (max-width: 500px) {
 
         h1 {
-            font-size: 15pt;
+            font-size: 25pt;
         }
     }
 
