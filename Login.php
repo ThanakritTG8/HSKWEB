@@ -379,9 +379,36 @@ if (isset($_SESSION['err'])) {
         <img src="./img/pen.png" alt="" style="width: 20px;">
       </div>
 
-     
-
     </div>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" style="color: white;" href="Regis.php">Register </a>
+      <img src="./img/pen.png" alt="" style="width: 20px;">
+    </div>
+
 
   </div>
 
