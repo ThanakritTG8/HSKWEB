@@ -527,7 +527,7 @@
                             </div>
                             </td>
                             <td class="col-2  col-md-1" >
-                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}">
+                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
                             <td scope="col" >
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>
@@ -554,7 +554,7 @@
                             </div>
                             </td>
                             <td class="col-2  col-md-1" style="padding-top: 30px;" >
-                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}">
+                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
                             <td scope="col" style="padding-top: 20px;">
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>
@@ -574,7 +574,7 @@
                             <div> <span>（  ） 。</span></div>
                             </td>
                             <td class="col-2  col-md-1" >
-                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}">
+                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
                             <td scope="col" >
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>

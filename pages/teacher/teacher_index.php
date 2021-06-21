@@ -6,16 +6,39 @@
       background-color: bisque;
       font-weight: bolder;
     }
-    h4{
+
+    tr th:first-child:hover {
+      background: unset;
+      text-decoration: unset;
+    }
+
+    tr th:last-child:hover {
+      background: unset;
+      text-decoration: unset;
+    }
+
+
+    .pointer {
+      cursor: pointer;
+    }
+
+    .table-header :hover {
+      background-color: #4caf50;
+      text-decoration: overline;
+    }
+
+    h4 {
       font-weight: bolder;
       text-transform: uppercase;
     }
+
     #info {
       width: 100%;
       height: 80%;
       margin-top: 30px;
       padding: 10px;
     }
+
 
     .container {
       display: flex;
@@ -26,18 +49,18 @@
       margin-top: 10px;
     }
 
-    thead {
+    .table-header {
       font-size: 10pt;
+      background: rgb(122, 45, 45);
+      color: #fff;
     }
 
     tbody {
       font-size: 10pt;
+      background-color: ivory;
     }
 
     @media screen and (max-width: 1200px) {
-      thead {
-        font-size: 8pt;
-      }
 
       tbody {
         font-size: 8pt;
@@ -52,10 +75,6 @@
     .row {
       margin: 0px !important;
       width: 100%;
-    }
-
-    .modal-body {
-      padding-left: 40px;
     }
 
     #myInput {
@@ -105,7 +124,6 @@
         ?>
       </div>
       <div class="d-flex flex-row-reverse">
-
         <div>
           <input class="form-control p-2" id="myInput" type="text" placeholder="Search..">
         </div>
@@ -113,19 +131,19 @@
 
       </div>
       <div class="cl-table">
-        <table class="table table-bordered text-center">
-          <thead>
-            <tr>
-              <th>No. </th>
-              <th>Name </th>
-              <th>HSK1_Pretest</th>
-              <th>HSK1_Posttest</th>
-              <th>HSK2_Pretest</th>
-              <th>HSK2_Posttest</th>
-              <th>view</th>
-            </tr>
-          </thead>
-          <tbody id="myTable">
+        <table class="table table-bordered text-center" id="myTable">
+
+          <tr class="table-header">
+            <th>No. </th>
+            <th onclick="sortTable(1)" class="pointer">Name </th>
+            <th onclick="sortTable(2)" class="pointer">HSK1_Pretest</th>
+            <th onclick="sortTable(3)" class="pointer">HSK1_Posttest</th>
+            <th onclick="sortTable(4)" class="pointer">HSK2_Pretest</th>
+            <th onclick="sortTable(5)" class="pointer">HSK2_Posttest</th>
+            <th>view</th>
+          </tr>
+
+          <tbody>
 
             <?php
 
@@ -196,21 +214,70 @@
               }
             }
             ?>
-
           </tbody>
+
         </table>
-        <script>
-          $(document).ready(function() {
-            $("#myInput").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
-              $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
-            });
-          });
-        </script>
+
       </div>
     </div>
   </div>
 
   <?php include('../../layout/footerTeacher.php'); ?>
+
+  <script>
+    $(document).ready(function() {
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    let click = 0;
+
+    function sortTable(e) {
+      const taget = e;
+      click += 1;
+      
+      let table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[taget];
+          y = rows[i + 1].getElementsByTagName("TD")[taget];
+          //check if the two rows should switch place:
+          if (click % 2 == 0) {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          } else {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>

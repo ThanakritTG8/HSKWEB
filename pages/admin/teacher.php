@@ -31,6 +31,9 @@
       .card-title {
           margin: 15px 0px;
           text-transform: uppercase;
+          color: rgb(122, 45, 45);
+          font-weight: 900;
+          text-decoration: overline;
       }
 
       .icon-delete {
