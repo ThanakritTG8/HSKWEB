@@ -84,12 +84,7 @@ if (isset($_SESSION['err'])) {
 
 
           <script>
-            $('#password, #confirm_password').on('keyup', function() {
-              if ($('#password').val() == $('#confirm_password').val()) {
-                $('#message').html('Matching').css('color', 'green');
-              } else
-                $('#message').html('Not Matching').css('color', 'red');
-            });
+
           </script>
 
           <div class="form-row">
@@ -139,6 +134,12 @@ if (isset($_SESSION['err'])) {
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+  $('#password, #confirm_password').on('keyup', function() {
+    if ($('#password').val() == $('#confirm_password').val()) {
+      $('#message').html('Matching').css('color', 'green');
+    } else
+      $('#message').html('Not Matching').css('color', 'red');
+  });
   var strMessage = '<?= $message ?>';
   if (strMessage) {
     console.log(strMessage);
