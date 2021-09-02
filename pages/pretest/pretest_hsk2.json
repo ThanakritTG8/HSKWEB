@@ -1,345 +1,353 @@
 {
-    "listen": {
-        "part1": [
-            { "topic": "ประเทศจีน", "answer": true },
-            { "topic": "ชา 1 แก้ว", "answer": true },
-            { "topic": "พี่สาวไม่อยู่บ้าน", "answer": false },
-            { "topic": "ว่ายน้ำ", "answer": false },
-            { "topic": "หนังสือ", "answer": false },
-            { "topic": "ยังไม่นอน", "answer": true },
-            { "topic": "ล้างผลไม้", "answer": true },
-            { "topic": "ครั้งหน้ามาอีกนะ", "answer": true },
-            { "topic": "บะหมี่", "answer": true },
-            { "topic": "ฟุตบอล", "answer": false }
-        ],
-        "part2": {
-            "choice_1": [
-                "B .  มือถือใช้ได้แล้ว",
-                "C .  ไปเที่ยวไหนดี",
-                "D . ซื้อเนื้อวัว",
-                "E .  ไม่เอานมสด",
-                "F  ชอบสีแดง"
-            ],
-            "choice_2": [
-                "A .  อาหารอร่อยจัง ",
-                "B .  เจอกันพรุงนี้",
-                "C . ลูกชายโตแล้ว",
-                "D . ทำงานที่สนามบิน",
-                "E .  ซื้อแตงโม"
-            ],
-            "answer": ["b", "d", "a", "e", "c", "e", "a", "b", "d", "c"]
-        },
-        "part3": [{
-                "topic": [
-                    { "pinin": " zhuōzi  shang", "ch": "A .     桌子     上" },
-                    { "pinin": "yǐzi   shang", "ch": " B .   椅子    上  " },
-                    { "pinin": "  diànshì  shang", "ch": " C .    电视      上" }
-                ],
-                "answer": "a"
-            },
-            {
-                "topic": [
-                    { "pinin": "  diànnǎo ", "ch": "A .     电脑" },
-                    { "pinin": " shǒujī", "ch": "B .   手机" },
-                    { "pinin": " shǒubiǎo", "ch": "C .     手表" }
-                ],
-                "answer": "c"
-            },
-            {
-                "topic": [
-                    { "pinin": "  kàn  bàozhǐ   ", "ch": "A .    看    报纸" },
-                    { "pinin": " kàn  diànshì", "ch": " B .  看     电视" },
-                    { "pinin": "kàn  shū", "ch": "C .   看    书" }
-                ],
-                "answer": "c"
-            },
-            {
-                "topic": [
-                    { "pinin": "  diǎn     fēn", "ch": "A .    7  点  45  分" },
-                    { "pinin": "  diǎn     fēn", "ch": "B .   8  点  50  分" },
-                    { "pinin": "  diǎn     fēn", "ch": " C .   9  点  55  分" }
-                ],
-                "answer": "b"
-            },
-            {
-                "topic": [
-                    { "pinin": "   xuéxí ", "ch": " A .    学习分" },
-                    { "pinin": " gōngzuò", "ch": "B .     工作" },
-                    { "pinin": " lǚyóu", "ch": "C .   旅游" }
-                ],
-                "answer": "b"
-            },
-            {
-                "topic": [
-                    { "pinin": " shì  yīntiān", "ch": "A .    是     阴天" },
-                    { "pinin": " xià  xuě  le", "ch": "B .   下   雪   了" },
-                    { "pinin": "   kuài  xià  yǔ  le", "ch": "C .    快   下   雨  了" }
-                ],
-                "answer": "c"
-            },
-            {
-                "topic": [
-                    { "pinin": "    xiě  Hànzì ", "ch": " A .    写    汉字" },
-                    { "pinin": "  xuéxí  Hànyǔ", "ch": " B .   学习  汉语" },
-                    { "pinin": "  qù   Zhōngguó", "ch": "C .  去      中国" }
-                ],
-                "answer": "a"
-            },
-            {
-                "topic": [
-                    { "pinin": " búcuò", "ch": "A .    不错" },
-                    { "pinin": "  bù  hǎo", "ch": "  B .   不  好" },
-                    { "pinin": "  hěn  hǎo", "ch": "C .   很    好" }
-                ],
-                "answer": "b"
-            },
-            {
-                "topic": [
-                    { "pinin": " yǐjīng  mǎi  le", "ch": "A .    已经   买   了" },
-                    { "pinin": "  dōu  bù  xǐhuan", "ch": " B .    都   不   喜欢" },
-                    { "pinin": "  shénme  dōu  kěyǐ", "ch": "C .    什么     都   可以" }
-                ],
-                "answer": "c"
-            },
-            {
-                "topic": [
-                    { "pinin": "  tī   zúqiú", "ch": "A .    踢   足球" },
-                    { "pinin": "tiàowǔ", "ch": " B .    跳舞" },
-                    { "pinin": " mǎi  dōngxi", "ch": "C .   买     东西" }
-                ],
-                "answer": "c"
-            }
-        ],
-        "part4": [{
-                "topic": [
-                    { "pinin": "   yīyuàn ", "ch": "A .    医院" },
-                    { "pinin": " jīchǎng", "ch": "  B .    机场" },
-                    { "pinin": "chūzūchē  shang", "ch": "C .    出租车     上" }
-                ],
-                "answer": "b"
-            },
-            {
-                "topic": [
-                    { "pinin": "    shàngkè ", "ch": "A .     上课" },
-                    { "pinin": "  mǎi  dōngxi", "ch": "B .   买     东西" },
-                    { "pinin": " qù  shūdiàn", "ch": " C .   去   书店" }
-                ],
-                "answer": "a"
-            },
-            {
-                "topic": [
-                    { "pinin": " gēge   jièshào", "ch": " A .    哥哥    介绍" },
-                    { "pinin": "  tóngxué   jièshào", "ch": "B .     同学     介绍" },
-                    { "pinin": "māma jièshào", "ch": "C .   妈妈   介绍" }
-                ],
-                "answer": "b"
-            },
-            {
-                "topic": [
-                    { "pinin": "shǎo  mǎi  xiē", "ch": "A .     少    买   些" },
-                    { "pinin": " duō  mǎi  xiē", "ch": "B .   多    买   些" },
-                    { "pinin": "bié  mǎi  le", "ch": "C .   别   买   了" }
-                ],
-                "answer": "a"
-            },
-            {
-                "topic": [
-                    { "pinin": "  kāi  chē", "ch": "A .     开   车" },
-                    { "pinin": "zǒulù", "ch": " B .   走路" },
-                    { "pinin": "zuò  gōnggòngqìchē", "ch": "C .   坐       公共汽车" }
-                ],
-                "answer": "c"
-            }
-        ]
+  "listen": {
+    "part1": [
+      { "topic": "ประเทศจีน", "answer": true },
+      { "topic": "ชา 1 แก้ว", "answer": true },
+      { "topic": "พี่สาวไม่อยู่บ้าน", "answer": false },
+      { "topic": "ว่ายน้ำ", "answer": false },
+      { "topic": "หนังสือ", "answer": false },
+      { "topic": "ยังไม่นอน", "answer": true },
+      { "topic": "ล้างผลไม้", "answer": true },
+      { "topic": "ครั้งหน้ามาอีกนะ", "answer": true },
+      { "topic": "บะหมี่", "answer": true },
+      { "topic": "ฟุตบอล", "answer": false }
+    ],
+    "part2": {
+      "choice_1": [
+        "B .  มือถือใช้ได้แล้ว",
+        "C .  ไปเที่ยวไหนดี",
+        "D . ซื้อเนื้อวัว",
+        "E .  ไม่เอานมสด",
+        "F  ชอบสีแดง"
+      ],
+      "choice_2": [
+        "A .  อาหารอร่อยจัง ",
+        "B .  เจอกันพรุงนี้",
+        "C . ลูกชายโตแล้ว",
+        "D . ทำงานที่สนามบิน",
+        "E .  ซื้อแตงโม"
+      ],
+      "answer": ["b", "d", "a", "e", "c", "e", "a", "b", "d", "c"]
     },
-    "reading": {
-        "part1": {
-            "topic": [{
-                    "pinin": "Xièxie  nǐ  bāng  wǒ  zhǎodào  le  xiǎo  māo .",
-                    "ch": " 谢谢   你    帮    我     找到     了  小     猫 。"
-                },
-                {
-                    "pinin": "Dìdi  shì  xiǎoxuéshēng,  tā  bú  huì  zuò  fàn .",
-                    "ch": "弟弟  是       小学生，   他  不  会    做   饭 。"
-                },
-                {
-                    "pinin": "Nǐ  yào  duō  xiūxi,  bié  tài  lèi   le .",
-                    "ch": "你   要    多   休息，别  太  累  了 。"
-                },
-                {
-                    "pinin": "Yú  zhēn  piányi,  sān  kuài  qián  yì  jīn .",
-                    "ch": "鱼    真    便宜， 三    块      钱  一  斤 。"
-                },
-                {
-                    "pinin": "Zhè  shì  wǒ  tóngxué,  tā   ài   tī   zúqiú .",
-                    "ch": " 这   是   我      同学，他  爱  踢  足球 。"
-                }
-            ],
-            "choice": [
-                "B  พักผ่อนสักหน่อย",
-                "C  ทำอาหารไม่เป็น",
-                "D  ปลาราคาถูกมาก",
-                "E  หาแมวเจอแล้ว",
-                "F  ออกไปวิ่ง"
-            ],
-            "answer": ["e", "c", "b", "d", "a"]
-        },
-        "part2": {
-            "topic": [{
-                    "pinin": " Wǒmen  xuéxiào  yǒu  liǎng",
-                    "ch": " 我们      学校     有     两",
-                    "pinin_end": " duō  xuésheng .",
-                    "ch_end": "多      学生 。"
-                },
-                {
-                    "pinin": "Duìbuqǐ,  wǒ  hái  méi  xuéhuì",
-                    "ch": " 对不起， 我  还   没     学会",
-                    "pinin_end": "ne .",
-                    "ch_end": "呢 。"
-                },
-                {
-                    "pinin": "Cóng  wǒ  jiā  dào  jīchǎng, zuò  huǒchē  yào  yí  ge  duō ",
-                    "ch": "  从    我  家   到     机场， 坐     火车    要   一 个   多"
-                },
-                {
-                    "pinin": "Nǐmen  yǒu  shénme  bù ",
-                    "ch": "你们     有     什么    不",
-                    "pinin_end": "  de  wèntí,   kěyǐ   lái  wèn  wǒ .",
-                    "ch_end": "的   问题，可以  来   问    我 。"
-                },
-                {
-                    "pinin": "Wéi,  nǐ  tīngjiàn  wǒ  shuōhuà  ma ?",
-                    "ch": "女：喂，你   听见     我      说话    吗 ？",
-                    "pinin_sec": " Nǐ  shuō  ba,  wǒ  tīng",
-                    "ch_sec": "男：你    说   吧，我    听",
-                    "pinin_sec_end": " ne .",
-                    "ch_sec_end": "呢 。"
-                }
-            ],
-            "choice": [{
-                    "pinin": " zhe ",
-                    "ch": "  B  着"
-                },
-                {
-                    "pinin": " dǒng",
-                    "ch": "C   懂"
-                },
-                {
-                    "pinin": " yóuyǒng",
-                    "ch": " D    游泳"
-                },
-                {
-                    "pinin": "  qiān",
-                    "ch": "   E   千"
-                },
-                {
-                    "pinin": "   yánsè",
-                    "ch": " F   颜色"
-                }
-            ],
-            "answer": ["e", "d", "a", "c", "b"]
-        },
-        "part3": [{
-                "topic": {
-                    "pinin": "Duìbuqǐ, xiānshēng, hēisè  de  dōu  mài  wán  le,",
-                    "ch": "对不起，  先生，   黑色   的   都   卖     完   了，",
-                    "pinin_sec": "nǐ  kàn  zhège  báisè  de  kěyǐ  ma ?",
-                    "ch_sec": "你  看    这个  白色  的  可以  吗 ？",
-                    "pinin_thr": "Hēisè  de  bǐ   báisè  de  guì .",
-                    "ch_thr": "★ 黑色   的  比  白色  的  贵 。"
-                },
-                "answer": false
-            },
-            {
-                "topic": {
-                    "pinin": "Mángle  yì  tiān, gōngzuò  zuò  wán  le,  zhēn  lèi . ",
-                    "ch": " 忙了    一  天，  工作      做    完   了，真    累 。",
-                    "pinin_sec": "Wǒmen  xiūxi  yíxià  ba,   lái  hē  bēi  kāfēi .",
-                    "ch_sec": " 我们    休息  一下  吧，来  喝  杯  咖啡 。",
-                    "pinin_thr": " Tāmen bù  xiǎng xiūxi .",
-                    "ch_thr": "★  他们   不    想    休息 。"
-                },
-                "answer": false
-            },
-            {
-                "topic": {
-                    "pinin": "Tā  xué  Hànyǔ  kuài  yì  nián  le , tīng  hé  shuō  hái  kěyǐ , . ",
-                    "ch": " 他   学    汉语     快   一   年   了，听   和   说    还  可以 ，",
-                    "pinin_sec": "dàn  dú  hé  xiě  hái  bù  hǎo .",
-                    "ch_sec": "但    读  和  写   还  不   好 。",
-                    "pinin_thr": "Tā  de  Hànyǔ  shuō  de  hěn  búcuò .",
-                    "ch_thr": "★ 他  的   汉语     说   得   很   不错 。"
-                },
-                "answer": true
-            },
-            {
-                "topic": {
-                    "pinin": "Yīnwèi  wàimiàn  hái  zài  xiàyǔ,  suǒyǐ  tāmen  méi  chūqù,",
-                    "ch": "  因为      外面     还   在  下雨， 所以   他们   没     出去，",
-                    "pinin_sec": "tāmen  zhǔnbèi  zài  jiā  li   zuò  fàn .",
-                    "ch_sec": "他们     准备    在   家  里  做   饭 。",
-                    "pinin_thr": "  Tāmen  xiànzài  xiǎng  zài  jiā  chī fàn .",
-                    "ch_thr": "★ 他们     现在      想     在   家  吃   饭  。"
-                },
-                "answer": true
-            },
-            {
-                "topic": {
-                    "pinin": "Wǒ hěn cháng shíjiān  méi  yùndòng  le . ",
-                    "ch": "我   很     长     时间     没     运动     了 。",
-                    "pinin_sec": "Míngtiān  shì  qíngtiān,  wǒ  xiǎng  qù  dǎ  lánqiú .",
-                    "ch_sec": "明天     是      晴天，  我     想     去  打   篮球 。",
-                    "pinin_thr": "Tā  míngtiān  xiǎng  qù  yùndòng .",
-                    "ch_thr": "★ 他     明天       想     去    运动 。"
-                },
-                "answer": true
-            }
+    "part3": [
+      {
+        "topic": [
+          { "pinin": " zhuōzi  shang", "ch": "A .     桌子     上" },
+          { "pinin": "yǐzi   shang", "ch": " B .   椅子    上  " },
+          { "pinin": "  diànshì  shang", "ch": " C .    电视      上" }
         ],
-        "part4": {
-            "topic": [{
-                    "pinin": "Méi  ne,   tā  hái  zài  dàxué  dú  shū ?",
-                    "ch": "没    呢，她  还  在   大学   读   书 ？"
-                },
-                {
-                    "pinin": "Hǎo, zàijiàn, dào  le  gěi  wǒ  lái  ge  diànhuà .",
-                    "ch": "好，  再见，到   了  给  我   来  个    电话 。"
-                },
-                {
-                    "pinin": "Shì  de,  wǒ  hái  méi  gàosù  tā .",
-                    "ch": "是   的，我  还    没    告诉  他 。"
-                },
-                {
-                    "pinin": "Nà,   nǐ  gěi  tā  dǎ  diànhuà  wèn  yíxià  ba.",
-                    "ch": "那，你  给  他  打    电话      问   一下  吧 。"
-                },
-                {
-                    "pinin": "Nà  wǒ  míngtiān  qù  shāngdiàn  mǎi   yìxiē  ba .",
-                    "ch": "那   我     明天      去      商店       买    一些  吧 。"
-                }
-            ],
-            "topic_1": [{
-                    "pinin": "Nǐ  wèi  shénme  méi  xǐ   yīfu ?",
-                    "ch": "你   为     什么     没   洗  衣服 ？"
-                },
-                {
-                    "pinin": "Nǐ  shì  zhèli  de  lǎoshī  ma ?",
-                    "ch": "你  是   这里  的   老师   吗 ？"
-                },
-                {
-                    "pinin": "Zhège  fángjiān  zěnmeyàng ?",
-                    "ch": "这个     房间       怎么样 ？"
-                },
-                {
-                    "pinin": "Tiān  yīn  le,  kěnéng  yào  xiàxuě . ",
-                    "ch": "天    阴  了，可能    要    下雪 。"
-                },
-                {
-                    "pinin": "Wǒ zhǔnbèi zhège  xīngqīliù  qù    nàr  wánwánr .",
-                    "ch": "我     准备    这个    星期六    去  那儿  玩玩儿 。"
-                }
-            ],
-            "answer": ["b", "b", "d", "e", "c"],
-            "answer_1": ["c", "e", "a", "d", "b"]
+        "answer": "a"
+      },
+      {
+        "topic": [
+          { "pinin": "  diànnǎo ", "ch": "A .     电脑" },
+          { "pinin": " shǒujī", "ch": "B .   手机" },
+          { "pinin": " shǒubiǎo", "ch": "C .     手表" }
+        ],
+        "answer": "c"
+      },
+      {
+        "topic": [
+          { "pinin": "  kàn  bàozhǐ   ", "ch": "A .    看    报纸" },
+          { "pinin": " kàn  diànshì", "ch": " B .  看     电视" },
+          { "pinin": "kàn  shū", "ch": "C .   看    书" }
+        ],
+        "answer": "c"
+      },
+      {
+        "topic": [
+          { "pinin": "  diǎn     fēn", "ch": "A .    7  点  45  分" },
+          { "pinin": "  diǎn     fēn", "ch": "B .   8  点  50  分" },
+          { "pinin": "  diǎn     fēn", "ch": " C .   9  点  55  分" }
+        ],
+        "answer": "b"
+      },
+      {
+        "topic": [
+          { "pinin": "   xuéxí ", "ch": " A .    学习分" },
+          { "pinin": " gōngzuò", "ch": "B .     工作" },
+          { "pinin": " lǚyóu", "ch": "C .   旅游" }
+        ],
+        "answer": "b"
+      },
+      {
+        "topic": [
+          { "pinin": " shì  yīntiān", "ch": "A .    是     阴天" },
+          { "pinin": " xià  xuě  le", "ch": "B .   下   雪   了" },
+          { "pinin": "   kuài  xià  yǔ  le", "ch": "C .    快   下   雨  了" }
+        ],
+        "answer": "c"
+      },
+      {
+        "topic": [
+          { "pinin": "    xiě  Hànzì ", "ch": " A .    写    汉字" },
+          { "pinin": "  xuéxí  Hànyǔ", "ch": " B .   学习  汉语" },
+          { "pinin": "  qù   Zhōngguó", "ch": "C .  去      中国" }
+        ],
+        "answer": "a"
+      },
+      {
+        "topic": [
+          { "pinin": " búcuò", "ch": "A .    不错" },
+          { "pinin": "  bù  hǎo", "ch": "  B .   不  好" },
+          { "pinin": "  hěn  hǎo", "ch": "C .   很    好" }
+        ],
+        "answer": "b"
+      },
+      {
+        "topic": [
+          { "pinin": " yǐjīng  mǎi  le", "ch": "A .    已经   买   了" },
+          { "pinin": "  dōu  bù  xǐhuan", "ch": " B .    都   不   喜欢" },
+          { "pinin": "  shénme  dōu  kěyǐ", "ch": "C .    什么     都   可以" }
+        ],
+        "answer": "c"
+      },
+      {
+        "topic": [
+          { "pinin": "  tī   zúqiú", "ch": "A .    踢   足球" },
+          { "pinin": "tiàowǔ", "ch": " B .    跳舞" },
+          { "pinin": " mǎi  dōngxi", "ch": "C .   买     东西" }
+        ],
+        "answer": "c"
+      }
+    ],
+    "part4": [
+      {
+        "topic": [
+          { "pinin": "   yīyuàn ", "ch": "A .    医院" },
+          { "pinin": " jīchǎng", "ch": "  B .    机场" },
+          { "pinin": "chūzūchē  shang", "ch": "C .    出租车     上" }
+        ],
+        "answer": "b"
+      },
+      {
+        "topic": [
+          { "pinin": "    shàngkè ", "ch": "A .     上课" },
+          { "pinin": "  mǎi  dōngxi", "ch": "B .   买     东西" },
+          { "pinin": " qù  shūdiàn", "ch": " C .   去   书店" }
+        ],
+        "answer": "a"
+      },
+      {
+        "topic": [
+          { "pinin": " gēge   jièshào", "ch": " A .    哥哥    介绍" },
+          { "pinin": "  tóngxué   jièshào", "ch": "B .     同学     介绍" },
+          { "pinin": "māma jièshào", "ch": "C .   妈妈   介绍" }
+        ],
+        "answer": "b"
+      },
+      {
+        "topic": [
+          { "pinin": "shǎo  mǎi  xiē", "ch": "A .     少    买   些" },
+          { "pinin": " duō  mǎi  xiē", "ch": "B .   多    买   些" },
+          { "pinin": "bié  mǎi  le", "ch": "C .   别   买   了" }
+        ],
+        "answer": "a"
+      },
+      {
+        "topic": [
+          { "pinin": "  kāi  chē", "ch": "A .     开   车" },
+          { "pinin": "zǒulù", "ch": " B .   走路" },
+          { "pinin": "zuò  gōnggòngqìchē", "ch": "C .   坐       公共汽车" }
+        ],
+        "answer": "c"
+      }
+    ]
+  },
+  "reading": {
+    "part1": {
+      "topic": [
+        {
+          "pinin": "Xièxie  nǐ  bāng  wǒ  zhǎodào  le  xiǎo  māo .",
+          "ch": " 谢谢   你    帮    我     找到     了  小     猫 。"
+        },
+        {
+          "pinin": "Dìdi  shì  xiǎoxuéshēng,  tā  bú  huì  zuò  fàn .",
+          "ch": "弟弟  是       小学生，   他  不  会    做   饭 。"
+        },
+        {
+          "pinin": "Nǐ  yào  duō  xiūxi,  bié  tài  lèi   le .",
+          "ch": "你   要    多   休息，别  太  累  了 。"
+        },
+        {
+          "pinin": "Yú  zhēn  piányi,  sān  kuài  qián  yì  jīn .",
+          "ch": "鱼    真    便宜， 三    块      钱  一  斤 。"
+        },
+        {
+          "pinin": "Zhè  shì  wǒ  tóngxué,  tā   ài   tī   zúqiú .",
+          "ch": " 这   是   我      同学，他  爱  踢  足球 。"
         }
+      ],
+      "choice": [
+        "B  พักผ่อนสักหน่อย",
+        "C  ทำอาหารไม่เป็น",
+        "D  ปลาราคาถูกมาก",
+        "E  หาแมวเจอแล้ว",
+        "F  ออกไปวิ่ง"
+      ],
+      "answer": ["e", "c", "b", "d", "a"]
+    },
+    "part2": {
+      "topic": [
+        {
+          "pinin": " Wǒmen  xuéxiào  yǒu  liǎng",
+          "ch": " 我们      学校     有     两",
+          "pinin_end": " duō  xuésheng .",
+          "ch_end": "多      学生 。"
+        },
+        {
+          "pinin": "Duìbuqǐ,  wǒ  hái  méi  xuéhuì",
+          "ch": " 对不起， 我  还   没     学会",
+          "pinin_end": "ne .",
+          "ch_end": "呢 。"
+        },
+        {
+          "pinin": "Cóng  wǒ  jiā  dào  jīchǎng, zuò  huǒchē  yào  yí  ge  duō ",
+          "ch": "  从    我  家   到     机场， 坐     火车    要   一 个   多"
+        },
+        {
+          "pinin": "Nǐmen  yǒu  shénme  bù ",
+          "ch": "你们     有     什么    不",
+          "pinin_end": "  de  wèntí,   kěyǐ   lái  wèn  wǒ .",
+          "ch_end": "的   问题，可以  来   问    我 。"
+        },
+        {
+          "pinin": "Wéi,  nǐ  tīngjiàn  wǒ  shuōhuà  ma ?",
+          "ch": "女：喂，你   听见     我      说话    吗 ？",
+          "pinin_sec": " Nǐ  shuō  ba,  wǒ  tīng",
+          "ch_sec": "男：你    说   吧，我    听",
+          "pinin_sec_end": " ne .",
+          "ch_sec_end": "呢 。"
+        }
+      ],
+      "choice": [
+        {
+          "pinin": " zhe ",
+          "ch": "  B  着"
+        },
+        {
+          "pinin": " dǒng",
+          "ch": "C   懂"
+        },
+        {
+          "pinin": " yóuyǒng",
+          "ch": " D    游泳"
+        },
+        {
+          "pinin": "  qiān",
+          "ch": "   E   千"
+        },
+        {
+          "pinin": "   yánsè",
+          "ch": " F   颜色"
+        }
+      ],
+      "answer": ["e", "d", "a", "c", "b"]
+    },
+    "part3": [
+      {
+        "topic": {
+          "pinin": "Duìbuqǐ, xiānshēng, hēisè  de  dōu  mài  wán  le,",
+          "ch": "对不起，  先生，   黑色   的   都   卖     完   了，",
+          "pinin_sec": "nǐ  kàn  zhège  báisè  de  kěyǐ  ma ?",
+          "ch_sec": "你  看    这个  白色  的  可以  吗 ？",
+          "pinin_thr": "Hēisè  de  bǐ   báisè  de  guì .",
+          "ch_thr": "★ 黑色   的  比  白色  的  贵 。"
+        },
+        "answer": false
+      },
+      {
+        "topic": {
+          "pinin": "Mángle  yì  tiān, gōngzuò  zuò  wán  le,  zhēn  lèi . ",
+          "ch": " 忙了    一  天，  工作      做    完   了，真    累 。",
+          "pinin_sec": "Wǒmen  xiūxi  yíxià  ba,   lái  hē  bēi  kāfēi .",
+          "ch_sec": " 我们    休息  一下  吧，来  喝  杯  咖啡 。",
+          "pinin_thr": " Tāmen bù  xiǎng xiūxi .",
+          "ch_thr": "★  他们   不    想    休息 。"
+        },
+        "answer": false
+      },
+      {
+        "topic": {
+          "pinin": "Tā  xué  Hànyǔ  kuài  yì  nián  le , tīng  hé  shuō  hái  kěyǐ , . ",
+          "ch": " 他   学    汉语     快   一   年   了，听   和   说    还  可以 ，",
+          "pinin_sec": "dàn  dú  hé  xiě  hái  bù  hǎo .",
+          "ch_sec": "但    读  和  写   还  不   好 。",
+          "pinin_thr": "Tā  de  Hànyǔ  shuō  de  hěn  búcuò .",
+          "ch_thr": "★ 他  的   汉语     说   得   很   不错 。"
+        },
+        "answer": true
+      },
+      {
+        "topic": {
+          "pinin": "Yīnwèi  wàimiàn  hái  zài  xiàyǔ,  suǒyǐ  tāmen  méi  chūqù,",
+          "ch": "  因为      外面     还   在  下雨， 所以   他们   没     出去，",
+          "pinin_sec": "tāmen  zhǔnbèi  zài  jiā  li   zuò  fàn .",
+          "ch_sec": "他们     准备    在   家  里  做   饭 。",
+          "pinin_thr": "  Tāmen  xiànzài  xiǎng  zài  jiā  chī fàn .",
+          "ch_thr": "★ 他们     现在      想     在   家  吃   饭  。"
+        },
+        "answer": true
+      },
+      {
+        "topic": {
+          "pinin": "Wǒ hěn cháng shíjiān  méi  yùndòng  le . ",
+          "ch": "我   很     长     时间     没     运动     了 。",
+          "pinin_sec": "Míngtiān  shì  qíngtiān,  wǒ  xiǎng  qù  dǎ  lánqiú .",
+          "ch_sec": "明天     是      晴天，  我     想     去  打   篮球 。",
+          "pinin_thr": "Tā  míngtiān  xiǎng  qù  yùndòng .",
+          "ch_thr": "★ 他     明天       想     去    运动 。"
+        },
+        "answer": true
+      }
+    ],
+    "part4": {
+      "topic": [
+        {
+          "pinin": "Méi  ne,   tā  hái  zài  dàxué  dú  shū ?",
+          "ch": "没    呢，她  还  在   大学   读   书 ？"
+        },
+        {
+          "pinin": "Hǎo, zàijiàn, dào  le  gěi  wǒ  lái  ge  diànhuà .",
+          "ch": "好，  再见，到   了  给  我   来  个    电话 。"
+        },
+        {
+          "pinin": "Shì  de,  wǒ  hái  méi  gàosù  tā .",
+          "ch": "是   的，我  还    没    告诉  他 。"
+        },
+        {
+          "pinin": "Nà,   nǐ  gěi  tā  dǎ  diànhuà  wèn  yíxià  ba.",
+          "ch": "那，你  给  他  打    电话      问   一下  吧 。"
+        },
+        {
+          "pinin": "Nà  wǒ  míngtiān  qù  shāngdiàn  mǎi   yìxiē  ba .",
+          "ch": "那   我     明天      去      商店       买    一些  吧 。"
+        }
+      ],
+      "topic_1": [
+        {
+          "pinin": "Nǐ  wèi  shénme  méi  xǐ   yīfu ?",
+          "ch": "你   为     什么     没   洗  衣服 ？"
+        },
+        {
+          "pinin": "Nǐ  shì  zhèli  de  lǎoshī  ma ?",
+          "ch": "你  是   这里  的   老师   吗 ？"
+        },
+        {
+          "pinin": "Zhège  fángjiān  zěnmeyàng ?",
+          "ch": "这个     房间       怎么样 ？"
+        },
+        {
+          "pinin": "Tiān  yīn  le,  kěnéng  yào  xiàxuě . ",
+          "ch": "天    阴  了，可能    要    下雪 。"
+        },
+        {
+          "pinin": "Wǒ zhǔnbèi zhège  xīngqīliù  qù    nàr  wánwánr .",
+          "ch": "我     准备    这个    星期六    去  那儿  玩玩儿 。"
+        }
+      ],
+      "answer": ["b", "b", "d", "e", "c"],
+      "answer_1": ["c", "e", "a", "d", "b"]
     }
+  }
 }

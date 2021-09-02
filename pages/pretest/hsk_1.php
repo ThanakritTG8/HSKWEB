@@ -16,8 +16,13 @@
         <p> 第一部分【ส่วนที่ 1】</p>
     </div>
     <div class="table-responsive">
-        <p>第 1-5 题【ข้อ 1-5】</p>
 
+        <div class="d-flex justify-content-between align-items-baseline">
+            <p>第 1-5 题【ข้อ 1-5】</p>
+            <div class="btn btn-play btn-success" id="lesson-btn">
+                Play <i class="fas fa-headphones"></i>
+            </div>
+        </div>
         <form id="part1_1">
             <table class="table table-bordered text-center responsive">
 
@@ -57,7 +62,12 @@
         <p> 第二部分【ส่วนที่ 2】</p>
     </div>
     <div class="table-responsive">
-        <p>第 6-10 题【ข้อ 6-10】</p>
+        <div class="d-flex justify-content-between align-items-baseline">
+            <p>第 6-10 题【ข้อ 6-10】</p>
+            <div class="btn btn-play btn-success" id="lesson-btn">
+                Play <i class="fas fa-headphones"></i>
+            </div>
+        </div>
         <form id="part1_2">
             <table class="table table-bordered text-center responsive">
 
@@ -87,7 +97,12 @@
         <p> 第三部分【ส่วนที่ 3】</p>
     </div>
     <div class="table-responsive">
-        <p>第 11-15 题【ข้อ 11-15】</p>
+        <div class="d-flex justify-content-between align-items-baseline">
+            <p>第 11-15 题【ข้อ 11-15】</p>
+            <div class="btn btn-play btn-success" id="lesson-btn">
+                Play <i class="fas fa-headphones"></i>
+            </div>
+        </div>
         <form id="part1_3">
             <table class="table table-bordered text-center responsive">
                 <tr>
@@ -100,9 +115,9 @@
                         <div>女：很 喜欢 。</div>
                     </td>
                     <td class="col-2  col-md-1" style="padding-top: 40px;">
-                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                        <input type="text" value="F" style="width:100%" class="text-center" disabled>
                     </td>
-                    <td scope="col" style="padding-top: 35px;" id="part3_choice1">
+                    <td scope="col" style="padding-top: 35px;" id="part3_choice1" class="text-start">
                     </td>
                 </tr>
                 <tbody id="sesion3">
@@ -116,14 +131,19 @@
         <p> 第四部分【ส่วนที่ 4】</p>
     </div>
     <div class="table-responsive">
-        <p>第 16-20 题【ข้อ 16-20】</p>
+        <div class="d-flex justify-content-between align-items-baseline">
+            <p>第 16-20 题【ข้อ 16-20】</p>
+            <div class="btn btn-play btn-success" id="lesson-btn">
+                Play <i class="fas fa-headphones"></i>
+            </div>
+        </div>
         <form id="part1_4">
             <table class="table table-bordered text-center responsive">
 
                 <tr>
                     <td scope="col" rowspan="2" style="padding-top: 60px;" class="first">例如：</td>
 
-                    <td scope="col" colspan="3">
+                    <td scope="col" colspan="3" class="text-start">
                         <div class="pin-in">Shàngwǔ tā qù shūdiàn mǎi shū.</div>
                         <div>上午 他 去 书店 买 书</div>
                         <div class="pin-in pl-2"> Tā shàngwǔ qù nǎlǐ ?</div>
@@ -201,14 +221,14 @@
                 <tr>
                     <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
 
-                    <td scope="col">
+                    <td scope="col" class="text-start">
                         <div class="pin-in">Wǒ hěn xǐhuan chī shuǐguǒ .</div>
                         <div>我 很 喜欢 吃 水果 。</div>
                     </td>
                     <td class="col-2  col-md-1" style="padding-top: 20px;">
-                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                        <input type="text" value="F" style="width:100%" class="text-center" disabled>
                     </td>
-                    <td scope="col" style="padding-top: 20px;" id="part2_2_choice1">
+                    <td scope="col" style="padding-top: 20px;" id="part2_2_choice1" class="text-start">
 
                     </td>
                 </tr>
@@ -229,14 +249,14 @@
                 <tr>
                     <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
 
-                    <td scope="col">
+                    <td scope="col" class="text-start">
                         <div class="pin-in">Nǐ xǐhuan chī shuǐguǒ ma ?</div>
                         <div>你 喜欢 吃 水果 吗 ？</div>
                     </td>
                     <td class="col-2  col-md-1" style="padding-top: 15px;">
-                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                        <input type="text" value="F" style="width:100%" class="text-center" disabled>
                     </td>
-                    <td scope="col">
+                    <td scope="col" class="text-start">
                         <div id="part2_3_choice1" class="pin-in"></div>
                         <div id="part2_3_choice2"></div>
                     </td>
@@ -258,7 +278,7 @@
                 <tr>
                     <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
 
-                    <td scope="col" class="d-flex justify-content-center align-items-end">
+                    <td scope="col" class="d-flex justify-content-start align-items-end">
                         <div>
                             <div class="pin-in"> Wǒ</div>
                             <div>我 </div>
@@ -273,10 +293,10 @@
 
                     </td>
                     <td class="col-2  col-md-1" style="padding-top: 15px;">
-                        <input type="text" id="disabledTextInput" value="F" style="width:100%" class="text-center" disabled>
+                        <input type="text" value="F" style="width:100%" class="text-center" disabled>
                     </td>
-                    <td scope="col">
-                        <div id="part2_4_choice1" class="pin-in"></div>
+                    <td scope="col" class="text-start">
+                        <div id="part2_4_choice1" class="pin-in pl-1"></div>
                         <div id="part2_4_choice2"></div>
                     </td>
                 </tr>
@@ -372,7 +392,7 @@
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no${i+1}">
                             </td>
-                            <td scope="col" >
+                            <td scope="col" class="text-start" >
                                 <div >${part3[i+1]}</div>
                             </td>
                         </tr>`;
@@ -457,7 +477,7 @@
             part2_2.forEach((e, i) => {
                 let td = `<tr>
                             <th scope="col" class="first">${i+26}</th>
-                            <td scope="col">
+                            <td scope="col" class="text-start">
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
 
@@ -465,7 +485,7 @@
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_2_${i+1}">
                             </td>
-                            <td scope="col" >
+                            <td scope="col" class="text-start" >
                                 <div>${choice2_2[i+1]}</div>
                             </td>
                         </tr>`;
@@ -483,7 +503,7 @@
             part2_3.forEach((e, i) => {
                 let td = `<tr>
                             <th scope="col" class="first">${i+31}</th>
-                            <td scope="col">
+                            <td scope="col" class="text-start">
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
 
@@ -491,7 +511,7 @@
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_3_${i+1}">
                             </td>
-                            <td scope="col" >
+                            <td scope="col" class="text-start" >
                                 <div class="pin-in pl-1">${choice2_3[i+1].pinin}</div>
                                 <div >${choice2_3[i+1].ch}</div>
                             </td>
@@ -515,7 +535,7 @@
                 if (e.pinin_end) {
                     td = `<tr>
                             <th scope="col" class="first">${i+36}</th>
-                            <td scope="col" class="d-flex justify-content-center align-items-end">
+                            <td scope="col" class="d-flex justify-content-start align-items-end">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
@@ -529,7 +549,7 @@
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
-                            <td scope="col" >
+                            <td scope="col" class="text-start">
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>
                                 <div >${choice2_4[i+1].ch}</div>
                             </td>
@@ -538,13 +558,13 @@
                     if (e.pinin_sec_end) {
                         td = `<tr>
                             <th scope="col" style="padding-top: 30px;" class="first">${i+36}</th>
-                            <td scope="col" >
+                            <td scope="col" class="text-start">
                            
-                            <div class="pin-in">${e.pinin}</div>
+                            <div class="pin-in pl-2">${e.pinin}</div>
                             <div>${e.ch}</div>
-                            <div class="d-flex justify-content-center align-items-end">
+                            <div class="d-flex justify-content-start align-items-end">
                             <div>
-                            <div class="pin-in">${e.pinin_sec}</div>
+                            <div class="pin-in pl-2">${e.pinin_sec}</div>
                             <div>${e.ch_sec}<span>（  ） 。</span></div>
                             </div>
                             <div>
@@ -556,7 +576,7 @@
                             <td class="col-2  col-md-1" style="padding-top: 30px;" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
-                            <td scope="col" style="padding-top: 20px;">
+                            <td scope="col" class="text-start" style="padding-top: 20px;">
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>
                                 <div >${choice2_4[i+1].ch}</div>
                             </td>
@@ -566,7 +586,7 @@
                 } else {
                     td = `<tr>
                             <th scope="col" class="first">${i+36}</th>
-                            <td scope="col" class="d-flex justify-content-center align-items-end">
+                            <td scope="col" class="d-flex justify-content-start align-items-end">
                             <div>
                             <div class="pin-in">${e.pinin}</div>
                             <div>${e.ch}</div>
@@ -576,7 +596,7 @@
                             <td class="col-2  col-md-1" >
                                 <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
-                            <td scope="col" >
+                            <td scope="col" class="text-start">
                                 <div class="pin-in pl-2">${choice2_4[i+1].pinin}</div>
                                 <div >${choice2_4[i+1].ch}</div>
                             </td>
