@@ -149,7 +149,7 @@ if (isset($_SESSION['success'])) {
                 };
             </script>
             <div class="col-sm-4">
-                <div class=" text-center" id="btn_menu">
+                <div class=" text-center" id="btn_menu" id="btn_menu" onclick="gramma()">
                     <div class="card-body underlineHover">
                         <img src="../../img/china.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">ไวยากรณ์</h4>
@@ -157,7 +157,7 @@ if (isset($_SESSION['success'])) {
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class=" text-center" id="btn_menu">
+                <div class=" text-center" id="btn_menu" onclick="pinyin()">
                     <div class="card-body underlineHover">
                         <img src="../../img/yueqin.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title">พินอิน</h4>
@@ -176,6 +176,12 @@ if (isset($_SESSION['success'])) {
                 </div>
             </div>
             <script>
+                 function gramma() {
+                    window.location.replace('gramma.php')
+                };
+                function pinyin() {
+                    window.location.replace('pinyin.php')
+                };
                 function btn_hsk1() {
                     window.location.replace('HSK.php?hsk_1')
                 };

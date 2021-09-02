@@ -66,37 +66,11 @@
                 <a class="nav-link" href="gramma.php">ไวยากรณ์ </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="pinin.php">พินอิน </a>
+                <a class="nav-link" href="pinyin.php">พินอิน </a>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    HSK1
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HSK_menu.php?part=1&&hsk_1">ชุดที่1</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=2&&hsk_1">ชุดที่2</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=3&&hsk_1">ชุดที่3</a>
-                    <a class="dropdown-item" href="HSK_menu.php?part=4&&hsk_1">ชุดที่4</a>
-                    <div class="dropdown-divider"></div>
-                    <?php
-
-                    include('../../database/database.php');
-                    $sid = "SID";
-                    $id = $_SESSION['SID'];
-
-
-                    $check = "SELECT* FROM HSK1_Exercise_Score WHERE $sid  = $id ";
-
-                    $query = mysqli_query($conn, $check);
-                    $result = mysqli_fetch_assoc($query);
-                    if ($result['hsk1_session_4'] >= 20) :
-                    ?>
-                        <a class="dropdown-item" href="hsk_post.php">แบบทดสอบหลังเรียน</a>
-                    <?php else : ?>
-                        <p class="item-dis">แบบทดสอบหลังเรียน </p>
-                    <?php endif ?>
-                </div>
+            <li class="nav-item ">
+                <a class="nav-link" href="HSK.php?hsk_1">HSK 1 </a>
             </li>
 
             <!-- ถ้าคะแนน hsk1 post-test ยังไม่ผ่าน จะไม่ปรากฏ hsk2  -->
@@ -109,30 +83,9 @@
             $result = mysqli_fetch_assoc($query);
 
             if ($result['HSK1_Pretest'] >= 20 || $result['HSK1_Posttest'] >= 20) {
-                echo ' <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      HSK2
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="HSK_menu.php?part=1&&hsk_2">ชุดที่1</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=2&&hsk_2">ชุดที่2</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=3&&hsk_2">ชุดที่3</a>
-                      <a class="dropdown-item" href="HSK_menu.php?part=4&&hsk_2">ชุดที่4</a>
-                      <div class="dropdown-divider"></div>';
-
-
-
-                $check = "SELECT* FROM HSK2_Exercise_Score WHERE $sid  = $id ";
-
-                $query = mysqli_query($conn, $check);
-                $result = mysqli_fetch_assoc($query);
-                if ($result['hsk2_session_4'] >= 20) {
-
-                    echo '<a class="dropdown-item" href="hsk_post.php">แบบทดสอบหลังเรียน</a>';
-                } else {
-                    echo '<p class="item-dis">แบบทดสอบหลังเรียน </p>';
-                }
-                echo ' </div> </li> ';
+                echo '  <li class="nav-item ">
+                <a class="nav-link" href="HSK.php?hsk_2">HSK 2</a>
+            </li>';
             }
             ?>
 
