@@ -11,7 +11,7 @@
                 ?>
             </div>
         </div>
-
+        <audio id="sound"></audio>
         <!-- //// ส่วนที่1 -->
         <div class="text-center">
             <p style="background-color: blanchedalmond;">一、听力【1 การฟัง】</p>
@@ -20,7 +20,7 @@
         <div class="table-responsive">
             <div class="d-flex justify-content-between align-items-baseline">
                 <p>第 1-5 题【ข้อ 1-5】</p>
-                <div class="btn btn-play btn-success" id="lesson-btn">
+                <div class="btn btn-play btn-success" id="pretest-btn-1">
                     Play <i class="fas fa-headphones"></i>
                 </div>
             </div>
@@ -65,7 +65,7 @@
         <div class="table-responsive">
             <div class="d-flex justify-content-between align-items-baseline">
                 <p>第 6-10 题【ข้อ 6-10】</p>
-                <div class="btn btn-play btn-success" id="lesson-btn">
+                <div class="btn btn-play btn-success" id="pretest-btn-2">
                     Play <i class="fas fa-headphones"></i>
                 </div>
             </div>
@@ -100,7 +100,7 @@
         <div class="table-responsive">
             <div class="d-flex justify-content-between align-items-baseline">
                 <p>第 11-15 题【ข้อ 11-15】</p>
-                <div class="btn btn-play btn-success" id="lesson-btn">
+                <div class="btn btn-play btn-success" id="pretest-btn-3">
                     Play <i class="fas fa-headphones"></i>
                 </div>
             </div>
@@ -134,7 +134,7 @@
         <div class="table-responsive">
             <div class="d-flex justify-content-between align-items-baseline">
                 <p>第 16-20 题【ข้อ 16-20】</p>
-                <div class="btn btn-play btn-success" id="lesson-btn">
+                <div class="btn btn-play btn-success" id="pretest-btn-4">
                     Play <i class="fas fa-headphones"></i>
                 </div>
             </div>
@@ -320,6 +320,25 @@
 
 <script>
     $(function() {
+        const sound = document.getElementById("sound");
+        const session = <?= $session ?>;
+
+        $('#pretest-btn-1').click(() => {
+        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_1.mp3`;
+        sound.play();
+        });
+        $('#pretest-btn-2').click(() => {
+        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_2.mp3`;
+        sound.play();
+        });
+        $('#pretest-btn-3').click(() => {
+        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_3.mp3`;
+        sound.play();
+        });
+        $('#pretest-btn-4').click(() => {
+        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_4.mp3`;
+        sound.play();
+        });
 
 
         $.getJSON("posttest_hsk1.json", function(result) {
