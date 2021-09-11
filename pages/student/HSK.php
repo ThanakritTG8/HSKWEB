@@ -96,6 +96,15 @@ if (isset($_GET['logout'])) {
         margin: 60px 0px 30px 0px;
     }
 
+    .description {
+        color: #d5d3d3;
+        font-size: 14px;
+    }
+
+    .mask {
+        color: #fffbfb;
+    }
+
     @media screen and (max-width: 500px) {
 
         h1 {
@@ -137,47 +146,8 @@ if (isset($_GET['logout'])) {
     <!-- body -->
 
     <div class="container">
+        <?php include('./btn-menu.php'); ?>
 
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <a href='HSK_menu.php?part=1&&hsk_<?= $hsk_set ?>' class="card btn text-center" id="btn_menu">
-                    <div class="card-body underlineHover">
-                        <img src="/img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                        <h4 class="card-title">HSK ชุดที่ 1</h4>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <a href="HSK_menu.php?part=2&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
-                    <div class="card-body underlineHover">
-                        <img src="/img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                        <h4 class="card-title">HSK ชุดที่ 2</h4>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <a href="HSK_menu.php?part=3&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
-                    <div class="card-body underlineHover">
-                        <img src="/img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                        <h4 class="card-title">HSK ชุดที่ 3 </h4>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
-                    <div class="card-body underlineHover">
-                        <img src="/img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                        <h4 class="card-title">HSK ชุดที่ 4</h4>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
         <?php if ($hsk_set == 1) : ?>
             <?php
             include('../../database/database.php');
@@ -192,7 +162,7 @@ if (isset($_GET['logout'])) {
             $query_pretest = mysqli_query($conn, $check_pretest);
             $result_pretest = mysqli_fetch_assoc($query_pretest);
 
-            if ($result['hsk1_session_4'] >= 20 || $result_pretest['HSK1_Pretest'] >= 24) :
+            if ($result['hsk1_session_4'] >= 36 || $result_pretest['HSK1_Pretest'] >= 24) :
             ?>
                 <div class="text-center row">
                     <div class="col-1 col-md-3"></div>
@@ -208,6 +178,9 @@ if (isset($_GET['logout'])) {
                     <div class="col-10 col-md-6">
                         <button type="button" class="btn btn-secondary btn-post" disabled>แบบทดสอบหลังเรียน
                             <img src="../../img/lock.png" alt="" style="width: 30px; ">
+                            <div>
+                                <span class="description">จำเป็นต้องผ่านแบบทดสอบ ชุดที่4 </span>
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -242,6 +215,9 @@ if (isset($_GET['logout'])) {
                     <div class="col-10 col-md-6">
                         <button type="button" class="btn btn-secondary btn-post" disabled>แบบทดสอบหลังเรียน
                             <img src="../../img/lock.png" alt="" style="width: 30px; ">
+                            <div>
+                                <span class="description">จำเป็นต้องผ่านแบบทดสอบ ชุดที่4 </span>
+                            </div>
                         </button>
                     </div>
                 </div>

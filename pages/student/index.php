@@ -104,6 +104,10 @@ if (isset($_SESSION['success'])) {
     }
 
 
+    .description {
+        color: #d5d3d3;
+        font-size: 14px;
+    }
 
     #btn_menu:hover {
         background-color: #36b163;
@@ -176,12 +180,14 @@ if (isset($_SESSION['success'])) {
                 </div>
             </div>
             <script>
-                 function gramma() {
+                function gramma() {
                     window.location.replace('gramma.php')
                 };
+
                 function pinyin() {
                     window.location.replace('pinyin.php')
                 };
+
                 function btn_hsk1() {
                     window.location.replace('HSK.php?hsk_1')
                 };
@@ -214,8 +220,10 @@ if (isset($_SESSION['success'])) {
                 echo '  <div class="col-sm-4">
                     <div class=" text-center" id="Dis_btn_menu">
                         <div class="card-body ">
-                            <img src="../../img/lock.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                            <h4 class="card-title" style="color:#D3D3D3">HSK2</h4>
+                            <img src="../../img/lock.png" alt="" style="width: 50px; margin-bottom: 10px;">
+                            <h4 class="card-title" style="color:#D3D3D3; margin-bottom: 0px;">HSK2</h4>
+                            <span class="description">จำเป็นต้องผ่านแบบทดสอบหลังเรียน HSK1 </span>
+
                         </div>
                     </div>
                 </div>';

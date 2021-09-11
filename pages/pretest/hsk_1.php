@@ -681,6 +681,12 @@
                 const sum_part_4 = $.fn.count(part4, 4, true);
 
                 let total_listen = sum_part1 + sum_part_2 + sum_part_3 + sum_part_4;
+                console.log(sum_part1);
+                console.log(sum_part_2);
+                console.log(sum_part_3);
+                console.log(sum_part_4);
+
+
 
                 // reading
                 const sum_part2_1 = $.fn.count(part2_1, 1, false);
@@ -689,6 +695,11 @@
                 const sum_part2_4 = $.fn.count_part3(answer2_4, false, 4);
                 let total_reading = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4;
                 const total = total_listen + total_reading;
+                console.log(sum_part2_1);
+                console.log(sum_part2_2);
+                console.log(sum_part2_3);
+                console.log(sum_part2_4);
+
 
                 ///send score
                 var xmlhttp = new XMLHttpRequest();
@@ -702,7 +713,9 @@
                                 text: `คุณได้คะแนนสอบ ${total} คะแนน`,
                                 confirmButtonText: `ยืนยัน`,
                             }).then((result) => {
-                                window.location.href = "../student/index.php"
+                                window.location.href = "../../pages/introTest.php?hsk=2"
+                                
+
                             })
                         } else {
                             Swal.fire({

@@ -1,4 +1,6 @@
-<?php include_once('../../layout/headerPretest.php') ?>
+                               
+<?php include_once('../../layout/headerPretest.php');
+  unset($_SESSION['HSK1']);?>
 
 <div class="container d-grid justify-content-center">
     <div class="timer">

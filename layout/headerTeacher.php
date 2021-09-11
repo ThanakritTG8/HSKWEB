@@ -93,11 +93,9 @@ if (isset($_GET['logout'])) {
 
             </ul>
             <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-success " type="button">
-                    <a href="teacher_index.php?logout='1'" style="color:white">LOGOUT
+                    <a href="teacher_index.php?logout='1'" style="color:white" class="btn btn-success">LOGOUT
                         <img src="../../img/logout.png" alt="" style="width: 20px; ">
                     </a>
-                </button>
 
             </form>
         </div>

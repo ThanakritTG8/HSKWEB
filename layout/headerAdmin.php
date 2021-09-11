@@ -106,11 +106,9 @@ if (isset($_SESSION['create'])) {
 
             </ul>
             <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <button class="btn btn-success " type="button">
-                    <a href="Admin_index.php?logout='1'" style="color:white">LOGOUT
+                    <a href="Admin_index.php?logout='1'" style="color:white" class="btn btn-success">LOGOUT
                         <img src="../../img/logout.png" alt="" style="width: 20px; ">
                     </a>
-                </button>
 
             </form>
         </div>

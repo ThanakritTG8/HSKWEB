@@ -82,7 +82,7 @@
             $query = mysqli_query($conn, $check);
             $result = mysqli_fetch_assoc($query);
 
-            if ($result['HSK1_Pretest'] >= 20 || $result['HSK1_Posttest'] >= 20) {
+            if ($result['HSK1_Pretest'] >= 24 || $result['HSK1_Posttest'] >= 36) {
                 echo '  <li class="nav-item ">
                 <a class="nav-link" href="HSK.php?hsk_2">HSK 2</a>
             </li>';
@@ -92,11 +92,9 @@
 
         </ul>
         <form action="Login.html" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-success " type="button">
-                <a href="index.php?logout='1'" style="color:white">LOGOUT
+                <a href="index.php?logout='1'" style="color:white" class="btn btn-success">LOGOUT
                     <img src="../../img/logout.png" alt="" style="width: 20px; ">
                 </a>
-            </button>
 
         </form>
     </div>

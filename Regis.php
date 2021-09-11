@@ -45,11 +45,11 @@ if (isset($_SESSION['err'])) {
           <div class="form-row">
             <div class="form-group col-12 col-md-6">
               <label for="inputEmail4">Firstname</label>
-              <input type="text" class="form-control" name="Fname" required>
+              <input type="text" class="form-control" name="Fname" maxlength="20" required>
             </div>
             <div class="form-group col-12 col-md-6">
               <label for="inputEmail4">Lastname</label>
-              <input type="text" class="form-control" name="Lname" required>
+              <input type="text" class="form-control" name="Lname" maxlength="20" required>
             </div>
           </div>
           <div class="form-row">
@@ -61,7 +61,7 @@ if (isset($_SESSION['err'])) {
           <div class="form-row">
             <div class="form-group  col-12  col-md-12">
               <label for="inputEmail4">Username</label>
-              <input type="text" class="form-control" name="username" required>
+              <input type="text" class="form-control" name="username" maxlength="20" required>
             </div>
           </div>
 

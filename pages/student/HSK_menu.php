@@ -147,7 +147,7 @@ $_SESSION['less_name'] = $result_send['pic'];
                     HSK_Vocab.php?vocab=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
-                        <img src="/img/flag-china.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                        <img src="../../img/flag-china.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title ">คำศัพท์</h4>
                     </div>
                 </a>
@@ -157,7 +157,7 @@ $_SESSION['less_name'] = $result_send['pic'];
                     HSK_lesson.php?lesson=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
-                        <img src="/img/online-lesson.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                        <img src="../../img/online-lesson.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title ">บทเรียน</h4>
                     </div>
                 </a>
@@ -171,7 +171,7 @@ $_SESSION['less_name'] = $result_send['pic'];
                     HSK_mooc.php?mooc=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
                     " class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
-                        <img src="/img/multimedia.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                        <img src="../../img/multimedia.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title ">MOOC</h4>
                     </div>
                 </a>
@@ -179,7 +179,7 @@ $_SESSION['less_name'] = $result_send['pic'];
             <div class="col-sm-4">
                 <a href="#" class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
-                        <img src="/img/test.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                        <img src="../../img/test.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title ">แบบทดสอบ</h4>
                     </div>
                 </a>
