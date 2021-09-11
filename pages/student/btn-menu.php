@@ -9,7 +9,6 @@
     }
 </style>
 <?php
-include('../../plugin/tooltip.html');
 include('../../database/database.php');
 $sid = "SID";
 $id = $_SESSION['SID'];
