@@ -16,10 +16,11 @@
         <p> 第一部分【ส่วนที่ 1】</p>
     </div>
     <div class="table-responsive">
-
+        <audio id="sound">
+        </audio>
         <div class="d-flex justify-content-between align-items-baseline">
             <p>第 1-5 题【ข้อ 1-5】</p>
-            <div class="btn btn-play btn-success" id="lesson-btn">
+            <div class="btn btn-play btn-success" id="pretest-btn-1">
                 Play <i class="fas fa-headphones"></i>
             </div>
         </div>
@@ -64,7 +65,7 @@
     <div class="table-responsive">
         <div class="d-flex justify-content-between align-items-baseline">
             <p>第 6-10 题【ข้อ 6-10】</p>
-            <div class="btn btn-play btn-success" id="lesson-btn">
+            <div class="btn btn-play btn-success" id="pretest-btn-2">
                 Play <i class="fas fa-headphones"></i>
             </div>
         </div>
@@ -99,7 +100,7 @@
     <div class="table-responsive">
         <div class="d-flex justify-content-between align-items-baseline">
             <p>第 11-15 题【ข้อ 11-15】</p>
-            <div class="btn btn-play btn-success" id="lesson-btn">
+            <div class="btn btn-play btn-success" id="pretest-btn-3">
                 Play <i class="fas fa-headphones"></i>
             </div>
         </div>
@@ -133,7 +134,7 @@
     <div class="table-responsive">
         <div class="d-flex justify-content-between align-items-baseline">
             <p>第 16-20 题【ข้อ 16-20】</p>
-            <div class="btn btn-play btn-success" id="lesson-btn">
+            <div class="btn btn-play btn-success" id="pretest-btn-4">
                 Play <i class="fas fa-headphones"></i>
             </div>
         </div>
@@ -317,6 +318,28 @@
 
 <script>
     $(function() {
+        const sound = document.getElementById("sound");
+
+        $('#pretest-btn-1').click(() => {
+            sound.src = '../../sound/pre-test/hsk1/HSK_1_1_PreTest_Part_1.mp3';
+            sound.play();
+        });
+        $('#pretest-btn-2').click(() => {
+            sound.src = '../../sound/pre-test/hsk1/HSK_1_1_PreTest_Part_2.mp3';
+            sound.play();
+        });
+        $('#pretest-btn-3').click(() => {
+            sound.src = '../../sound/pre-test/hsk1/HSK_1_1_PreTest_Part_3.mp3';
+            sound.play();
+        });
+        $('#pretest-btn-4').click(() => {
+            sound.src = '../../sound/pre-test/hsk1/HSK_1_1_PreTest_Part_4.mp3';
+            sound.play();
+        });
+
+
+
+
         $.getJSON("pretest_hsk1.json", function(result) {
 
             const part1 = result.listen.part1;
@@ -681,12 +704,6 @@
                 const sum_part_4 = $.fn.count(part4, 4, true);
 
                 let total_listen = sum_part1 + sum_part_2 + sum_part_3 + sum_part_4;
-                console.log(sum_part1);
-                console.log(sum_part_2);
-                console.log(sum_part_3);
-                console.log(sum_part_4);
-
-
 
                 // reading
                 const sum_part2_1 = $.fn.count(part2_1, 1, false);
@@ -695,10 +712,6 @@
                 const sum_part2_4 = $.fn.count_part3(answer2_4, false, 4);
                 let total_reading = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4;
                 const total = total_listen + total_reading;
-                console.log(sum_part2_1);
-                console.log(sum_part2_2);
-                console.log(sum_part2_3);
-                console.log(sum_part2_4);
 
 
                 ///send score
@@ -714,7 +727,7 @@
                                 confirmButtonText: `ยืนยัน`,
                             }).then((result) => {
                                 window.location.href = "../../pages/introTest.php?hsk=2"
-                                
+
 
                             })
                         } else {
