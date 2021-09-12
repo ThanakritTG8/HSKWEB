@@ -723,7 +723,7 @@
                                                         <a onclick="play('zi')" class="btn btn-light">
                                                             z<b style="color: rgb(89, 0, 128);">i</b> (จือ)
                                                         </a>
-                                                        <!-- <audio id="zi" src="/sound/pinyin2/zi.mp3"></audio> -->
+                                                        <audio id="zi" src="/sound/pinyin2/zi.mp3"></audio>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <a onclick="play('ci')" class="btn btn-light">
