@@ -10,12 +10,6 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['username']);
     header('location: ../../Login.php');
 }
-if (isset($_SESSION['success'])) {
-    $message = $_SESSION['success'];
-    echo  "<script type='text/javascript'>alert('$message');</script>";
-
-    unset($_SESSION['success']);
-}
 
 ?>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-unset($_SESSION['HSK1']);
 if (!isset($_SESSION['username'])) {
 
     header('location: ../../Login.php');
@@ -10,12 +9,6 @@ if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
     header('location: ../../Login.php');
-}
-if (isset($_SESSION['success'])) {
-    $message = $_SESSION['success'];
-    echo  "<script type='text/javascript'>alert('$message');</script>";
-
-    unset($_SESSION['success']);
 }
 
 ?>
