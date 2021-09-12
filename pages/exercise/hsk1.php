@@ -1,4 +1,4 @@
-<?php include_once('../../layout/headerPosttest.php') ?>
+<?php include_once('../../layout/headerExercise.php') ?>
 <style>
     .btn-play {
         border-radius: 1.25rem !important;
