@@ -174,19 +174,19 @@
                         <tr>
                         
                             <td class="text-left" >    
-                            <input  type="radio" id="topic4_1_${i}" name="no${i+1}" value="${setAnswer[0]}" >
-                                <label for="topic4_1_${i}">
+                            <input  type="radio" id="topic4_1_${i}" name="no${i+1}" value="${setAnswer[0]}" style="cursor:pointer">
+                                <label for="topic4_1_${i}" style="width: 80%; cursor:pointer">
                                 ${e.choice[0]}
                                 </label>
                             </td>
                             <td class="text-left">    
-                            <input  type="radio" id="topic4_1_${i+10}" name="no${i+1}" value="${setAnswer[1]}" >
-                                <label for="topic4_1_${i+10}">
+                            <input  type="radio" id="topic4_1_${i+10}" name="no${i+1}" value="${setAnswer[1]}" style="cursor:pointer">
+                                <label for="topic4_1_${i+10}" style="width: 80%; cursor:pointer">
                                 ${e.choice[1]}
                                 </label>
                             </td>  <td class="text-left">    
-                            <input  type="radio" id="topic4_1_${i+20}" name="no${i+1}" value="${setAnswer[2]}" >
-                                <label for="topic4_1_${i+20}">
+                            <input  type="radio" id="topic4_1_${i+20}" name="no${i+1}" value="${setAnswer[2]}" style="cursor:pointer">
+                                <label for="topic4_1_${i+20}" style="width: 80%; cursor:pointer">
                                 ${e.choice[2]}
                                 </label>
                             </td>
@@ -385,19 +385,19 @@
                         <tr>
                         
                             <td class="text-left col-4" >    
-                            <input  type="radio" id="topic4_1_${i+200}" name="no${i+21}" value="${setAnswer[0]}" >
-                                <label for="topic4_1_${i+200}">
+                            <input  type="radio" id="topic4_1_${i+200}" name="no${i+21}" value="${setAnswer[0]}" style="cursor:pointer">
+                                <label for="topic4_1_${i+200}" style="width: 80%; cursor:pointer">
                                 ${e.choice[0]}
                                 </label>
                             </td>
                             <td class="text-left col-4">    
-                            <input  type="radio" id="topic4_1_${i+210}" name="no${i+21}" value="${setAnswer[1]}" >
-                                <label for="topic4_1_${i+210}">
+                            <input  type="radio" id="topic4_1_${i+210}" name="no${i+21}" value="${setAnswer[1]}" style="cursor:pointer">
+                                <label for="topic4_1_${i+210}" style="width: 80%; cursor:pointer">
                                 ${e.choice[1]}
                                 </label>
                             </td>  <td class="text-left col-4">    
-                            <input  type="radio" id="topic4_1_${i+220}" name="no${i+21}" value="${setAnswer[2]}" >
-                                <label for="topic4_1_${i+220}">
+                            <input  type="radio" id="topic4_1_${i+220}" name="no${i+21}" value="${setAnswer[2]}" style="cursor:pointer">
+                                <label for="topic4_1_${i+220}" style="width: 80%; cursor:pointer">
                                 ${e.choice[2]}
                                 </label>
                             </td>
