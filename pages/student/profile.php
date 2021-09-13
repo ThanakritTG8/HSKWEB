@@ -37,7 +37,7 @@ if (isset($_SESSION['success'])) {
         font-family: 'Prompt', sans-serif;
     }
 
-  
+
     .wrapper {
         display: flex;
     }
@@ -184,14 +184,16 @@ if (isset($_SESSION['success'])) {
                 <div class="col-sm-1"></div>
             </div>
             <div class="row" style=" margin-bottom: 30px;">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <div class="card" id="info">
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th rowspan="2" class="align-middle" scope="col">#</th>
+                                        <th colspan="4" class="text-center" scope="col">แบบทดสอบ</th>
+                                    </tr>
+                                    <tr>
                                         <th scope="col">ชุดที่1</th>
                                         <th scope="col">ชุดที่2</th>
                                         <th scope="col">ชุดที่3</th>
@@ -268,15 +270,20 @@ if (isset($_SESSION['success'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 table-buttom">
+                <div class="col-md-6 table-buttom">
                     <div class="card" id="info">
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Pre-Test</th>
-                                        <th scope="col">Post-Test</th>
+                                        <th rowspan="2" class="align-middle" scope="col" class="">#</th>
+                                        <th rowspan="2" class="align-middle" scope="col">Pre-Test</th>
+                                        <th colspan="2" class="text-center" scope="col">Post-Test</th>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">ชุดที่1</th>
+                                        <th scope="col">ชุดที่2</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -299,6 +306,11 @@ if (isset($_SESSION['success'])) {
                                         } else {
                                             echo '<td>' . $result['HSK1_Posttest'] . '</td>';
                                         }
+                                        if ($result['HSK1_Posttest_2'] == 0) {
+                                            echo '<td>-</td>';
+                                        } else {
+                                            echo '<td>' . $result['HSK1_Posttest_2'] . '</td>';
+                                        }
                                         ?>
                                     </tr>
                                     <tr>
@@ -320,6 +332,11 @@ if (isset($_SESSION['success'])) {
                                         } else {
                                             echo '<td>' . $result['HSK2_Posttest'] . '</td>';
                                         }
+                                        if ($result['HSK2_Posttest_2'] == 0) {
+                                            echo '<td>-</td>';
+                                        } else {
+                                            echo '<td>' . $result['HSK2_Posttest_2'] . '</td>';
+                                        }
                                         ?>
                                     </tr>
                                 </tbody>
@@ -336,8 +353,8 @@ if (isset($_SESSION['success'])) {
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

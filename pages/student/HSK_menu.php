@@ -177,7 +177,7 @@ $_SESSION['less_name'] = $result_send['pic'];
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="#" class="card btn text-center" id="btn_menu">
+                <a href="../exercise/hsk.php?part=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>" class="card btn text-center" id="btn_menu">
                     <div class="card-body underlineHover">
                         <img src="../../img/test.png" alt="" style="width: 50px; margin-bottom: 20px;">
                         <h4 class="card-title ">แบบทดสอบ</h4>

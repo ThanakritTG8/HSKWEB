@@ -75,7 +75,7 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
     <div class="col-sm-4">
         <?php if ($resultExercise['hsk' . $hsk_set . '_session_3'] >= 36) : ?>
 
-            <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="Dis_btn_menu">
+            <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">
                     <img src="../..//img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 4</h4>

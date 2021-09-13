@@ -22,7 +22,7 @@
 
     <div class="container d-grid justify-content-center">
         <!-- ///// set1_1_1 -->
-        <P class="text-center mt-5">HSK（一级）练习（1/1）【แบบฝึกหัด HSK 1 ชุดที่ 1/1】</P>
+        <P class="text-center mt-5">HSK（一级）练习（1/1）【แบบฝึกหัด HSK <?=$hsk_set?> ชุดที่ <?=$part?>/1】</P>
         <P class="text-center">第一部分【ส่วนที่ 1】</P>
         <div class="table-responsive">
             <p>第 1-10 题【ข้อ 1-10】</p>
@@ -78,7 +78,7 @@
         </div>
 
         <!-- ///// set1_2_1 -->
-        <P class="text-center mt-5">HSK（一级）练习（1/2）【แบบฝึกหัด HSK 1 ชุดที่ 1/2】</P>
+        <P class="text-center mt-5">HSK（一级）练习（1/2）【แบบฝึกหัด HSK <?=$hsk_set?> ชุดที่ <?=$part?>/2】</P>
         <P class="text-center">第一部分【ส่วนที่ 1】</P>
         <div class="table-responsive">
             <p>第 1-10 题【ข้อ 1-10】</p>
@@ -648,9 +648,35 @@
                 let totle1 = sum_part1 + sum_part2_1 + sum_part2_2 + sum_part3_1 + sum_part3_2;
                 let totle2 = sum2_part1 + sum2_part2_1 + sum2_part2_2 + sum2_part3_1 + sum2_part3_2;
 
-                let totle = totle1 + totle2;
+                let total = totle1 + totle2;
 
-
+                ///send score
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (total >= 36) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'สอบผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.replace("../student/index.php")
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'สอบไม่ผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.replace("../student/index.php")
+                            })
+                        }
+                    }
+                };
+                xmlhttp.open("GET", "../../models/submitExercise.php?score=" + total + "&&hsk="+hsk+"&&set=" + part, true);
+                xmlhttp.send();
 
             }
 

@@ -2,9 +2,10 @@
 session_start();
 if (!isset($_SESSION['SID'])) {
     header('location: ../Login.php');
-}elseif(!isset($_SESSION['HSK1'])){
-    header('location: ../pages/student/index.php');
 }
+// elseif(!isset($_SESSION['HSK1'])){
+//     header('location: ../pages/student/index.php');
+// }
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +36,7 @@ if (!isset($_SESSION['SID'])) {
     #send {
         padding: 0 1em !important;
     }
+
     .card-header {
         font-size: 16px;
         font-weight: 500;
@@ -48,56 +50,60 @@ if (!isset($_SESSION['SID'])) {
 </style>
 
 <body>
-    <div class="container">
+    <?php if (isset($_GET['hsk'])) : ?>
 
-        <div class="card text-center">
-            <?php $hsk = $_GET['hsk'];
-            if ($hsk == 1) : ?>
-                <div class="card-header">
-                    <div>HSK（一级）课前自测</div>
-                    <div>【แบบทดสอบก่อนเรียน (Pre-test) HSK 1】</div>
-                </div>
-                <div class="card-body text-left">
-                    <h6 class="card-title text-center">注意【คำอธิบาย】</h6>
-                    <p class="card-text"> 一、HSK（一级）分两部分【HSK 1 แบ่งเป็น 2 ทักษะ】</p>
-                    <p class="card-text">1．听力：20 题，13 分钟【การฟัง：20 ข้อ 13 นาที】</p>
-                    <p class="card-text">2．阅读：20 题，17 分钟【การอ่าน：20 ข้อ 17 นาที】</p>
-                    <p class="card-text">二、全部考试：40 题，30 分钟【การสอบทั้งหมด：40 ข้อ 30 นาที】</p>
-                    <p class="card-text">三、满分 40 分 / 24 分为合格【คะแนนเต็ม 40 คะแนน / สอบผ่าน 24 คะแนน】</p>
+        <div class="container">
 
-                </div>
-            <?php else : ?>
-                <div class="card-header">
-                    <div>HSK（二级）课前自测</div>
-                    <div>【แบบทดสอบก่อนเรียน (Pre-test) HSK 2】</div>
-                </div>
-                <div class="card-body text-left">
-                    <h5 class="card-title text-center">注意【คำอธิบาย】</h5>
-                    <p class="card-text"> 一、HSK（二级）分两部分【HSK 2 แบ่งเป็น 2 ทักษะ】</p>
-                    <p class="card-text">1．听力：35 题，25 分钟【การฟัง：35 ข้อ 25 นาที】</p>
-                    <p class="card-text">2．阅读：25 题，25 分钟【การอ่าน：25 ข้อ 25 นาที】</p>
-                    <p class="card-text">二、全部考试：60 题，50 分钟【การสอบทั้งหมด：60 ข้อ 50 นาที】</p>
-                    <p class="card-text">三、满分 60 分 / 36 分为合格【คะแนนเต็ม 60 คะแนน / สอบผ่าน 36 คะแนน】</p>
+            <div class="card text-center">
+                <?php $hsk = $_GET['hsk'];
+                if ($hsk == 1) : ?>
+                    <div class="card-header">
+                        <div>HSK（一级）课前自测</div>
+                        <div>【แบบทดสอบก่อนเรียน (Pre-test) HSK 1】</div>
+                    </div>
+                    <div class="card-body text-left">
+                        <h6 class="card-title text-center">注意【คำอธิบาย】</h6>
+                        <p class="card-text"> 一、HSK（一级）分两部分【HSK 1 แบ่งเป็น 2 ทักษะ】</p>
+                        <p class="card-text">1．听力：20 题，13 分钟【การฟัง：20 ข้อ 13 นาที】</p>
+                        <p class="card-text">2．阅读：20 题，17 分钟【การอ่าน：20 ข้อ 17 นาที】</p>
+                        <p class="card-text">二、全部考试：40 题，30 分钟【การสอบทั้งหมด：40 ข้อ 30 นาที】</p>
+                        <p class="card-text">三、满分 40 分 / 24 分为合格【คะแนนเต็ม 40 คะแนน / สอบผ่าน 24 คะแนน】</p>
 
+                    </div>
+                <?php else : ?>
+                    <div class="card-header">
+                        <div>HSK（二级）课前自测</div>
+                        <div>【แบบทดสอบก่อนเรียน (Pre-test) HSK 2】</div>
+                    </div>
+                    <div class="card-body text-left">
+                        <h5 class="card-title text-center">注意【คำอธิบาย】</h5>
+                        <p class="card-text"> 一、HSK（二级）分两部分【HSK 2 แบ่งเป็น 2 ทักษะ】</p>
+                        <p class="card-text">1．听力：35 题，25 分钟【การฟัง：35 ข้อ 25 นาที】</p>
+                        <p class="card-text">2．阅读：25 题，25 分钟【การอ่าน：25 ข้อ 25 นาที】</p>
+                        <p class="card-text">二、全部考试：60 题，50 分钟【การสอบทั้งหมด：60 ข้อ 50 นาที】</p>
+                        <p class="card-text">三、满分 60 分 / 36 分为合格【คะแนนเต็ม 60 คะแนน / สอบผ่าน 36 คะแนน】</p>
+
+                    </div>
+                <?php endif ?>
+                <div class="card-footer text-muted">
+                    <?php $mess_send = "เริ่มทำแบบทดสอบ";
+                    include_once('../plugin/sent_button.php')
+                    ?>
                 </div>
-            <?php endif ?>
-            <div class="card-footer text-muted">
-                <?php $mess_send = "เริ่มทำแบบทดสอบ";
-                include_once('../plugin/sent_button.php')
-                ?>
             </div>
+
         </div>
 
-    </div>
 
 
+        <?php include_once('../layout/footerPretest.php') ?>
+    <?php endif ?>
 
-    <?php include_once('../layout/footerPretest.php') ?>
     <script>
         $(function() {
             const hsk = <?= $hsk ?>;
             $("#send").click(() => {
-                window.location.href = `../pages/pretest/hsk_${hsk}.php`;
+                window.location.replace(`../pages/pretest/hsk_${hsk}.php`);
 
             });
 

@@ -823,7 +823,7 @@
                                 text: `คุณได้คะแนนสอบ ${total} คะแนน`,
                                 confirmButtonText: `ยืนยัน`,
                             }).then((result) => {
-                                window.location.href = "../student/index.php"
+                                window.location.replace("../student/index.php") 
                             })
                         } else {
                             Swal.fire({
@@ -832,7 +832,7 @@
                                 text: `คุณได้คะแนนสอบ ${total} คะแนน`,
                                 confirmButtonText: `ยืนยัน`,
                             }).then((result) => {
-                                window.location.href = "../student/index.php"
+                                window.location.replace("../student/index.php")  
                             })
                         }
                     }

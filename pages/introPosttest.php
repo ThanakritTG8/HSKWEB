@@ -102,7 +102,7 @@ if (!isset($_SESSION['SID'])) {
             const hsk = <?= $hsk ?>;
             const session = <?= $session ?>;
             $("#send").click(() => {
-                window.location.href = `../pages/posttest/hsk_${hsk}.php?session=${session}`;
+                window.location.replace(`../pages/posttest/hsk_${hsk}.php?session=${session}`) 
 
             });
 

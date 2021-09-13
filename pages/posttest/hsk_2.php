@@ -850,34 +850,34 @@
                 let total_read = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4 + sum_part2_4_1;
 
                 let total = total_listen + total_read
-                console.log(total);
+               
                 ///send score
-                //     var xmlhttp = new XMLHttpRequest();
-                //     xmlhttp.onreadystatechange = function() {
-                //         if (this.readyState == 4 && this.status == 200) {
-                //             if (total >= 36) {
-                //                 Swal.fire({
-                //                     icon: 'success',
-                //                     title: 'สอบผ่าน',
-                //                     text: `คุณได้คะแนนสอบ ${total} คะแนน`,
-                //                     confirmButtonText: `ยืนยัน`,
-                //                 }).then((result) => {
-                //                     window.location.href = "../student/index.php"
-                //                 })
-                //             } else {
-                //                 Swal.fire({
-                //                     icon: 'error',
-                //                     title: 'สอบไม่ผ่าน',
-                //                     text: `คุณได้คะแนนสอบ ${total} คะแนน`,
-                //                     confirmButtonText: `ยืนยัน`,
-                //                 }).then((result) => {
-                //                     window.location.href = "../student/index.php"
-                //                 })
-                //             }
-                //         }
-                //     };
-                //     xmlhttp.open("GET", "../../models/submitTest.php?score=" + total + "&&hsk=2", true);
-                //     xmlhttp.send();
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            if (total >= 36) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'สอบผ่าน',
+                                    text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                    confirmButtonText: `ยืนยัน`,
+                                }).then((result) => {
+                                    window.location.replace("../student/index.php")
+                                })
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'สอบไม่ผ่าน',
+                                    text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                    confirmButtonText: `ยืนยัน`,
+                                }).then((result) => {
+                                    window.location.replace("../student/index.php")
+                                })
+                            }
+                        }
+                    };
+                    xmlhttp.open("GET", "../../models/submitPosttest.php?score=" + total + "&&hsk=2&&set=" + session, true);
+                    xmlhttp.send();
 
             }
 

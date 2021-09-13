@@ -82,7 +82,7 @@
             $query = mysqli_query($conn, $check);
             $result = mysqli_fetch_assoc($query);
 
-            if ($result['HSK1_Pretest'] >= 24 || $result['HSK1_Posttest'] >= 36) {
+            if ($result['HSK1_Pretest'] >= 24 || $result['HSK1_Posttest'] >= 36 || $result['HSK1_Posttest_2'] >= 36) {
                 echo '  <li class="nav-item ">
                 <a class="nav-link" href="HSK.php?hsk_2">HSK 2</a>
             </li>';

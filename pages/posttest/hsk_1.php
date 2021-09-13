@@ -276,10 +276,10 @@
             <p>第 36-40 题【ข้อ 36-40】</p>
             <form id="part2_4">
                 <table class="table table-bordered text-center responsive">
-                    <tr >
+                    <tr>
                         <td scope="col" rowspan="2" style="padding-top: 20px;" class="first">例如：</td>
 
-                        <td scope="col" class="d-flex justify-content-start align-items-end" >
+                        <td scope="col" class="d-flex justify-content-start align-items-end">
                             <div>
                                 <div class="pin-in"> Wǒ</div>
                                 <div>我 </div>
@@ -324,20 +324,20 @@
         const session = <?= $session ?>;
 
         $('#pretest-btn-1').click(() => {
-        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_1.mp3`;
-        sound.play();
+            sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_1.mp3`;
+            sound.play();
         });
         $('#pretest-btn-2').click(() => {
-        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_2.mp3`;
-        sound.play();
+            sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_2.mp3`;
+            sound.play();
         });
         $('#pretest-btn-3').click(() => {
-        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_3.mp3`;
-        sound.play();
+            sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_3.mp3`;
+            sound.play();
         });
         $('#pretest-btn-4').click(() => {
-        sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_4.mp3`;
-        sound.play();
+            sound.src = `../../sound/post-test/hsk1/HSK_1_PostTest_${session}_Part_4.mp3`;
+            sound.play();
         });
 
 
@@ -774,36 +774,35 @@
                 let total_reading = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4;
                 const total = total_listen + total_reading;
 
-                console.log(total);
 
                 ///send score
-                //  var xmlhttp = new XMLHttpRequest();
-                // xmlhttp.onreadystatechange = function() {
-                //     if (this.readyState == 4 && this.status == 200) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
 
-                //         if (total >= 24) {
-                //             Swal.fire({
-                //                 icon: 'success',
-                //                 title: 'สอบผ่าน',
-                //                 text: `คุณได้คะแนนสอบ ${total} คะแนน`,
-                //                 confirmButtonText: `ยืนยัน`,
-                //             }).then((result) => {
-                //                 window.location.href = "../student/index.php"
-                //             })
-                //         } else {
-                //             Swal.fire({
-                //                 icon: 'error',
-                //                 title: 'สอบไม่ผ่าน',
-                //                 text: `คุณได้คะแนนสอบ ${total} คะแนน`,
-                //                 confirmButtonText: `ยืนยัน`,
-                //             }).then((result) => {
-                //                 window.location.href = "../student/index.php"
-                //             })
-                //         }
-                //     }
-                // };
-                // xmlhttp.open("GET", "../../models/submitTest.php?score=" + total + "&&hsk=1", true);
-                // xmlhttp.send();
+                        if (total >= 24) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'สอบผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.replace("../../pages/introTest.php?hsk=2") 
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'สอบไม่ผ่าน',
+                                text: `คุณได้คะแนนสอบ ${total} คะแนน`,
+                                confirmButtonText: `ยืนยัน`,
+                            }).then((result) => {
+                                window.location.replace("../student/index.php") 
+                            })
+                        }
+                    }
+                };
+                xmlhttp.open("GET", "../../models/submitPosttest.php?score=" + total + "&&hsk=1&&set=" + session, true);
+                xmlhttp.send();
 
 
             }

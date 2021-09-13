@@ -19,7 +19,6 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSK</title>
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -92,7 +91,6 @@ if (isset($_GET['logout'])) {
     }
 
     .btn-post {
-        width: 100%;
         margin: 60px 0px 30px 0px;
     }
 
@@ -105,10 +103,22 @@ if (isset($_GET['logout'])) {
         color: #fffbfb;
     }
 
+    .description-post {
+        color: #1a1717;
+        font-size: 14px;
+    }
+
     @media screen and (max-width: 500px) {
 
         h1 {
             font-size: 25pt;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+
+        .btn-test {
+            margin-top: 10px;
         }
     }
 
@@ -122,13 +132,27 @@ if (isset($_GET['logout'])) {
 <body id="body">
 
     <!-- <include header> -->
-    <?php include('../../layout/header.php');
+    <?php
 
     if (isset($_GET['hsk_1'])) {
         $hsk_set = 1;
     } elseif (isset($_GET['hsk_2'])) {
+        include('../../database/database.php');
+        $sid = "SID";
+        $id = $_SESSION['SID'];
+        $checkRedirect = "SELECT* FROM HSK_Exam_Score WHERE $sid  = $id ";
+        $queryRedirect = mysqli_query($conn, $checkRedirect);
+        $resultRedirect = mysqli_fetch_assoc($queryRedirect);
+        if ($resultRedirect['HSK2_Pretest'] == 0) {
+            echo "
+            <script type=\"text/javascript\">
+            window.location.href = '../introTest.php?hsk=2';
+            </script>
+        ";
+        }
         $hsk_set = 2;
     }
+    include('../../layout/header.php');
     ?>
 
 
@@ -165,11 +189,17 @@ if (isset($_GET['logout'])) {
             if ($result['hsk1_session_4'] >= 36 || $result_pretest['HSK1_Pretest'] >= 24) :
             ?>
                 <div class="text-center row">
-                    <div class="col-1 col-md-3"></div>
-                    <div class="col-10 col-md-6">
-                        <button type="button" class="btn btn-success btn-post">แบบทดสอบหลังเรียน
+                    <div class="col-1 col-md-2"></div>
+                    <div class="col-10 col-md-8 btn-post">
+                        <div class="description-post">สามารถเลือกทำได้ 1 ชุด</div>
+                        <a href="../introPosttest.php?hsk=1&&session=1" class="btn btn-success">
+                            แบบทดสอบหลังเรียน ชุดที่1
                             <img src="../../img/posttest.png" alt="" style="width: 30px; ">
-                        </button>
+                        </a>
+                        <a href="../introPosttest.php?hsk=1&&session=2" class="btn btn-success btn-test">
+                            แบบทดสอบหลังเรียน ชุดที่2
+                            <img src="../../img/posttest.png" alt="" style="width: 30px; ">
+                        </a>
                     </div>
                 </div>
             <?php else : ?>
@@ -202,11 +232,17 @@ if (isset($_GET['logout'])) {
             if ($result['hsk2_session_4'] >= 20 || $result_pretest['HSK2_Pretest'] >= 36) :
             ?>
                 <div class="text-center row">
-                    <div class="col-1 col-md-3"></div>
-                    <div class="col-10 col-md-6">
-                        <button type="button" class="btn btn-success btn-post">แบบทดสอบหลังเรียน
+                    <div class="col-1 col-md-2"></div>
+                    <div class="col-10 col-md-8 btn-post">
+                        <div class="description-post">สามารถเลือกทำได้ 1 ชุด</div>
+                        <a href="../introPosttest.php?hsk=2&&session=1" class="btn btn-success">
+                            แบบทดสอบหลังเรียน ชุดที่1
                             <img src="../../img/posttest.png" alt="" style="width: 30px; ">
-                        </button>
+                        </a>
+                        <a href="../introPosttest.php?hsk=2&&session=2" class="btn btn-success btn-test">
+                            แบบทดสอบหลังเรียน ชุดที่2
+                            <img src="../../img/posttest.png" alt="" style="width: 30px; ">
+                        </a>
                     </div>
                 </div>
             <?php else : ?>

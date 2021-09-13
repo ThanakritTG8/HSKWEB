@@ -201,7 +201,7 @@ if (isset($_GET['logout'])) {
             $query = mysqli_query($conn, $check);
             $result = mysqli_fetch_assoc($query);
 
-            if ($result['HSK1_Pretest'] >= 20 || $result['HSK1_Posttest'] >= 20) {
+            if ($result['HSK1_Pretest'] >= 24 || $result['HSK1_Posttest'] >= 36 || $result['HSK1_Posttest_2'] >= 36) {
                 echo '<div class="col-sm-4">
                     <div class=" text-center" id="btn_menu"  onclick="btn_hsk2()">
                         <div class="card-body underlineHover">
