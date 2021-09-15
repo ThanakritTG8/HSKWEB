@@ -16,16 +16,14 @@
       background: unset;
       text-decoration: unset;
     }
-
-
     .pointer {
       cursor: pointer;
     }
-
+/* 
     .table-header :hover {
       background-color: #4caf50;
       text-decoration: overline;
-    }
+    } */
 
     h4 {
       font-weight: bolder;
@@ -134,13 +132,23 @@
         <table class="table table-bordered text-center" id="myTable">
 
           <tr class="table-header">
-            <th>No. </th>
-            <th onclick="sortTable(1)" class="pointer">Name </th>
-            <th onclick="sortTable(2)" class="pointer">HSK1_Pretest</th>
-            <th onclick="sortTable(3)" class="pointer">HSK1_Posttest</th>
-            <th onclick="sortTable(4)" class="pointer">HSK2_Pretest</th>
-            <th onclick="sortTable(5)" class="pointer">HSK2_Posttest</th>
-            <th>view</th>
+            <th rowspan="2" class="align-middle">No. </th>
+            <th rowspan="2" class="pointer align-middle">Name </th>
+            <th colspan="3">HSK1</th>
+
+            <th colspan="3">HSK2</th>
+
+            <th rowspan="2" class="align-middle">view</th>
+          </tr>
+
+          <tr class="table-header">
+            <th class="pointer">Pretest</th>
+            <th class="pointer">Posttest ชุดที่1</th>
+            <th class="pointer">Posttest ชุดที่2</th>
+
+            <th class="pointer">Pretest</th>
+            <th class="pointer">Posttest ชุดที่1</th>
+            <th class="pointer">Posttest ชุดที่2</th>
           </tr>
 
           <tbody>
@@ -171,8 +179,11 @@
    <td>' . $row['Sname'] . ' ' . $row['SLname'] . '</td>
    <td> ' . $row['HSK1_Pretest'] . '</td>
    <td> ' . $row['HSK1_Posttest'] . '</td>
+   <td> ' . $row['HSK1_Posttest_2'] . '</td>
    <td> ' . $row['HSK2_Pretest'] . '</td>
    <td> ' . $row['HSK2_Posttest'] . '</td>
+   <td> ' . $row['HSK2_Posttest_2'] . '</td>
+
    <td>
    <i class="far fa-eye icon" style="font-size:20px" data-toggle="modal" data-target="#Modal' . $row['SID'] . '"></i></td>
  </tr>';
@@ -190,7 +201,9 @@
       <div class="modal-body">
         <p class="topic">HSK1 </p>
         <p>Pretest   :   ' . $row['HSK1_Pretest'] . ' </p>
-        <p>Posttest  :   ' . $row['HSK1_Posttest'] . ' </p>
+        <p>Posttest ชุดที่1 :   ' . $row['HSK1_Posttest'] . ' </p>
+        <p>Posttest ชุดที่2 :   ' . $row['HSK1_Posttest_2'] . ' </p>
+
         <p> ชุดที่1  : ' . $row['hsk1_session_1'] . '  </p>
         <p> ชุดที่2 : ' . $row['hsk1_session_2'] . ' </p>
         <p> ชุดที่3 : ' . $row['hsk1_session_3'] . ' </p>
@@ -198,7 +211,9 @@
         <hr>  <hr>
         <p class="topic">HSK2 </p>
         <p>Pretest   : ' . $row['HSK2_Pretest'] . ' </p>
-        <p>Posttest  : ' . $row['HSK2_Posttest'] . ' </p>
+        <p>Posttest ชุดที่1 : ' . $row['HSK2_Posttest'] . ' </p>
+        <p>Posttest ชุดที่2 : ' . $row['HSK2_Posttest_2'] . ' </p>
+
         <p> ชุดที่1 : ' . $row['hsk2_session_1'] . ' </p>
         <p> ชุดที่2 :  ' . $row['hsk2_session_2'] . '</p>
         <p> ชุดที่3 :  ' . $row['hsk2_session_3'] . '</p>
@@ -238,7 +253,7 @@
     function sortTable(e) {
       const taget = e;
       click += 1;
-      
+
       let table, rows, switching, i, x, y, shouldSwitch;
       table = document.getElementById("myTable");
       switching = true;

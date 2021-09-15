@@ -1617,7 +1617,6 @@ if (isset($_GET['logout'])) {
 
     <script>
         function play(au) {
-            // console.log(au);
             var audio = document.getElementById(au);
             audio.play();
         }

@@ -143,7 +143,8 @@ if (isset($_GET['logout'])) {
             </div>
             <script>
                 function btn_profile() {
-                    window.location.replace('profile.php')
+                    window.location.href ="profile.php"
+
                 };
             </script>
             <div class="col-sm-4">
@@ -175,19 +176,22 @@ if (isset($_GET['logout'])) {
             </div>
             <script>
                 function gramma() {
-                    window.location.replace('gramma.php')
+                    window.location.href ="gramma.php"
+
                 };
 
                 function pinyin() {
-                    window.location.replace('pinyin.php')
+                    window.location.href ="pinyin.php"
+
                 };
 
                 function btn_hsk1() {
-                    window.location.replace('HSK.php?hsk_1')
+                    window.location.href ="HSK.php?hsk_1"
+
                 };
 
                 function btn_hsk2() {
-                    window.location.replace('HSK.php?hsk_2')
+                    window.location.href ="HSK.php?hsk_2"
                 };
             </script>
 

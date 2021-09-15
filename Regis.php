@@ -142,7 +142,6 @@ if (isset($_SESSION['err'])) {
   });
   var strMessage = '<?= $message ?>';
   if (strMessage) {
-    console.log(strMessage);
     Swal.fire({
       heightAuto: false,
       text: strMessage,

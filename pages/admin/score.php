@@ -138,12 +138,19 @@
                                       <th>No. </th>
                                       <th>Name </th>
                                       <th class="pointer" onclick="sortTable(2)">Pretest</th>
-                                      <th class="pointer" onclick="sortTable(3)">Posttest</th>
-                                      <th class="pointer" onclick="sortTable(4)">ชุดที่ 1</th>
-                                      <th class="pointer" onclick="sortTable(5)">ชุดที่ 2</th>
-                                      <th class="pointer" onclick="sortTable(6)">ชุดที่ 3</th>
-                                      <th class="pointer" onclick="sortTable(7)">ชุดที่ 4</th>
-                                      <th class="pointer" onclick="sortTable(8)">School</th>
+                                      <th class="pointer" onclick="sortTable(3)">
+                                          <div>Posttest</div>
+                                          <div>ชุดที่1</div>
+                                      </th>
+                                      <th class="pointer" onclick="sortTable(4)">
+                                          <div>Posttest</div>
+                                          <div>ชุดที่2</div>
+                                      </th>
+                                      <th class="pointer" onclick="sortTable(5)">ชุดที่ 1</th>
+                                      <th class="pointer" onclick="sortTable(6)">ชุดที่ 2</th>
+                                      <th class="pointer" onclick="sortTable(7)">ชุดที่ 3</th>
+                                      <th class="pointer" onclick="sortTable(8)">ชุดที่ 4</th>
+                                      <th class="pointer" onclick="sortTable(9)">School</th>
                                   </tr>
                               </thead>
                               <tbody id="scoreTable-hsk1">
@@ -162,6 +169,7 @@
                                     <td>' . $row['Sname'] . ' ' . $row['SLname'] . '</td>
                                     <td> ' . $row['HSK1_Pretest'] . '</td>
                                     <td> ' . $row['HSK1_Posttest'] . '</td>
+                                    <td> ' . $row['HSK1_Posttest_2'] . '</td>
                                     <td> ' .  $row['hsk1_session_1'] . '</td>
                                     <td> ' .  $row['hsk1_session_2'] . '</td>
                                     <td> ' .  $row['hsk1_session_3'] . '</td>
@@ -196,13 +204,20 @@
                                   <tr class="table-header">
                                       <th>No. </th>
                                       <th>Name </th>
-                                      <th class="pointer" onclick="sortTable_hsk2(2)">Pretest</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(3)">Posttest</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(4)">ชุดที่ 1</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(5)">ชุดที่ 2</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(6)">ชุดที่ 3</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(7)">ชุดที่ 4</th>
-                                      <th class="pointer" onclick="sortTable_hsk2(8)">School</th>
+                                      <th class="pointer" onclick="sortTable(2)">Pretest</th>
+                                      <th class="pointer" onclick="sortTable(3)">
+                                          <div>Posttest</div>
+                                          <div>ชุดที่1</div>
+                                      </th>
+                                      <th class="pointer" onclick="sortTable(4)">
+                                          <div>Posttest</div>
+                                          <div>ชุดที่2</div>
+                                      </th>
+                                      <th class="pointer" onclick="sortTable(5)">ชุดที่ 1</th>
+                                      <th class="pointer" onclick="sortTable(6)">ชุดที่ 2</th>
+                                      <th class="pointer" onclick="sortTable(7)">ชุดที่ 3</th>
+                                      <th class="pointer" onclick="sortTable(8)">ชุดที่ 4</th>
+                                      <th class="pointer" onclick="sortTable(9)">School</th>
                                   </tr>
                               </thead>
                               <tbody id="scoreTable-hsk2">
@@ -221,6 +236,8 @@
                                     <td >' . $row['Sname'] . ' ' . $row['SLname'] . '</td>
                                     <td> ' . $row['HSK2_Pretest'] . '</td>
                                     <td> ' . $row['HSK2_Posttest'] . '</td>
+                                    <td> ' . $row['HSK2_Posttest_2'] . '</td>
+
                                     <td> ' .  $row['hsk2_session_1'] . '</td>
                                     <td> ' .  $row['hsk2_session_2'] . '</td>
                                     <td> ' .  $row['hsk2_session_3'] . '</td>
