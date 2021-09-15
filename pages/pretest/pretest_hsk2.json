@@ -6,7 +6,7 @@
       { "topic": "พี่สาวไม่อยู่บ้าน", "answer": false },
       { "topic": "ว่ายน้ำ", "answer": false },
       { "topic": "หนังสือ", "answer": false },
-      { "topic": "ยังไม่นอน", "answer": true },
+      { "topic": "ยังไม่นอน", "answer": false },
       { "topic": "ล้างผลไม้", "answer": true },
       { "topic": "ครั้งหน้ามาอีกนะ", "answer": true },
       { "topic": "บะหมี่", "answer": true },
@@ -52,7 +52,7 @@
           { "pinin": " kàn  diànshì", "ch": " B .  看     电视" },
           { "pinin": "kàn  shū", "ch": "C .   看    书" }
         ],
-        "answer": "c"
+        "answer": "a"
       },
       {
         "topic": [
@@ -346,7 +346,7 @@
           "ch": "我     准备    这个    星期六    去  那儿  玩玩儿 。"
         }
       ],
-      "answer": ["b", "b", "d", "e", "c"],
+      "answer": ["b", "a", "d", "e", "c"],
       "answer_1": ["c", "e", "a", "d", "b"]
     }
   }

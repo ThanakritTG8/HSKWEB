@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chochiang.com/chinyhot_HSK13/">
     <meta property="og:title" content="HSK">
-    <meta property="og:description" content="บทเรียนและบทดสอบHSK online">
+    <meta property="og:description" content="บทเรียนและบททดสอบHSK online">
     <meta property="og:image" content="https://chochiang.com/chinyhot_HSK13/img/Logo.png">
 
     <!-- Twitter -->

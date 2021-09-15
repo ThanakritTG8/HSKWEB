@@ -649,7 +649,8 @@
                 let totle2 = sum2_part1 + sum2_part2_1 + sum2_part2_2 + sum2_part3_1 + sum2_part3_2;
 
                 let total = totle1 + totle2;
-
+                console.log(sum_part1,sum_part2_1,sum_part2_2,sum_part3_1,sum_part3_2);
+                console.log(sum2_part1,sum2_part2_1,sum2_part2_2,sum2_part3_1,sum2_part3_2);
                 ///send score
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {

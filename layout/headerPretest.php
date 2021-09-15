@@ -4,9 +4,6 @@ session_start();
 if (!isset($_SESSION['SID'])) {
     header('location: ../../Login.php');
 } 
-// elseif (!isset($_SESSION['HSK1'])) {
-//     header('location: ../student/index.php');
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

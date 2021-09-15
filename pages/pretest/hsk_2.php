@@ -712,7 +712,7 @@
                             <div>${e.ch} </div>
                             </td>
                             <td class="col-2  col-md-1" >
-                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}">
+                                <input type="text" style="width:100%" class="text-center" maxlength="1" id="no_4_${i+1}" autocomplete="off">
                             </td>
                            
                         </tr>`;
@@ -734,7 +734,6 @@
             });
             $("#sesion2_4").html(data_read_4);
             $("#sesion2_4_1").html(data_read_4_1);
-
 
 
             $("#send").click(() => {
@@ -809,6 +808,8 @@
                 const sum_part2_4_1 = $.fn.count_part2(answer2_4_1, false, 5);
 
                 let total_read = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4 + sum_part2_4_1;
+                console.log(sum_part1,sum_part2,sum_part3,sum_part4);
+                console.log(sum_part2_1,sum_part2_2,sum_part2_3,sum_part2_4,sum_part2_4_1);
 
                 let total = total_listen + total_read
 
