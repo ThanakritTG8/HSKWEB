@@ -3,9 +3,24 @@ session_start();
 if (!isset($_SESSION['SID'])) {
     header('location: ../Login.php');
 }
-// elseif(!isset($_SESSION['HSK1'])){
-//     header('location: ../pages/student/index.php');
-// }
+if (isset($_GET['hsk'])) {
+    if ($_GET['hsk'] == 2) {
+        include('../../database/database.php');
+        $sid = "SID";
+        $id = $_SESSION['SID'];
+        $checkRedirect = "SELECT* FROM HSK_Exam_Score WHERE $sid  = $id ";
+        $queryRedirect = mysqli_query($conn, $checkRedirect);
+        $resultRedirect = mysqli_fetch_assoc($queryRedirect);
+        if ($resultRedirect['HSK2_Pretest'] !== 0) {
+            echo "
+            <script type=\"text/javascript\">
+            window.location.href = '../pages/student/index.php';
+            </script>
+        ";
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +66,6 @@ if (!isset($_SESSION['SID'])) {
 
 <body>
     <?php if (isset($_GET['hsk'])) : ?>
-
         <div class="container">
 
             <div class="card text-center">
