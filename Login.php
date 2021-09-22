@@ -18,6 +18,7 @@ if (isset($_SESSION['err'])) {
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/login.css">
+  <link rel="icon" href="./img/Logo.png">
 </head>
 
 

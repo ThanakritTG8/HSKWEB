@@ -46,6 +46,15 @@
         font-size: 14px;
     }
 
+    .edit {
+        color: #7f7f0b;
+        cursor: pointer;
+    }
+
+    .edit:hover {
+        color: #31b716;
+    }
+
     .btn {
         margin-bottom: 10px;
     }
@@ -62,6 +71,8 @@
 
                     <div class="d-flex justify-content-center">
                         <div style="width: 70%;">
+                            <label>No.</label>
+                            <input type="text" class="form-control" name="vocab_no">
                             <label>หมวด</label>
                             <select class="form-control" id="validationCustom" name="type" required>
                                 <option selected disabled value="">หมวด </option>
@@ -79,7 +90,7 @@
 
                             </select>
                             <label>ประเภทคำศัพท์</label>
-                            <select class="form-control" id="validationCustom" name="type_word" >
+                            <select class="form-control" id="validationCustom" name="type_word">
                                 <option selected disabled value="">ประเภทคำศัพท์ </option>
                                 <?php
                                 include('../../database/database.php');
@@ -93,8 +104,7 @@
 
                                 ?>
                             </select>
-                            <label>No.</label>
-                            <input type="text" class="form-control" name="vocab_no">
+
                             <label>คำศัพท์</label>
                             <input type="text" class="form-control" name="ch" required>
                             <label>พินอิน</label>
@@ -134,14 +144,14 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ลำดับ</th>
                         <th scope="col">หมวด</th>
                         <th scope="col">ประเภทคำศัพท์</th>
-                        <th scope="col">No.</th>
                         <th scope="col">คำศัพท์</th>
                         <th scope="col">พินอิน</th>
                         <th scope="col">ประเภท</th>
                         <th scope="col">คำแปล</th>
+                        <th scope="col">แก้ไข </th>
                         <th scope="col">ลบ</th>
                     </tr>
                 </thead>
@@ -154,19 +164,20 @@
                     $part = $_GET['part'];
                     $ses = 'session';
                     $no = 0;
-                    $query = "SELECT * FROM $set WHERE $ses =  $part";
+                    $query = "SELECT * FROM $set WHERE $ses =  $part ORDER BY vocab_no ASC";
                     $result = mysqli_query($conn, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $no += 1;
                         echo '  <tr>
-      <th scope="row">' .  $no . '</th>
+      <th scope="row">' .  $row['vocab_no'] . '</th>
       <th scope="row">' .  $row['type'] . '</th>
       <th scope="row">' .  $row['type_word'] . '</th>
-      <th scope="row">' .  $row['vocab_no'] . '</th>
       <th scope="row">' .  $row['ch'] . '</th>
       <th scope="row">' .  $row['pinyin'] . '</th>
       <th scope="row">' .  $row['type_ch'] . '</th>
       <th scope="row">' .  $row['th'] . '</th>
+      <th scope="row"><i class="fas fa-edit edit" data-toggle="modal" data-target="#modal-edit' . $row[$HSK_id] . '"></i></th>
+
       <th scope="row"><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal' . $row[$HSK_id] . '"></i></th>
       <!-- /// Modal Delete -->
       <div class="modal fade" id="modal' . $row[$HSK_id] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -196,12 +207,75 @@
       </div>
     </div>
       <!-- //// -->
+      <!-- /// Modal edit -->
+      <div class="modal fade" id="modal-edit' . $row[$HSK_id] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title " id="exampleModalLabel">แก้ไข</h5>
+           
+          </div>
+          <div class="modal-body">
+          <form action="edit.php?set='. $_GET['set'] .'&&part='. $_GET['part'] .'&&id='. $row[$HSK_id].'" method="post">
+       
+     
+          <label>No.</label>
+          <input type="text" class="form-control" name="vocab_no" value=' .  $row['vocab_no'] . '>
+          <label>หมวด</label>
+          <select class="form-control" id="validationCustom" name="type" required>
+          <option selected disabled value=""> </option>
+          ';
+                        include('../../database/database.php');
+                        $set_edit = 'HSK' . $_GET['set'] . '_Vocab';
+                        $query_edit = "SELECT * FROM $set GROUP BY type";
+                        $result_edit = mysqli_query($conn, $query_edit);
+
+                        while ($row_edit = mysqli_fetch_assoc($result_edit)) {
+                            echo "<option value = " . $row_edit['type'] . ">" . $row_edit['type'] . "</option>";
+                        }
+
+                        echo ' </select>
+
+          <label>ประเภทคำศัพท์</label>
+          <select class="form-control" id="validationCustom" name="type_word" required>
+              <option selected disabled value=""></option> ';
+
+                        $query_edit_1 = "SELECT * FROM $set GROUP BY type_word";
+                        $result_edit_1 = mysqli_query($conn, $query_edit_1);
+
+                        while ($row_edit_1 = mysqli_fetch_assoc($result_edit_1)) {
+                            echo "<option value = " . $row_edit_1['type_word'] . ">" . $row_edit_1['type_word'] . "</option>";
+                        }
+
+
+                        echo ' </select>
+   
+        <label>คำศัพท์</label>
+        <input type="text" class="form-control" name="ch" value="' .  $row['ch'] . '" required>
+        <label>พินอิน</label>
+        <input type="text" class="form-control" value="' .  $row['pinyin'] . '" name="pinyin" required>
+        <label>ประเภท</label>
+        <input type="text" class="form-control" value="' .  $row['type_ch'] . '" name="type_ch">
+        <label>คำแปล</label>
+        <input type="text" class="form-control" value="' .  $row['th'] . '" name="th" required>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">ยืนยัน</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+          </div> 
+           </form>
+        </div>
+      </div>
+    </div>
+      <!-- //// -->
                     </tr>';
                     }
                     ?>
                 </tbody>
             </table>
         </div>
+
     </div>
 </div>
 <?php include('../../layout/footerAdmin.php'); ?>

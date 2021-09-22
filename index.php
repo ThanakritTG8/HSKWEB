@@ -20,6 +20,8 @@
     <meta property="twitter:title" content="HSK">
     <meta property="twitter:description" content="บทเรียนและบทดสอบHSK online">
     <meta property="twitter:image" content="https://chochiang.com/chinyhot_HSK13/img/Logo.png">
+    <link rel="icon" href="./img/Logo.png">
+
 </head>
 <script>
     window.location.replace('Login.php')

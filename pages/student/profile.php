@@ -31,6 +31,8 @@ if (isset($_SESSION['success'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../img/Logo.png">
+
 </head>
 <style>
     * {
