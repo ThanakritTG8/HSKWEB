@@ -801,8 +801,6 @@ if (!isset($_SESSION['SID'])) {
                 let total_reading = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4;
                 const total = total_listen + total_reading;
 
-                console.log(sum_part1,sum_part_2,sum_part_3,sum_part_4);
-                console.log(sum_part2_1,sum_part2_2,sum_part2_3,sum_part2_4);
                 ///send score
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {

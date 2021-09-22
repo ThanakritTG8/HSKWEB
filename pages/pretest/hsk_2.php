@@ -808,8 +808,6 @@
                 const sum_part2_4_1 = $.fn.count_part2(answer2_4_1, false, 5);
 
                 let total_read = sum_part2_1 + sum_part2_2 + sum_part2_3 + sum_part2_4 + sum_part2_4_1;
-                console.log(sum_part1,sum_part2,sum_part3,sum_part4);
-                console.log(sum_part2_1,sum_part2_2,sum_part2_3,sum_part2_4,sum_part2_4_1);
 
                 let total = total_listen + total_read
 
