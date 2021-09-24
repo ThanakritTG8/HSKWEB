@@ -93,14 +93,14 @@ if (isset($_GET['logout'])) {
             $ses = $_GET['vocab'];
             $hsk = "HSK" . $hsk_set . "_Vocab";
             ////หาประเภทคำ type 
-            $query_type = "SELECT * FROM $hsk WHERE $session = $ses GROUP BY type  ";
+            $query_type = "SELECT * FROM $hsk WHERE $session = $ses GROUP BY type ORDER BY vocab_no ASC ";
             $result_type = mysqli_query($conn, $query_type);
 
             while ($row_type = mysqli_fetch_assoc($result_type)) {
                 $type = $row_type['type'];
 
                 ////// หาประเภทคำ type_word
-                $query_type_word = "SELECT * FROM $hsk WHERE type = '$type' GROUP BY type_word ";
+                $query_type_word = "SELECT * FROM $hsk WHERE type = '$type' AND $session = $ses GROUP BY type_word ORDER BY vocab_no ASC";
                 $result_type_word = mysqli_query($conn, $query_type_word);
 
                 if ((mysqli_num_rows($result_type_word) >= 1)) {
@@ -114,17 +114,18 @@ if (isset($_GET['logout'])) {
                         $type_word = $row_type_word['type_word'];
 
                         ////// หาคำศัพท์
-                        $query = "SELECT * FROM $hsk WHERE type = '$type' AND type_word = '$type_word' ORDER BY vocab_no ASC ";
+                        $query = "SELECT * FROM $hsk WHERE type = '$type' AND type_word = '$type_word' AND $session = $ses ORDER BY vocab_no ASC ";
                         $result = mysqli_query($conn, $query);
 
 
                         if ((mysqli_num_rows($result) >= 1)) {
                             echo '<table class="table" >
                          <tbody>';
+                         $no = 0;
                             while ($row = mysqli_fetch_assoc($result)) {
-
-                                echo '  <tr class="table-light">
-                   <td scope="row" class="col-3">' . $row['vocab_no'] . '</td>
+                                $no +=1 ;
+                 echo '  <tr class="table-light">
+                   <td scope="row" class="col-3">' . $row['vocab_no'] . '. </td>
                    <td class="col-3">' . $row['ch'] . '</td>
                    <td class="col-3">' . $row['pinyin'] . '</td>
                    <td class="col-3">' . $row['th'] . '</td>
