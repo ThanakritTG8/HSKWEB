@@ -77,11 +77,14 @@ if (isset($_GET['vocab'])) {
     } else {
         move_uploaded_file($tmp_name_pic, $locate_img . $pic);
         move_uploaded_file($tmp_name_sound, $locate_sound . $sound);
-        $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name',$no)";
-        $results =   mysqli_query($conn, $sql);
-
-        $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
-        header('location:./editLess.php?set=' . $set . '&&part=' . $part);
+        $sql = "INSERT INTO  $hsk VALUES(NULL,'$no','$pic','$sound','$part','$less_name')";
+        if (mysqli_query($conn, $sql)) {
+            $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
+            header('location:./editLess.php?set=' . $set . '&&part=' . $part);
+        } else {
+            $_SESSION['delete'] = "เพิ่มบทเรียนไม่สำเร็จ!";
+            echo "Error updating record: " . mysqli_error($conn);
+        }
     }
 } elseif ($name_Sh) {
     /////แอคเคาท์โรงเรียน
