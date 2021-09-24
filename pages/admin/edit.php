@@ -9,7 +9,6 @@ if (isset($_GET['set']) && isset($_GET['part']) && isset($_GET['id'])) {
     $id = $_GET['id'];
     $hsk = 'HSK' . $_GET['set'] . '_Vocab';
     $hsk_put = 'HSK' . $_GET['set'] . '_VocabID';
-
     $type = $_POST['type'];
     $type_word = $_POST['type_word'];
     $vocab_no = $_POST['vocab_no'];
@@ -17,7 +16,6 @@ if (isset($_GET['set']) && isset($_GET['part']) && isset($_GET['id'])) {
     $pinyin = $_POST['pinyin'];
     $type_ch = $_POST['type_ch'];
     $th = $_POST['th'];
-
     $set_type = 'type';
     $sql = "UPDATE $hsk SET $set_type='$type',type_word='$type_word',th='$th',vocab_no='$vocab_no',ch='$ch' ,pinyin='$pinyin' ,type_ch='$type_ch' WHERE $hsk_put= $id";
 

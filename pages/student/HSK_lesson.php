@@ -235,7 +235,9 @@ if (isset($_GET['logout'])) {
                             $hsk = $hsk_set;
                             $img = array();
                             $sound = array();
-                            $query = "SELECT * FROM HSK" . $hsk . "_lesson WHERE $sesion = $ses ";
+                            $hsk_set = "HSK" . $hsk . "_lesson";
+                            $no = "no";
+                            $query = "SELECT * FROM $hsk_set WHERE $sesion = $ses ORDER BY $no ASC";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {

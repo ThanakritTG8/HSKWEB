@@ -42,15 +42,18 @@ elseif (isset($_GET['lessId'])) {
 
     if (unlink($file_img) && unlink($file_sound)) {
         $query = "DELETE FROM $hsk WHERE $HSK_id = '$lessId' ";
-        $result = mysqli_query($conn, $query);
-        $_SESSION['delete'] = "ลบบทเรียนสำเร็จ";
+        if (mysqli_query($conn, $query)) {
+            $_SESSION['delete'] = "ลบบทเรียนสำเร็จ";
+        } else {
+            $_SESSION['delete'] = "ลบบทเรียนไม่สำเร็จ !";
+            echo "Error updating record: " . mysqli_error($conn);
+
+        }
         header('location:./editLess.php?set=' . $_GET['set'] . '&&part=' . $_GET['part']);
     } else {
         $_SESSION['delete'] = "ลบบทเรียนไม่สำเร็จ !";
         header('location:./editLess.php?set=' . $_GET['set'] . '&&part=' . $_GET['part']);
     }
-
-   
 }
 ///////// set ตัวแปลส่วนของหน้า techer
 elseif ($tid) {

@@ -44,6 +44,11 @@ if (isset($_GET['logout'])) {
             font-size: 25pt;
         }
     }
+    .type {
+        background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+    }
 
     @media (min-width: 576px) {
         .jumbotron {
@@ -102,14 +107,14 @@ if (isset($_GET['logout'])) {
 
                     while ($row_type_word = mysqli_fetch_assoc($result_type_word)) {
                         if (!$row_type_word['type_word']) {
-                            echo '<h5 class="title" id="subtitle-vocab">' . $type . '</h5>';
+                            echo '<h5 class="title type" id="subtitle-vocab">' . $type . '</h5>';
                         } else {
-                            echo '<h5 class="title" id="subtitle-vocab">' . $row_type_word['type_word'] . '</h5>';
+                            echo '<h5 class="title type" id="subtitle-vocab">' . $row_type_word['type_word'] . '</h5>';
                         }
                         $type_word = $row_type_word['type_word'];
 
                         ////// หาคำศัพท์
-                        $query = "SELECT * FROM $hsk WHERE type = '$type' AND type_word = '$type_word'  ";
+                        $query = "SELECT * FROM $hsk WHERE type = '$type' AND type_word = '$type_word' ORDER BY vocab_no ASC ";
                         $result = mysqli_query($conn, $query);
 
 

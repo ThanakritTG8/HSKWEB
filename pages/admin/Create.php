@@ -32,6 +32,10 @@ if (isset($_GET['vocab'])) {
 
 ///////// set ตัวแปลส่วนของหน้า บทเรียน
 elseif (isset($_GET['less'])) {
+    $no = 0;
+    if (isset($_POST['no'])) {
+        $no = $_POST['no'];
+    }
     $hsk = 'HSK' . $_GET['set'] . '_lesson';
     $part = $_GET['part'];
     $set = $_GET['set'];
@@ -67,13 +71,13 @@ if (isset($_GET['vocab'])) {
     header('location:./editVocab.php?set=' . $set . '&&part=' . $part);
 } elseif (isset($_GET['less'])) {
     /////บทเรียน
-    if ($img_type !== '/png' ||  $sound_type !== '/mpeg') {
+    if ($img_type !== '/png' &&  $img_type !== '/jpeg' && $sound_type !== '/mpeg') {
         $_SESSION['create'] = "กรุณาตรวจประเภทของไฟล์รูปภาพและคลิปเสียง !";
         header('location:./editLess.php?set=' . $set . '&&part=' . $part);
     } else {
         move_uploaded_file($tmp_name_pic, $locate_img . $pic);
         move_uploaded_file($tmp_name_sound, $locate_sound . $sound);
-        $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name')";
+        $sql = "INSERT INTO  $hsk VALUES(NULL,'$pic','$sound','$part',' $less_name',$no)";
         $results =   mysqli_query($conn, $sql);
 
         $_SESSION['create'] = "เพิ่มบทเรียนสำเร็จ!";
