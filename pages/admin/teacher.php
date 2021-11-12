@@ -301,7 +301,7 @@
                                                                 <button type="submit" class="btn btn-primary">ยืนยัน</button>
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                                                             
-                                                            </form>
+                                                        </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -320,7 +320,7 @@
 
 
                   <!-- /////Student -->
-                  <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+                  <div class="tab-pane fade" id="student" role="tabpanel" aria-labelledby="student-tab">
                       <h5 class="card-title">Student Account</h5>
 
                       <div class="header d-flex justify-content-between">
