@@ -154,9 +154,9 @@
                                         echo
                                         '<tr>
                                             <td>' . $row['SchoolName'] . '</td>
-                                            <td><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['SchoolID'] . '"></i></td>
+                                            <td><i  class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['SchoolID'] . '_School"></i></td>
                                             <!-- /// Modal Delete -->
-                                            <div class="modal fade" id="modal-delete' . $row['SchoolID'] . '" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
+                                            <div class="modal fade" id="modal-delete' . $row['SchoolID'] . '_School" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
 
@@ -280,9 +280,9 @@
                                             <td>' . $row['TUsername'] . '</td>
                                             <td>' . $row['TPassword'] . '</td>
                                             <td>' . $row['SchoolName'] . '</td>
-                                            <td><i class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['TID'] . '"></i></td>
+                                            <td><i class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['TID'] . '_Teacher"></i></td>
                                             <!-- /// Modal Delete -->
-                                            <div class="modal fade" id="modal-delete' . $row['TID'] . '" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
+                                            <div class="modal fade" id="modal-delete' . $row['TID'] . '_Teacher" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
 
@@ -358,9 +358,9 @@
                                             <td>' . $row['SUsername'] . '</td>
                                             <td>' . $row['Spassword'] . '</td>
                                             <td>' . $row['SchoolName'] . '</td>
-                                            <td><i class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['SID'] . '"></i></td>
+                                            <td><i class="fas fa-trash icon-delete" data-toggle="modal" data-target="#modal-delete' . $row['SID'] . '_student"></i></td>
                                             <!-- /// Modal Delete -->
-                                            <div class="modal fade" id="modal-delete' . $row['SID'] . '" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
+                                            <div class="modal fade" id="modal-delete' . $row['SID'] . '_student" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
 

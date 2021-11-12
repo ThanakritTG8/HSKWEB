@@ -10,126 +10,139 @@
         }
     }
 </style>
-<?php if ((isset($_GET['hsk_1']) || isset($_GET['hsk_2'])) && isset($_GET['part'])) :
+<?php if ((isset($_GET['hsk_1']) || isset($_GET['hsk_2'])) && isset($_GET['part']) && isset($_GET['section'])) :
     if (isset($_GET['hsk_1'])) {
         $hsk_set = 1;
     } elseif (isset($_GET['hsk_2'])) {
         $hsk_set = 2;
     }
     $part = $_GET['part'];
+    $section = $_GET['section'];
 ?>
     <audio id="sound"></audio>
 
     <div class="container d-grid justify-content-center">
-        <!-- ///// set1_1_1 -->
-        <P class="text-center mt-5">HSK（一级）练习（1/1）【แบบฝึกหัด HSK <?=$hsk_set?> ชุดที่ <?=$part?>/1】</P>
-        <P class="text-center">第一部分【ส่วนที่ 1】</P>
-        <div class="table-responsive">
-            <p>第 1-10 题【ข้อ 1-10】</p>
+        <?php if ($section == 1) : ?>
+            <div>
 
-            <form id="part1_1">
-                <table class="table table-bordered text-center responsive">
-                    <tbody id="set1_1_1">
-                    </tbody>
-                </table>
-            </form>
-        </div>
 
-        <!-- ///// set1_1_2 -->
-        <P class="text-center mt-2">第二部分【ส่วนที่ 2】</P>
-        <div class="table-responsive">
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第11-15题【ข้อ11-15】</p>
+                <!-- ///// set1_1_1 -->
+                <P class="text-center mt-5">HSK（一级）练习（1/1）【แบบฝึกหัด HSK <?= $hsk_set ?> ชุดที่ <?= $part ?>/1】</P>
+                <P class="text-center">第一部分【ส่วนที่ 1】</P>
+                <div class="table-responsive">
+                    <p>第 1-10 题【ข้อ 1-10】</p>
+
+                    <form id="part1_1">
+                        <table class="table table-bordered text-center responsive">
+                            <tbody id="set1_1_1">
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- ///// set1_1_2 -->
+                <P class="text-center mt-2">第二部分【ส่วนที่ 2】</P>
+                <div class="table-responsive">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第11-15题【ข้อ11-15】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_1_2_1">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第16-20题【ข้อ16-20】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_1_2_2">
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- ///// set1_1_3 -->
+                <P class="text-center mt-2">第三部分【ส่วนที่ 3】</P>
+                <div class="table-responsive">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第 21-25 题【ข้อ 21-25】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_1_3_1">
+
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第 26-30 题【ข้อ 26-30】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_1_3_2">
+
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_1_2_1">
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第16-20题【ข้อ16-20】</p>
+        <?php elseif ($section == 2) : ?>
+            <div>
+
+
+                <!-- ///// set1_2_1 -->
+                <P class="text-center mt-5">HSK（一级）练习（1/2）【แบบฝึกหัด HSK <?= $hsk_set ?> ชุดที่ <?= $part ?>/2】</P>
+                <P class="text-center">第一部分【ส่วนที่ 1】</P>
+                <div class="table-responsive">
+                    <p>第 1-10 题【ข้อ 1-10】</p>
+
+                    <form id="part1_2">
+                        <table class="table table-bordered text-center responsive">
+                            <tbody id="set1_2_1">
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- ///// set1_2_2 -->
+
+                <P class="text-center mt-2">第二部分【ส่วนที่ 2】</P>
+                <div class="table-responsive">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第11-15题【ข้อ11-15】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_2_2_1">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第16-20题【ข้อ16-20】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_2_2_2">
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- ///// set1_2_3 -->
+                <P class="text-center mt-2">第三部分【ส่วนที่ 3】</P>
+                <div class="table-responsive">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第 21-25 题【ข้อ 21-25】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_2_3_1">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <p>第 26-30 题【ข้อ 26-30】</p>
+                    </div>
+                    <table class="table table-bordered text-center responsive">
+                        <tbody id="set1_2_3_2">
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_1_2_2">
-                </tbody>
-            </table>
 
-        </div>
-
-        <!-- ///// set1_1_3 -->
-        <P class="text-center mt-2">第三部分【ส่วนที่ 3】</P>
-        <div class="table-responsive">
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第 21-25 题【ข้อ 21-25】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_1_3_1">
-
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第 26-30 题【ข้อ 26-30】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_1_3_2">
-
-                </tbody>
-            </table>
-
-        </div>
-
-        <!-- ///// set1_2_1 -->
-        <P class="text-center mt-5">HSK（一级）练习（1/2）【แบบฝึกหัด HSK <?=$hsk_set?> ชุดที่ <?=$part?>/2】</P>
-        <P class="text-center">第一部分【ส่วนที่ 1】</P>
-        <div class="table-responsive">
-            <p>第 1-10 题【ข้อ 1-10】</p>
-
-            <form id="part1_2">
-                <table class="table table-bordered text-center responsive">
-                    <tbody id="set1_2_1">
-                    </tbody>
-                </table>
-            </form>
-        </div>
-
-        <!-- ///// set1_2_2 -->
-        <P class="text-center mt-2">第二部分【ส่วนที่ 2】</P>
-        <div class="table-responsive">
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第11-15题【ข้อ11-15】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_2_2_1">
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第16-20题【ข้อ16-20】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_2_2_2">
-                </tbody>
-            </table>
-
-        </div>
-
-        <!-- ///// set1_2_3 -->
-        <P class="text-center mt-2">第三部分【ส่วนที่ 3】</P>
-        <div class="table-responsive">
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第 21-25 题【ข้อ 21-25】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_2_3_1">
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-between align-items-baseline">
-                <p>第 26-30 题【ข้อ 26-30】</p>
-            </div>
-            <table class="table table-bordered text-center responsive">
-                <tbody id="set1_2_3_2">
-                </tbody>
-            </table>
-
-        </div>
+        <?php endif ?>
 
         <div class="d-flex justify-content-center mt-1 mb-4">
             <?php $mess_send = "ส่งคำตอบ";
@@ -572,8 +585,6 @@
 
 
 
-
-
             $("#send").click(() => {
                 Swal.fire({
                     icon: 'question',
@@ -631,29 +642,36 @@
                 return sum;
             }
             $.fn.countScore = function() {
+                const section = <?= $section ?>;
                 //// ชุด 1 
-                const sum_part1 = $.fn.count(set1_1_1, 1);
-                const sum_part2_1 = $.fn.count_part2(answer_1, 2, 1);
-                const sum_part2_2 = $.fn.count_part2(answer_2, 2, 2);
-                const sum_part3_1 = $.fn.count_part2(answer_3_1, 3, 1);
-                const sum_part3_2 = $.fn.count_part2(answer_3_2, 3, 2);
+                let total
+                if (section == 1) {
+                    const sum_part1 = $.fn.count(set1_1_1, 1);
+                    const sum_part2_1 = $.fn.count_part2(answer_1, 2, 1);
+                    const sum_part2_2 = $.fn.count_part2(answer_2, 2, 2);
+                    const sum_part3_1 = $.fn.count_part2(answer_3_1, 3, 1);
+                    const sum_part3_2 = $.fn.count_part2(answer_3_2, 3, 2);
+                    let totle1 = sum_part1 + sum_part2_1 + sum_part2_2 + sum_part3_1 + sum_part3_2;
+                    total = totle1
+                } else {
+                    //// ชุด 2
+                    const sum2_part1 = $.fn.count(set1_2_1, 2, true);
+                    const sum2_part2_1 = $.fn.count_part2(answer2_1, 2, 1, true);
+                    const sum2_part2_2 = $.fn.count_part2(answer2_2, 2, 2, true);
+                    const sum2_part3_1 = $.fn.count_part2(answer2_3_1, 3, 1, true);
+                    const sum2_part3_2 = $.fn.count_part2(answer2_3_2, 3, 2, true);
 
-                //// ชุด 2
-                const sum2_part1 = $.fn.count(set1_2_1, 2, true);
-                const sum2_part2_1 = $.fn.count_part2(answer2_1, 2, 1, true);
-                const sum2_part2_2 = $.fn.count_part2(answer2_2, 2, 2, true);
-                const sum2_part3_1 = $.fn.count_part2(answer2_3_1, 3, 1, true);
-                const sum2_part3_2 = $.fn.count_part2(answer2_3_2, 3, 2, true);
+                    let totle2 = sum2_part1 + sum2_part2_1 + sum2_part2_2 + sum2_part3_1 + sum2_part3_2;
+                    total = totle2
 
-                let totle1 = sum_part1 + sum_part2_1 + sum_part2_2 + sum_part3_1 + sum_part3_2;
-                let totle2 = sum2_part1 + sum2_part2_1 + sum2_part2_2 + sum2_part3_1 + sum2_part3_2;
+                }
 
-                let total = totle1 + totle2;
+
                 ///send score
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        if (total >= 36) {
+                        if (total >= 18) {
                             Swal.fire({
                                 icon: 'success',
                                 title: 'สอบผ่าน',
@@ -674,7 +692,7 @@
                         }
                     }
                 };
-                xmlhttp.open("GET", "../../models/submitExercise.php?score=" + total + "&&hsk="+hsk+"&&set=" + part, true);
+                xmlhttp.open("GET", "../../models/submitExercise.php?score=" + total + "&&hsk=" + hsk + "&&set=" + part, true);
                 xmlhttp.send();
 
             }

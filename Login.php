@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 if (isset($_SESSION['err'])) {
   $message = $_SESSION['err'];
   session_destroy();
@@ -11,6 +12,11 @@ if (isset($_SESSION['err'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <META http-equiv="expires" content="0">
+  <meta http-equiv="expires" content="Sat, 13 2021 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
   <title>Login</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">

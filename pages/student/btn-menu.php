@@ -52,7 +52,7 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
 <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
-        <?php if ($resultExercise['hsk' . $hsk_set . '_session_2'] >= 36) : ?>
+        <?php if ($resultExercise['hsk' . $hsk_set . '_session_2'] >= 18) : ?>
 
             <a href="HSK_menu.php?part=3&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">
@@ -73,7 +73,7 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
         <?php endif ?>
     </div>
     <div class="col-sm-4">
-        <?php if ($resultExercise['hsk' . $hsk_set . '_session_3'] >= 36) : ?>
+        <?php if ($resultExercise['hsk' . $hsk_set . '_session_3'] >= 18) : ?>
 
             <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">

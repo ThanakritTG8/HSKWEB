@@ -188,7 +188,7 @@ if (isset($_GET['logout'])) {
             $query_pretest = mysqli_query($conn, $check_pretest);
             $result_pretest = mysqli_fetch_assoc($query_pretest);
 
-            if ($result['hsk1_session_4'] >= 36 || $result_pretest['HSK1_Pretest'] >= 24) :
+            if ($result['hsk1_session_4'] >= 18 || $result_pretest['HSK1_Pretest'] >= 24) :
             ?>
                 <div class="text-center row">
                     <div class="col-1 col-md-2"></div>
@@ -231,7 +231,7 @@ if (isset($_GET['logout'])) {
             $query_pretest = mysqli_query($conn, $check_pretest);
             $result_pretest = mysqli_fetch_assoc($query_pretest);
 
-            if ($result['hsk2_session_4'] >= 20 || $result_pretest['HSK2_Pretest'] >= 36) :
+            if ($result['hsk2_session_4'] >= 18 || $result_pretest['HSK2_Pretest'] >= 36) :
             ?>
                 <div class="text-center row">
                     <div class="col-1 col-md-2"></div>

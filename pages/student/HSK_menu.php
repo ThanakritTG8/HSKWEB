@@ -113,6 +113,13 @@ $_SESSION['less_name'] = $result_send['pic'];
         }
     }
 
+    @media screen and (max-width: 800px) {
+
+        .btn-test {
+            margin-top: 10px;
+        }
+    }
+
     @media (min-width: 576px) {
         .jumbotron {
             padding: 2rem 1rem !important;
@@ -143,7 +150,6 @@ $_SESSION['less_name'] = $result_send['pic'];
 
         <!-- menu -->
         <div class="row">
-            <div class="col-sm-2"></div>
             <div class="col-sm-4">
                 <a href="
                     HSK_Vocab.php?vocab=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
@@ -164,10 +170,6 @@ $_SESSION['less_name'] = $result_send['pic'];
                     </div>
                 </a>
             </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2"></div>
             <div class="col-sm-4">
                 <a href="
                     HSK_mooc.php?mooc=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>
@@ -178,15 +180,21 @@ $_SESSION['less_name'] = $result_send['pic'];
                     </div>
                 </a>
             </div>
-            <div class="col-sm-4">
-                <a href="../exercise/hsk.php?part=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>" class="card btn text-center" id="btn_menu">
-                    <div class="card-body underlineHover">
-                        <img src="../../img/test.png" alt="" style="width: 50px; margin-bottom: 20px;">
-                        <h4 class="card-title ">แบบทดสอบ</h4>
-                    </div>
+        </div>
+    
+        <div class="text-center row mt-5">
+            <div class="col-1 col-md-2"></div>
+            <div class="col-10 col-md-8 btn-post">
+                <div class="description-post">สามารถเลือกทำได้ 1 ชุด</div>
+                <a href="../exercise/hsk.php?part=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>&&section=1" class="btn btn-success">
+                    แบบทดสอบ ชุดที่1
+                    <img src="../../img/posttest.png" alt="" style="width: 30px; ">
+                </a>
+                <a href="../exercise/hsk.php?part=<?= $_GET['part']; ?>&&hsk_<?= $hsk_set; ?>&&section=2" class="btn btn-success btn-test">
+                    แบบทดสอบ ชุดที่2
+                    <img src="../../img/posttest.png" alt="" style="width: 30px; ">
                 </a>
             </div>
-            <div class="col-sm-2"></div>
         </div>
     </div>
 
