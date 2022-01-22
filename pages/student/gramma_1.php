@@ -21,7 +21,7 @@
                     <div class="card-header" id="headingOneOne" style="cursor: pointer;">
                         <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOneOne"
                             aria-expanded="false" aria-controls="collapseOneOne">
-                            1.1 บุรุษสรรพนาม (人称代词 Rénchēnɡ Dàicí)
+                            1.1 บุรุษสรรพนาม/สรรพนามบุคคล (人称代词 Rénchēnɡ Dàicí)
                         </p>
                     </div>
 
@@ -36,7 +36,7 @@
                     <div class="card-header" id="headingOneTwo" style="cursor: pointer;">
                         <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOneTwo"
                             aria-expanded="false" aria-controls="collapseOneTwo">
-                            1.2 นิยมสรรพนาม/สรรพนามบ่งชี้ (指示代词 Zhǐshì Dàicí)
+                            1.2 สรรพนามชี้เฉพาะ/สรรพนามบ่งชี้ (指示代词 Zhǐshì Dàicí)
                         </p>
                     </div>
                     <div id="collapseOneTwo" class="collapse" aria-labelledby="headingOneTwo" data-parent="#accordion">
@@ -168,7 +168,7 @@
                     <div class="card-header" id="headingTwo" style="cursor: pointer;">
                         <p class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo"
                             aria-expanded="false" aria-controls="collapseTwo">
-                            2. ตัวเลข/คำบอกจำนวน (数词 Shùcí)
+                            2. ตัวเลข/คำแสดงตัวเลข (数词 Shùcí)
                         </p>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -487,7 +487,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="m-3 text-left">7. คำกริยาช่วย/คำกริยานุเคราะห์ (助动词 Zhùdònɡcí) </p>
+                <p class="m-3 text-left">7. คำช่วยกริยา (助动词 Zhùdònɡcí)  </p>
                 <p class="m-3 text-left">7.1 “会 huì สามารถ, เป็น / จะ”</p>
                 <div class="card">
                     <div class="card-header" id="headingSevenOneOne" style="cursor: pointer;">

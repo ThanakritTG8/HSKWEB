@@ -69,7 +69,7 @@ if (isset($_GET['logout'])) {
         </li>
 
     </ul>
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content pb-5" id="nav-tabContent">
         <div class="tab-pane fade show active"  id="pills-hsk1" role="tabpanel" aria-labelledby="nav-home-tab">
 
             <?php include('gramma_1.php');  ?>

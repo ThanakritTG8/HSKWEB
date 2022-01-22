@@ -49,10 +49,12 @@ if (isset($_GET['logout'])) {
     #btn-pinyin {
         margin-bottom: 5px;
     }
+
     #header {
         max-height: none !important;
     }
-    .jumbotron{
+
+    .jumbotron {
         margin-bottom: 0px !important;
     }
 </style>
@@ -66,23 +68,23 @@ if (isset($_GET['logout'])) {
 
     <!-- ////////////////// body -->
 
-     <!-- header -->
-            <header class="masthead">
-                <div class="jumbotron jumbotron-fluid" id="header">
-                    <h3 class="text-center m-3">汉语拼音</h3>
-                    <h3 class="text-center m-3">Hànyǔ Pīnyīn</h3>
-                    <h3 class="text-center m-3">การสะกดเสียงภาษาจีน (พินอิน)</h3>
+    <!-- header -->
+    <header class="masthead">
+        <div class="jumbotron jumbotron-fluid" id="header">
+            <h3 class="text-center m-3">汉语拼音</h3>
+            <h3 class="text-center m-3">Hànyǔ Pīnyīn</h3>
+            <h3 class="text-center m-3">การสะกดเสียงภาษาจีน (พินอิน)</h3>
 
-                </div>
-            </header>
+        </div>
+    </header>
 
     <div class="container">
 
         <!-- พยัญชนะ -->
         <div id="pinyin_lesson">
-       
-        
-            <h4 class="header" >
+
+
+            <h4 class="header">
                 1. 声母 Shēngmǔ พยัญชนะ
             </h4>
             <div class="card text-left" id="pinyin-body">
@@ -617,7 +619,7 @@ if (isset($_GET['logout'])) {
                     </div>
 
                     <div class="" id="box">
-                        <div class="card text-left" style="background: rgb(255, 205, 205);">
+                        <div class="card text-left" style="background: rgb(255, 205, 205); width: 100%; overflow-x: scroll;">
                             <div class="card-body">
                                 <h5 class="card-title" id="pinyin-article">
                                     การอ่านเสียง
@@ -625,14 +627,16 @@ if (isset($_GET['logout'])) {
                                     “<b class="text-danger">i</b>”
                                 </h5>
 
-                                <p class="card-text">
+                                <p class="card-text m-3">
                                     1. <b class="text-danger">e</b> (<b class="text-danger">เออ</b>)
                                     ถ้าอยู่หลังสุดในสระผสม ให้เปลี่ยนเป็นเสียง -<b class="text-primary">e</b>
                                     (<b class="text-primary">เอ</b>) ได้แก่
 
                                     <button onclick="play('ie')" class="btn btn-light" type="button">
                                         <b class="text-danger">i</b><b class="text-primary">e</b>
-                                        (<b class="text-danger">อี</b><b class="text-primary">เย</b>),
+                                        (<b class="text-danger">อี</b><b class="text-primary">เย</b>)
+                                    </button>
+                                    <button onclick="play('üe')" class="btn btn-light" type="button">
                                         <b class="text-danger">ü</b><b class="text-primary">e</b>
                                         (<b class="text-danger">อวี</b><b class="text-primary">เอ</b>)
                                     </button>
@@ -640,89 +644,100 @@ if (isset($_GET['logout'])) {
                                 <div class="card-text">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            2. <b class="text-danger">i</b> ปกติอ่าน “
-                                            <b class="text-danger">อี</b>ย”
+                                            <p class="m-3">
+                                                2. <b class="text-danger">i</b> ปกติอ่าน “
+                                                <b class="text-danger">อี</b>ย”
+                                            </p>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="row">
-                                                <div class="col-sm-3">เช่น
-                                                    <a onclick="play('ji1')" class="btn btn-light">
-                                                        j<b class="text-danger">i</b> (จี)
-                                                    </a>
-                                                    <audio id="ji1" src="../../sound/pinyin2/ji1.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('qi')" class="btn btn-light">
-                                                        q<b class="text-danger">i</b> (ชี)
-                                                    </a>
-                                                    <audio id="qi" src="../../sound/pinyin2/qi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('xi')" class="btn btn-light">
-                                                        x<b class="text-danger">i</b> (ซี)
-                                                    </a>
-                                                    <audio id="xi" src="../../sound/pinyin2/xi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3"></div>
-                                            </div>
+                                            <table class="table table-borderless">
+                                                <tr>
+                                                    <td>
+                                                        <p class="mt-2">เช่น</p>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('ji1')" class="btn btn-light">
+                                                            j<b class="text-danger">i</b> (จี)
+                                                        </a>
+                                                        <audio id="ji1" src="../../sound/pinyin2/ji1.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('qi')" class="btn btn-light">
+                                                            q<b class="text-danger">i</b> (ชี)
+                                                        </a>
+                                                        <audio id="qi" src="../../sound/pinyin2/qi.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('xi')" class="btn btn-light">
+                                                            x<b class="text-danger">i</b> (ซี)
+                                                        </a>
+                                                        <audio id="xi" src="../../sound/pinyin2/xi.mp3"></audio>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            หากรวมกับ z, c, s และ zh, ch, sh, r ให้อ่าน “
-                                            <b style="color: rgb(89, 0, 128);">อือ</b>”
+                                            <p class="m-3">
+                                                หากรวมกับ z, c, s และ zh, ch, sh, r ให้อ่าน “
+                                                <b style="color: rgb(89, 0, 128);">อือ</b>”
+                                            </p>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="row">
-                                                <div class="col-sm-3">เช่น
-                                                    <a onclick="play('zi')" class="btn btn-light">
-                                                        z<b style="color: rgb(89, 0, 128);">i</b> (จือ)
-                                                    </a>
-                                                    <audio id="zi" src="../../sound/pinyin2/zi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('ci')" class="btn btn-light">
-                                                        c<b style="color: rgb(89, 0, 128);">i</b> (ชือ)
-                                                    </a>
-                                                    <audio id="ci" src="../../sound/pinyin2/ci.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('si')" class="btn btn-light">
-                                                        s<b style="color: rgb(89, 0, 128);">i</b> (ซือ)
-                                                    </a>
-                                                    <audio id="si" src="../../sound/pinyin2/si.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6"></div>
-                                        <div class="col-sm-6">
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('zhi')" class="btn btn-light">
-                                                        zh<b style="color: rgb(89, 0, 128);">i</b> (จรือ)
-                                                    </a>
-                                                    <audio id="zhi" src="../../sound/pinyin2/zhi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('chi')" class="btn btn-light">
-                                                        ch<b style="color: rgb(89, 0, 128);">i</b> (ชรือ)
-                                                    </a>
-                                                    <audio id="chi" src="../../sound/pinyin2/chi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('shi')" class="btn btn-light">
-                                                        sh<b style="color: rgb(89, 0, 128);">i</b> (ซรือ)
-                                                    </a>
-                                                    <audio id="shi" src="../../sound/pinyin2/shi.mp3"></audio>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <a onclick="play('ri')" class="btn btn-light">
-                                                        r<b style="color: rgb(89, 0, 128);">i</b> (รือ)
-                                                    </a>
-                                                    <audio id="ri" src="../../sound/pinyin2/ri.mp3"></audio>
-                                                </div>
-                                            </div>
+                                            <table class="table table-borderless">
+                                                <tr>
+                                                    <td>
+                                                        <p class="mt-2">เช่น</p>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('zi')" class="btn btn-light">
+                                                            z<b style="color: rgb(89, 0, 128);">i</b> (จือ)
+                                                        </a>
+                                                        <audio id="zi" src="../../sound/pinyin2/zi.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('ci')" class="btn btn-light">
+                                                            c<b style="color: rgb(89, 0, 128);">i</b> (ชือ)
+                                                        </a>
+                                                        <audio id="ci" src="../../sound/pinyin2/ci.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('si')" class="btn btn-light">
+                                                            s<b style="color: rgb(89, 0, 128);">i</b> (ซือ)
+                                                        </a>
+                                                        <audio id="si" src="../../sound/pinyin2/si.mp3"></audio>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <a onclick="play('zhi')" class="btn btn-light">
+                                                            zh<b style="color: rgb(89, 0, 128);">i</b> (จรือ)
+                                                        </a>
+                                                        <audio id="zhi" src="../../sound/pinyin2/zhi.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('chi')" class="btn btn-light">
+                                                            ch<b style="color: rgb(89, 0, 128);">i</b> (ชรือ)
+                                                        </a>
+                                                        <audio id="chi" src="../../sound/pinyin2/chi.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('shi')" class="btn btn-light">
+                                                            sh<b style="color: rgb(89, 0, 128);">i</b> (ซรือ)
+                                                        </a>
+                                                        <audio id="shi" src="../../sound/pinyin2/shi.mp3"></audio>
+                                                    </td>
+                                                    <td>
+                                                        <a onclick="play('ri')" class="btn btn-light">
+                                                            r<b style="color: rgb(89, 0, 128);">i</b> (รือ)
+                                                        </a>
+                                                        <audio id="ri" src="../../sound/pinyin2/ri.mp3"></audio>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
 
@@ -827,7 +842,7 @@ if (isset($_GET['logout'])) {
                                     2. เสียง 3 ออกเสียงเอก (21) ก่อน แล้วลากยาวให้เป็นเสียงจัตวา (14)
                                 </p>
                                 <p class="text">
-                                    3. เสียง 5 เป็นเสียงเบา ออกเสียงให้สั้นและเบ
+                                    3. เสียง 5 เป็นเสียงเบา ออกเสียงให้สั้นและเบา
                                 </p>
                             </div>
                         </div>
@@ -1031,7 +1046,8 @@ if (isset($_GET['logout'])) {
                         <h4><b>การเติมวรรณยุกต์บนสระ</b></h4>
 
                         <p>
-                            <li>พยางค์ที่ปรากฏสระเดี่ยวตัวเดียว ให้เติมบนสระตัวนั้น เช่น</li>
+                            <!-- <li>พยางค์ที่ปรากฏสระผสมตัวเดียว ให้เติมบนสระตัวนั้น เช่น</li> -->
+                            <li>พยางค์ที่เป็นสระผสม ให้เติมบนสระตัวนั้น เช่น</li>
                         </p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;
                             <b style="color: rgb(255, 123, 0);">à è</b>r <b style="color: rgb(255, 123, 0);">ā</b>n
@@ -1044,7 +1060,8 @@ if (isset($_GET['logout'])) {
                             w<b style="color: rgb(255, 123, 0);">ǔ</b> y<b style="color: rgb(255, 123, 0);">ú</b>n
                         </p>
                         <p>
-                            <li>พยางค์ที่ปรากฏสระเดี่ยวหลายตัว โดยทั่วไปให้เติมบนสระตัวแรก เช่น</li>
+                            <!-- <li>พยางค์ที่ปรากฏสระเดี่ยวหลายตัว โดยทั่วไปให้เติมบนสระตัวแรก เช่น</li> -->
+                            <li>พยางค์ที่เป็นสระผสม โดยทั่วไปให้เติมบนสระตัวแรก เช่น</li>
                         </p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -1056,7 +1073,10 @@ if (isset($_GET['logout'])) {
                             w<b style="color: rgb(255, 123, 0);">é</b>i
                         </p>
                         <p>
-                            <li>พยางค์ที่ปรากฏสระเดี่ยวหลายตัวที่ขึ้นต้นด้วยสระ
+                            <!-- <li>พยางค์ที่ปรากฏสระเดี่ยวหลายตัวที่ขึ้นต้นด้วยสระ
+                                <b class="text-danger">i, u, ü</b> ให้เติมบนสระตัวถัดไป เช่น
+                            </li> -->
+                            <li>พยางค์ที่ปรากฏสระผสมที่ขึ้นต้นด้วยสระ
                                 <b class="text-danger">i, u, ü</b> ให้เติมบนสระตัวถัดไป เช่น
                             </li>
                         </p>
@@ -1115,41 +1135,40 @@ if (isset($_GET['logout'])) {
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
-                                    <td style="width: 150px;">
+                                    <td>
                                         <button onclick="play('lǎo_shī')" class="btn btn-light" id="laoshi">
                                             <b style="color: darkviolet;">老师</b>
                                             <b class="text-danger">lǎo</b><b style="color: darkviolet;">shī</b>
                                         </button>
                                         <audio id="lǎo_shī" src="../../sound/pinyin6/lǎo shī.mp3"></audio>
-
                                     </td>
-                                    <td style="width: 150px;">อ่านเป็น</td>
+                                    <td>อ่านเป็น</td>
                                     <td>
                                         (<b class="text-danger">เหล่า</b><b style="color: darkviolet;">ซือ</b>)
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 150px;">
+                                    <td>
                                         <button onclick="play('hǎo_wán')" class="btn btn-light" id="laoshi">
                                             <b style="color: darkviolet;">好玩</b>
                                             <b class="text-danger">hǎo</b><b style="color: darkviolet;">wán</b>
                                         </button>
                                         <audio id="hǎo_wán" src="../../sound/pinyin6/hǎo wán.mp3"></audio>
                                     </td>
-                                    <td style="width: 150px;">อ่านเป็น</td>
+                                    <td>อ่านเป็น</td>
                                     <td>
                                         (<b class="text-danger">ห่าว</b><b style="color: darkviolet;">หวาน</b>)
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 150px;">
+                                    <td>
                                         <button onclick="play('kě_shì')" class="btn btn-light" id="laoshi">
                                             <b style="color: darkviolet;">可是</b>
                                             <b class="text-danger">kě</b><b style="color: darkviolet;">shì</b>
                                         </button>
                                         <audio id="kě_shì" src="../../sound/pinyin6/kě shì.mp3"></audio>
                                     </td>
-                                    <td style="width: 150px;">อ่านเป็น</td>
+                                    <td>อ่านเป็น</td>
                                     <td>
                                         (<b class="text-danger">เข่อ</b><b style="color: darkviolet;">ซื่อ</b>)
                                     </td>
@@ -1168,10 +1187,16 @@ if (isset($_GET['logout'])) {
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
-                                    <td style="width: 150px;">
-                                        <b style="color: darkviolet;">nǐ hǎo (หนี่ ห่าว)</b>
+                                    <td>
+                                        <button class="btn" style="cursor: auto;">
+                                            <b style="color: darkviolet;">nǐ hǎo (หนี่ ห่าว)</b>
+                                        </button>
                                     </td>
-                                    <td style="width: 150px;">อ่านเป็น</td>
+                                    <td>
+                                        <button class="btn" style="cursor: auto;">
+                                            อ่านเป็น
+                                        </button>
+                                    </td>
                                     <td>
                                         <button onclick="play('nǐ_hǎo')" class="btn btn-light" id="laoshi">
                                             <b class="text-danger">ní</b><b style="color: darkviolet;">hǎo</b>
@@ -1181,10 +1206,14 @@ if (isset($_GET['logout'])) {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 150px;">
-                                        <b style="color: darkviolet;">hěn hǎo (เหิ่น ห่าว)</b>
+                                    <td>
+                                        <button class="btn" style="cursor: auto;">
+                                            <b style="color: darkviolet;">hěn hǎo (เหิ่น ห่าว)</b>
+                                        </button>
                                     </td>
-                                    <td style="width: 150px;">อ่านเป็น</td>
+                                    <td>
+                                        <button class="btn" style="cursor: auto;">อ่านเป็น</button>
+                                    </td>
                                     <td>
                                         <button onclick="play('hén_hǎo')" class="btn btn-light" id="laoshi">
                                             <b class="text-danger">hén</b><b style="color: darkviolet;">hǎo</b>
@@ -1205,14 +1234,19 @@ if (isset($_GET['logout'])) {
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <td style="width: 500px;">
-                                            <b style="color: darkviolet;">展览</b><b class="text-primary">馆</b>
-                                            <b style="color: darkviolet;">zhǎnlǎn</b><b class="text-primary">guǎn</b>
-                                            (<b style="color: darkviolet;">จ่านหล่าน</b><b class="text-primary">ก่วน</b>)
-                                            <b class="text-primary">หอ</b><b style="color: darkviolet;">นิทรรศการ</b>
-
+                                        <td>
+                                            <button class="btn" style="cursor: auto;">
+                                                <b style="color: darkviolet;">展览</b><b class="text-primary">馆</b>
+                                                <b style="color: darkviolet;">zhǎnlǎn</b><b class="text-primary">guǎn</b>
+                                                (<b style="color: darkviolet;">จ่านหล่าน</b><b class="text-primary">ก่วน</b>)
+                                                <b class="text-primary">หอ</b><b style="color: darkviolet;">นิทรรศการ</b>
+                                            </button>
                                         </td>
-                                        <td style="">อ่านเป็น</td>
+                                        <td>
+                                            <button class="btn" style="cursor: auto;">
+                                                อ่านเป็น
+                                            </button>
+                                        </td>
                                         <td>
                                             <button onclick="play('zhán_lán_guǎn')" class="btn btn-light" id="laoshi">
                                                 <b class="text-danger">zhánlán </b>
@@ -1232,13 +1266,19 @@ if (isset($_GET['logout'])) {
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <td style="width: 500px;">
-                                            <b style="color: darkviolet;">小</b><b class="text-primary">老板</b>
-                                            <b style="color: darkviolet;">xiǎo </b><b class="text-primary">lǎobǎn</b>
-                                            (<b style="color: darkviolet;">เซี่ยว</b><b class="text-primary">หล่าวป่าน</b>)
-                                            <b class="text-primary">เถ้าแก่</b><b style="color: darkviolet;">น้อย</b>
+                                        <td>
+                                            <button class="btn" style="cursor: auto;">
+                                                <b style="color: darkviolet;">小</b><b class="text-primary">老板</b>
+                                                <b style="color: darkviolet;">xiǎo </b><b class="text-primary">lǎobǎn</b>
+                                                (<b style="color: darkviolet;">เซี่ยว</b><b class="text-primary">หล่าวป่าน</b>)
+                                                <b class="text-primary">เถ้าแก่</b><b style="color: darkviolet;">น้อย</b>
+                                            </button>
                                         </td>
-                                        <td style="">อ่านเป็น</td>
+                                        <td>
+                                            <button class="btn" style="cursor: auto;">
+                                                อ่านเป็น
+                                            </button>
+                                        </td>
                                         <td>
                                             <button onclick="play('xiǎo_lǎobǎn')" class="btn btn-light" id="laoshi">
                                                 <b style="color: darkviolet;">xiǎo </b>
@@ -1260,21 +1300,23 @@ if (isset($_GET['logout'])) {
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <td style="width: 500px;">
-                                            <b style="color: darkviolet;">我</b><b class="text-primary">很</b><b class="text" style="color: darkgreen;">好</b>
-                                            <b style="color: darkviolet;">我</b><b class="text-primary">hěn</b><b class="text" style="color: darkgreen;">hǎo</b>
-                                            (<b style="color: darkviolet;">หว่อ</b><b class="text-primary">เหิ่น</b><b class="text" style="color: darkgreen;">ห่าว</b>)
-                                            <b style="color: darkviolet;">ฉัน</b><b class="text" style="color: darkgreen;">สบายดี</b><b class="text-primary">มาก</b>
-                                        </td>
-                                        <td style="">อ่านเป็น</td>
                                         <td>
-                                            <button onclick="play('wó_hén_hǎo')" class="btn btn-light" id="laoshi">
+                                            <button class="btn" style="cursor: auto;">
+                                                <b style="color: darkviolet;">我</b><b class="text-primary">很</b><b class="text" style="color: darkgreen;">好</b>
+                                                <b style="color: darkviolet;">wǒ</b><b class="text-primary">hěn</b><b class="text" style="color: darkgreen;">hǎo</b>
+                                                (<b style="color: darkviolet;">หว่อ</b><b class="text-primary">เหิ่น</b><b class="text" style="color: darkgreen;">ห่าว</b>)
+                                                <b style="color: darkviolet;">ฉัน</b><b class="text" style="color: darkgreen;">สบายดี</b><b class="text-primary">มาก</b>
+                                            </button>
+                                        </td>
+                                        <td><button class="btn" style="cursor: auto;">อ่านเป็น</button></td>
+                                        <td>
+                                            <button onclick="play('wó hěn hǎo')" class="btn btn-light" id="laoshi">
                                                 <b class="text-danger">wó hén</b>
                                                 <b style="color: darkgreen;"> hǎo</b>
                                                 (<b class="text-danger">หวอ เหิน </b>
                                                 <b style="color: darkgreen;">ห่าว</b>)
                                             </button>
-                                            <audio id="wó_hén_hǎo" src="../../sound/pinyin6/wó hén hǎo.mp3"></audio>
+                                            <audio id="wó hěn hǎo" src="../../sound/pinyin6/wó hěn hǎo.mp3"></audio>
                                         </td>
                                     </tr>
                                 </tbody>
