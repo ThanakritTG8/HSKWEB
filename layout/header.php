@@ -65,10 +65,13 @@
             <li class="nav-item ">
                 <a class="nav-link" href="gramma.php">ไวยากรณ์ </a>
             </li>
+
             <li class="nav-item ">
                 <a class="nav-link" href="pinyin.php">พินอิน </a>
             </li>
-
+            <li class="nav-item ">
+                <a class="nav-link" href="character.php">อักษรจีน【汉字 Hànzì 】 </a>
+            </li>
             <li class="nav-item ">
                 <a class="nav-link" href="HSK.php?hsk_1">HSK 1 </a>
             </li>
@@ -92,9 +95,9 @@
 
         </ul>
         <form action="Login.html" class="form-inline my-2 my-lg-0">
-                <a href="index.php?logout='1'" style="color:white" class="btn btn-success">LOGOUT
-                    <img src="../../img/logout.png" alt="" style="width: 20px; ">
-                </a>
+            <a href="index.php?logout='1'" style="color:white" class="btn btn-success">LOGOUT
+                <img src="../../img/logout.png" alt="" style="width: 20px; ">
+            </a>
 
         </form>
     </div>

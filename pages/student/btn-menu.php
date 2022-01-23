@@ -22,23 +22,23 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
     <div class="col-sm-4">
         <a href='HSK_menu.php?part=1&&hsk_<?= $hsk_set ?>' class="card btn text-center" id="btn_menu">
             <div class="card-body underlineHover">
-                <img src="../..//img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                <img src="../../img/storytelling.png" alt="" style="width: 50px; margin-bottom: 20px;">
                 <h4 class="card-title">HSK ชุดที่ 1</h4>
             </div>
         </a>
     </div>
     <div class="col-sm-4">
-        <?php if ($resultExercise['hsk' . $hsk_set . '_session_1'] >= 36) : ?>
+        <?php if ($resultExercise['hsk' . $hsk_set . '_session_1'] >= 18) : ?>
             <a href="HSK_menu.php?part=2&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">
-                    <img src="../..//img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 2</h4>
                 </div>
             </a>
         <?php else : ?>
             <div class="card btn text-center" id="Dis_btn_menu">
                 <div class="card-body">
-                    <img src="../..//img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/open-book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 2</h4>
 
                     <span class="description">จำเป็นต้องผ่านแบบทดสอบ ชุดที่1 </span>
@@ -56,14 +56,14 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
 
             <a href="HSK_menu.php?part=3&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">
-                    <img src="../..//img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 3 </h4>
                 </div>
             </a>
         <?php else : ?>
             <div class="card btn text-center" id="Dis_btn_menu">
                 <div class="card-body">
-                    <img src="../..//img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/book.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 3</h4>
 
                     <span class="description">จำเป็นต้องผ่านแบบทดสอบ ชุดที่2 </span>
@@ -77,14 +77,14 @@ $resultExercise = mysqli_fetch_assoc($queryExercise);
 
             <a href="HSK_menu.php?part=4&&hsk_<?= $hsk_set ?>" class="card btn text-center" id="btn_menu">
                 <div class="card-body underlineHover">
-                    <img src="../..//img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 4</h4>
                 </div>
             </a>
         <?php else : ?>
             <div class="card btn text-center" id="Dis_btn_menu">
                 <div class="card-body">
-                    <img src="../..//img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
+                    <img src="../../img/books.png" alt="" style="width: 50px; margin-bottom: 20px;">
                     <h4 class="card-title">HSK ชุดที่ 4</h4>
 
                     <span class="description">จำเป็นต้องผ่านแบบทดสอบ ชุดที่3 </span>
