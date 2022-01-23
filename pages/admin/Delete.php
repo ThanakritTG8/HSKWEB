@@ -5,6 +5,7 @@ $tid =  '';
 $sh_id = '';
 $hsk = '';
 $vocabId = '';
+$sid = '';
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
 if (isset($_GET['vocabId'])) {
     $hsk = 'HSK' . $_GET['set'] . '_Vocab';
@@ -20,6 +21,7 @@ elseif (isset($_GET['lessId'])) {
     ///////// set ตัวแปลส่วนของหน้า techer
     $tid =  $_POST['delete'];
     $sh_id = $_POST['sh_delete'];
+    $sid = $_POST['std_delete'];
 }
 
 ///////// set ตัวแปลส่วนของหน้า คำศัพท์
@@ -61,6 +63,13 @@ elseif ($tid) {
 ///////// set ตัวแปลส่วนของหน้าโรงเรียน
 elseif ($sh_id) {
     $query = "DELETE FROM School WHERE SchoolID = '$sh_id' ";
+    $result = mysqli_query($conn, $query);
+    $_SESSION['delete'] = "ลบข้อมูลสำเร็จ";
+    header('location:./teacher.php');
+}
+///////// set ตัวแปลส่วนของหน้า student
+elseif ($sid) {
+    $query = "DELETE FROM Student WHERE SID = '$sid' ";
     $result = mysqli_query($conn, $query);
     $_SESSION['delete'] = "ลบข้อมูลสำเร็จ";
     header('location:./teacher.php');

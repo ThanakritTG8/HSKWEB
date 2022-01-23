@@ -375,7 +375,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                         <form action="Delete.php" method="post">
-                                                            <input type="hidden" name="delete" value="' . $row['SID'] . '">
+                                                            <input type="hidden" name="std_delete" value="' . $row['SID'] . '">
                                                                 <button type="submit" class="btn btn-primary">ยืนยัน</button>
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                                                             
