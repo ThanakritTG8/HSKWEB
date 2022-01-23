@@ -78,6 +78,10 @@ if (isset($_GET['logout'])) {
         color: white;
     }
 
+    a{
+        text-decoration: unset !important;
+    }
+
     #Dis_btn_menu {
         background-color: gray;
         max-height: 170px;
