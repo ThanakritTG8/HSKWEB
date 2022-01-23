@@ -70,7 +70,7 @@
                 <a class="nav-link" href="pinyin.php">พินอิน </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="character.php">อักษรจีน【汉字 Hànzì 】 </a>
+                <a class="nav-link" href="character.php">อักษรจีน</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="HSK.php?hsk_1">HSK 1 </a>
