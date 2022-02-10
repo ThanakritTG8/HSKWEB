@@ -1589,7 +1589,9 @@
           },
           {
             "pinin": "Bàba měi tiān zǎoshang dōu yào chūqù",
-            "ch": "爸爸  每   天      早上     都  要    出去"
+            "ch": "爸爸  每   天      早上     都  要    出去",
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Nǐ zài xiǎng shénme",
@@ -1773,7 +1775,9 @@
           },
           {
             "pinin": "Nà bàozhǐ jiù zài diànshì",
-            "ch": "那   报纸   就 在   电视"
+            "ch": "那   报纸   就 在   电视",
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zuótiān de kǎoshì",
@@ -2342,8 +2346,8 @@
           {
             "pinin": "Wǒ zhù de fàndiàn lí jīchǎng hěn",
             "ch": "我   住 的   饭店   离 机场    很",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Tiān",
@@ -2534,14 +2538,14 @@
           {
             "pinin": "Wǒ mǎile ge xīn shǒujī, jiǔbǎi duō kuài qián, zhēn",
             "ch": "我  买了 个  新   手机,  九百  多   块     钱,    真",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Tā de gǒu tiào de zhēn",
             "ch": "她 的  狗  跳  得   真",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Jīntiān shì tā shēngrì, tā  hé nǚ péngyou",
@@ -2596,8 +2600,8 @@
           {
             "pinin": "Zhèxiē shì wǎnshang zài shuō",
             "ch": "这些   事      晚上     再  说",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Cài tài duō le, wǒ",
@@ -2728,8 +2732,8 @@
           {
             "pinin": "Qǐng jìn, huānyíng dàjiā lái wǒ jiā",
             "ch": "请    进,    欢迎     大家 来 我  家",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Nǐmen tīng",
@@ -2771,7 +2775,9 @@
           },
           {
             "pinin": "Yīnwèi érzi bìng le, suǒyǐ tā méi qù",
-            "ch": "因为  儿子 病  了, 所以 她 没  去"
+            "ch": "因为  儿子 病  了, 所以 她 没  去",
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Gěi nǐ",

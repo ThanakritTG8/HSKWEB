@@ -299,7 +299,7 @@
                         </td>
                     </tr>`;
                 } else {
-                    if(e.ch_sec){
+                    if (e.ch_sec) {
                         tr = ` <tr>
                         <td>${i+21}</td>
                         <td>
@@ -336,8 +336,8 @@
                             <div>${choice[i].ch}</div>
                         </td>
                     </tr>`;
-                    }else {
-                    tr = ` <tr>
+                    } else {
+                        tr = ` <tr>
                         <td>${i+21}</td>
                         <td class="td-respon text-start">
                             <div>
@@ -360,7 +360,7 @@
                             <div>${choice[i].ch}</div>
                         </td>
                     </tr>`;
-                }
+                    }
                 }
                 if (!set1_1_3_2[i].pinin) {
                     tr_1 = ` <tr>
@@ -379,8 +379,7 @@
                             <div>${choice_1[i].ch}</div>
                         </td>
                     </tr>`;
-                }
-                else if(set1_1_3_2[i].ch_sec && !set1_1_3_2[i].pinin_sec) {
+                } else if (set1_1_3_2[i].ch_sec && !set1_1_3_2[i].pinin_sec) {
                     tr_1 = ` <tr>
                         <td>${i+26}</td>
                         <td>
@@ -590,7 +589,7 @@
                         </td>
                     </tr>`;
                 } else {
-                    if(e.ch_sec){
+                    if (e.ch_sec) {
                         tr = ` <tr>
                         <td>${i+21}</td>
                         <td>
@@ -627,7 +626,7 @@
                             <div>${choice2[i].ch}</div>
                         </td>
                     </tr>`;
-                    }else {
+                    } else {
                         tr = ` <tr>
                         <td>${i+21}</td>
                         <td>
@@ -635,14 +634,10 @@
                             <div>
                                 <div class="pin-in">${e.pinin || ''}</div>
                                 <div>
-                                    <span style="padding-right:8px">
-                                        ${e.ch || ''} 
-                                    </span>
-                                    <span>
-                                    ( )
-                                    </span>
+                                ${e.ch || ''} 
                                 </div>
                             </div>
+                            <div style="display: flex;align-items: end; ">${e.ch_sec || ''} （ ）</div>
                             <div>
                                 <div class="pin-in pl-1"> ${e.pinin_end || ''}</div>
                                 <div class="pl-1">${e.ch_end || ''}</div>
@@ -715,8 +710,8 @@
                             <div>${choice2_1[i].ch}</div>
                         </td>
                     </tr>`;
-                    }else {
-                    tr_1 = ` <tr>
+                    } else {
+                        tr_1 = ` <tr>
                         <td>${i+26}</td>
                         <td class="td-respon text-start">
                             <div>
@@ -739,9 +734,9 @@
                             <div>${choice2_1[i].ch}</div>
                         </td>
                     </tr>`;
-                }
+                    }
 
-            }
+                }
 
                 data_set1_2_3_1.push(tr);
                 data_set1_2_3_2.push(tr_1);
