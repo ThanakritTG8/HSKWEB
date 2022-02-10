@@ -342,7 +342,10 @@
                         <td class="td-respon text-start">
                             <div>
                                 <div class="pin-in">${e.pinin}</div>
-                                <div>${e.ch} （ ）</div>
+                                <div>${e.ch}</div>
+                            </div>
+                            <div style="display: flex; align-items: end;">
+                                （ ）
                             </div>
                             <div>
                                 <div class="pin-in"> ${e.pinin_end||''}</div>
@@ -376,13 +379,50 @@
                             <div>${choice_1[i].ch}</div>
                         </td>
                     </tr>`;
+                }
+                else if(set1_1_3_2[i].ch_sec && !set1_1_3_2[i].pinin_sec) {
+                    tr_1 = ` <tr>
+                        <td>${i+26}</td>
+                        <td>
+                            <div class="td-respon text-start">
+                            <div>
+                                <div class="pin-in">${set1_1_3_2[i].pinin || ''}</div>
+                                <div>${set1_1_3_2[i].ch|| ''}</div>
+                            </div>
+                            <div>
+                                <div class="pin-in"> ${set1_1_3_2[i].pinin_end|| ''}</div>
+                                <div>${set1_1_3_2[i].ch_end|| ''}</div>
+                            </div>
+                            </div>
+                            
+                            <div class="td-respon text-start">
+                            <div>
+                                <div>${set1_1_3_2[i].ch_sec|| ''} （ ）</div>
+                            </div>
+                            <div>
+                                <div>${set1_1_3_2[i].ch_sec_end|| ''}</div>
+                            </div>
+                           
+                            </div>
+                        </td>
+                        <td class="col-2  col-md-1">
+                         <input type="text" style="width:100%" class="text-center" maxlength="1" id="no${i+1}_3_2">
+                        </td>
+                        <td class="text-start">
+                            <div class="pl-1">${choice_1[i].pinin}</div>
+                            <div>${choice_1[i].ch}</div>
+                        </td>
+                    </tr>`;
                 } else {
                     tr_1 = ` <tr>
                         <td>${i+26}</td>
                         <td class="td-respon text-start">
                             <div>
                                 <div class="pin-in">${set1_1_3_2[i].pinin || ''}</div>
-                                <div>${set1_1_3_2[i].ch|| ''} （ ）</div>
+                                <div>${set1_1_3_2[i].ch|| ''}</div>
+                            </div>
+                            <div style="display: flex; align-items: end;">
+                                （ ）
                             </div>
                             <div>
                                 <div class="pin-in"> ${set1_1_3_2[i].pinin_end|| ''}</div>
@@ -594,7 +634,14 @@
                         <div class="td-respon text-start">
                             <div>
                                 <div class="pin-in">${e.pinin || ''}</div>
-                                <div>${e.ch || ''} ( ) </div>
+                                <div>
+                                    <span style="padding-right:8px">
+                                        ${e.ch || ''} 
+                                    </span>
+                                    <span>
+                                    ( )
+                                    </span>
+                                </div>
                             </div>
                             <div>
                                 <div class="pin-in pl-1"> ${e.pinin_end || ''}</div>
@@ -674,7 +721,10 @@
                         <td class="td-respon text-start">
                             <div>
                                 <div class="pin-in">${set1_2_3_2[i].pinin}</div>
-                                <div>${set1_2_3_2[i].ch} （ ）</div>
+                                <div>${set1_2_3_2[i].ch} </div>
+                            </div>
+                            <div style="display: flex; align-items: end;">
+                                （ ）
                             </div>
                             <div>
                                 <div class="pin-in"> ${set1_2_3_2[i].pinin_end}</div>

@@ -333,8 +333,8 @@
           {
             "pinin": "Wǒ yǒu liǎng ge",
             "ch": "我  有    两    个",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           }
         ],
         "choice_1": [
@@ -431,8 +431,8 @@
           {
             "pinin": "Nǚ'ér bú ài chī",
             "ch": "女儿 不 爱 吃",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zhège diànshì duōshao",
@@ -443,20 +443,20 @@
           {
             "pinin": "Wǒ xià ge yuè qù",
             "ch": "我   下 个  月  去",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Wǒmen dōu zài xuéxiào",
             "ch": "我们     都  在   学校",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Qǐng zài zhèr  xiě nǐ de",
             "ch": "请   在  这儿 写 你 的",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           }
         ],
         "choice": [
@@ -487,8 +487,8 @@
           {
             "pinin": "Māma qù shāngdiàn mǎi",
             "ch": "妈妈  去      商店     买",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Wǔ fēnzhōng",
@@ -499,8 +499,8 @@
           {
             "pinin": "Míngtiān xīngqī yī, wǒ qù",
             "ch": "明天      星期 一, 我  去",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Wǒmen zuò",
@@ -511,8 +511,8 @@
           {
             "pinin": "Wǒ xiǎng hē",
             "ch": "我    想   喝",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           }
         ],
         "choice_1": [
@@ -629,14 +629,14 @@
           {
             "pinin": "Érzi   ài chī",
             "ch": "儿子 爱 吃",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zhōngguó rén xǐhuan hē",
             "ch": "中国       人   喜欢  喝",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Tā de",
@@ -673,8 +673,8 @@
           {
             "pinin": "Zhuōzi shang yǒu yì běn",
             "ch": "桌子    上     有  一 本",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zhè",
@@ -691,8 +691,8 @@
           {
             "pinin": "Jiā li yǒu hěn duō",
             "ch": "家 里 有  很   多",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Nǐ de",
@@ -815,8 +815,8 @@
           {
             "pinin": "Nǐ nǚ'ér hěn",
             "ch": "你 女儿 很",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Nǐ kànjiàn wǒ de shū",
@@ -883,8 +883,8 @@
           {
             "pinin": "Zhè běn shū shí kuài",
             "ch": "这   本   书  十  块",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zuótiān xià yǔ le ma ?",
@@ -892,7 +892,8 @@
             "pinin_end": "",
             "ch_end": "",
             "pinin_sec": "",
-            "ch_sec": "乙："
+            "ch_sec": "乙：",
+            "ch_sec_end":"。"
           }
         ],
         "choice_1": [
@@ -1005,12 +1006,12 @@
           {
             "pinin": "Jīntiān wǒ hěn",
             "ch": "今天   我  很",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zhè shàngmiàn",
-            "ch": "这      上面",
+            "ch": "这 上面",
             "pinin_end": "yǒu wǒ de míngzi.",
             "ch_end": "有   我 的  名字。"
           },
@@ -1073,14 +1074,14 @@
           {
             "pinin": "Nàge fànguǎnr rén hěn",
             "ch": "那个   饭馆儿  人  很",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           },
           {
             "pinin": "Zuótiān tiānqì hěn",
             "ch": "昨天   天气   很",
-            "pinin_end": "",
-            "ch_end": ""
+            "pinin_end": ".",
+            "ch_end": "。"
           }
         ],
         "choice_1": [
