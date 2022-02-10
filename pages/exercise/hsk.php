@@ -594,11 +594,11 @@
                         <div class="td-respon text-start">
                             <div>
                                 <div class="pin-in">${e.pinin || ''}</div>
-                                <div>${e.ch || ''}</div>
+                                <div>${e.ch || ''} ( ) </div>
                             </div>
                             <div>
-                                <div class="pin-in"> ${e.pinin_end || ''}</div>
-                                <div>${e.ch_end || ''}</div>
+                                <div class="pin-in pl-1"> ${e.pinin_end || ''}</div>
+                                <div class="pl-1">${e.ch_end || ''}</div>
                             </div>
                         </div>
                         
