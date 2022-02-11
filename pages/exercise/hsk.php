@@ -394,11 +394,12 @@
                             </div>
                             </div>
                             
-                            <div class="td-respon text-start">
+                            <div class="td-respon text-start"  style="display: flex; align-items: end;">
                             <div>
                                 <div>${set1_1_3_2[i].ch_sec|| ''} （ ）</div>
                             </div>
                             <div>
+                                <div>${set1_1_3_2[i].pinin_sec_end|| ''}</div>
                                 <div>${set1_1_3_2[i].ch_sec_end|| ''}</div>
                             </div>
                            

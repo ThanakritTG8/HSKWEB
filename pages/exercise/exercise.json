@@ -892,6 +892,7 @@
             "pinin_end": "",
             "ch_end": "",
             "pinin_sec": "",
+            "pinin_sec_end": ".",
             "ch_sec": "乙：",
             "ch_sec_end":"。"
           }
@@ -2771,7 +2772,7 @@
             "pinin": "Wǒ míngtiān shàngwǔ qù gōngsī",
             "ch": "我     明天        上午   去  公司",
             "pinin_end": "nǐ.",
-            "ch_end": "你"
+            "ch_end": "你。"
           },
           {
             "pinin": "Yīnwèi érzi bìng le, suǒyǐ tā méi qù",
