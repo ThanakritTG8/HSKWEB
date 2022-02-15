@@ -113,8 +113,8 @@ if (isset($_GET['logout'])) {
     </header>
     <!-- ////////////////// body -->
     <?php
-    $path_vdo_Content = '../../mooc/HSK' . $hsk_set . '-' . $_GET['mooc'] . '/HSK ' . $hsk_set . '-Set' . $_GET['mooc'] . '-Content_2021_4_1.mp4';
-    $path_vdo_Translation = '../../mooc/HSK' . $hsk_set . '-' . $_GET['mooc'] . '/HSK ' . $hsk_set . '-Set' . $_GET['mooc'] . '-Translation_2021_4_1.mp4';
+    $path_vdo_Content = '../../mooc/HSK' . $hsk_set . '-' . $_GET['mooc'] . '/HSK' . $hsk_set . '.' . $_GET['mooc'] . '.mp4';
+    $path_vdo_Translation = '../../mooc/HSK' . $hsk_set . '-' . $_GET['mooc'] . '/HSK' . $hsk_set . '.' . $_GET['mooc'] . '_Translation.mp4';
     ?>
     <div class="container">
         <div class="btn-vdo-header">
